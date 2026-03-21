@@ -1,4 +1,4 @@
-import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises'
+import { access, mkdir, readFile, readdir, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -9,15 +9,32 @@ const projectRoot = path.resolve(__dirname, '..')
 const workspaceRoot = path.resolve(projectRoot, '..')
 
 const sources = [
-  { from: path.join(workspaceRoot, 'course.json'), to: path.join(projectRoot, 'public', 'data', 'course.json') },
-  { from: path.join(workspaceRoot, 'acronyms.json'), to: path.join(projectRoot, 'public', 'data', 'acronyms.json') },
+  { external: path.join(workspaceRoot, 'course.json'), to: path.join(projectRoot, 'public', 'data', 'course.json') },
+  { external: path.join(workspaceRoot, 'acronyms.json'), to: path.join(projectRoot, 'public', 'data', 'acronyms.json') },
 ]
+
+async function exists(filePath) {
+  try {
+    await access(filePath)
+    return true
+  } catch {
+    return false
+  }
+}
 
 await mkdir(path.join(projectRoot, 'public', 'data'), { recursive: true })
 
-for (const { from, to } of sources) {
-  const data = await readFile(from, 'utf8')
-  await writeFile(to, data, 'utf8')
+for (const { external, to } of sources) {
+  const sourcePath = (await exists(external)) ? external : to
+
+  if (!(await exists(sourcePath))) {
+    throw new Error(`Missing required data file: ${path.relative(projectRoot, to)}`)
+  }
+
+  if (sourcePath !== to) {
+    const data = await readFile(sourcePath, 'utf8')
+    await writeFile(to, data, 'utf8')
+  }
 }
 
 const publicDataDir = path.join(projectRoot, 'public', 'data')
