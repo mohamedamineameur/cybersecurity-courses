@@ -1,0 +1,140 @@
+{
+  "brand": {
+    "title": "Security+ Revision",
+    "subtitle": "Cours + quiz + acronymes"
+  },
+  "nav": {
+    "revise": "Revise",
+    "quizzes": "Quizzes",
+    "acronyms": "Acronyms",
+    "home": "Home"
+  },
+  "loading": "Loading courses…",
+  "error": "Error",
+  "hero": {
+    "title": "Revise fast, revise well.",
+    "subtitle": "Instant search, mobile-friendly courses, quiz per topic, progress saved.",
+    "progress": "Progress",
+    "topicsChecked": "topics checked",
+    "version": "Version",
+    "localData": "Local data (JSON)"
+  },
+  "search": {
+    "placeholder": "Search a concept (e.g. Zero Trust, CIA, AES, IDS...)",
+    "label": "Search",
+    "clear": "Clear",
+    "hint": "Tip: known acronyms are highlighted in course pages."
+  },
+  "topic": {
+    "quiz": "Quiz",
+    "course": "Course",
+    "done": "Done",
+    "todo": "To do",
+    "bestQuiz": "Best quiz: {best}/{total}"
+  },
+  "outline": {
+    "title": "Revision plan (by sections)",
+    "topicsCount": "topics"
+  },
+  "topicPage": {
+    "back": "← Back",
+    "markDone": "Mark as done",
+    "markedDone": "✓ Marked as done",
+    "startQuiz": "Start quiz ({count})",
+    "quizUnavailable": "Quiz unavailable",
+    "bestScore": "Best quiz score",
+    "keyPoints": "Key points",
+    "miniQuiz": "Mini-quiz (preview)",
+    "miniQuizHint": "You can launch the full quiz above.",
+    "answer": "Answer"
+  },
+  "quiz": {
+    "bravo": "Bravo",
+    "backToCourse": "Back to course",
+    "question": "Question {current}/{total}",
+    "answered": "{answered}/{total} answered",
+    "progress": "Progress",
+    "correct": "Correct",
+    "wrong": "Not quite",
+    "wellDone": "Well done.",
+    "correctWas": "The correct answer was: {answer}.",
+    "prev": "Previous",
+    "next": "Next",
+    "finish": "Finish",
+    "restart": "Restart",
+    "allQuizzes": "All quizzes",
+    "scoreLabel": "Score: {score} / {total}",
+    "savedAt": "Saved at",
+    "savedAttemptAvailable": "Last attempt available",
+    "reviewSaved": "Review saved answers"
+  },
+  "quizHub": {
+    "kicker": "Quiz hub",
+    "title": "All quizzes",
+    "subtitle": "Find every quiz with its topic, section, subsection, and your saved answers.",
+    "available": "Available quizzes",
+    "savedResults": "{count} saved results",
+    "searchPlaceholder": "Search a quiz, topic, or section…",
+    "searchLabel": "Quiz search",
+    "topicId": "Topic",
+    "questions": "{count} questions",
+    "best": "Best: {score}/{total}",
+    "lastScore": "Last score: {score}/{total}",
+    "inProgress": "In progress: {count}/{total}",
+    "savedAt": "Last attempt",
+    "resume": "Resume",
+    "openQuiz": "Open quiz",
+    "openTopic": "Open course"
+  },
+  "mockExam": {
+    "cardTitle": "CompTIA Security+ exam mode",
+    "cardSubtitle": "Timed 90-minute mock test with 90 random questions covering the syllabus broadly.",
+    "historyTitle": "Full exam history",
+    "historyCount": "{count} saved exam(s)",
+    "historyEntryTitle": "Saved full exam",
+    "historyEmpty": "No completed exam has been saved yet.",
+    "reviewSavedExam": "Review this exam",
+    "reviewBanner": "Reviewing a saved exam",
+    "closeReview": "Close review",
+    "questionCount": "{count} questions",
+    "duration": "{duration}",
+    "coverageHint": "Random multi-section and multi-topic coverage",
+    "resumeAvailable": "Session in progress",
+    "resumeExam": "Resume exam",
+    "startExam": "Start exam",
+    "newExam": "New exam",
+    "kicker": "Mock exam",
+    "title": "Security+ practice exam",
+    "subtitle": "Exam-style flow: no instant correction, review at the end.",
+    "remaining": "Time left",
+    "answeredCount": "{answered}/{total} answered",
+    "format": "Format",
+    "multipleChoiceOnly": "MCQs from your quiz pool",
+    "resultTitle": "Exam result",
+    "resultScore": "Score: {score}/{total}",
+    "finishedAt": "Finished at",
+    "backToQuizHub": "Back to quizzes",
+    "clearExam": "Clear this session",
+    "submitExam": "Submit exam",
+    "navigator": "Quick navigation",
+    "emptyTitle": "No active exam",
+    "emptyBody": "Start a new practice exam to generate a 90-question session."
+  },
+  "acronyms": {
+    "kicker": "Glossary",
+    "title": "Security Acronyms",
+    "subtitle": "Quick search. Tap an acronym to copy.",
+    "placeholder": "E.g. AES, RBAC, SIEM…",
+    "searchLabel": "Acronym search",
+    "copy": "Copy"
+  },
+  "auth": {
+    "signInGoogle": "Connect with Google",
+    "signOut": "Sign out",
+    "syncing": "Syncing…"
+  },
+  "pwa": {
+    "install": "Install app",
+    "installed": "Installed"
+  }
+}

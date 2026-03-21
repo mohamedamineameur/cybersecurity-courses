@@ -1,0 +1,338 @@
+{
+  "actors": [
+    {
+      "question": "A financial institution has been experiencing a series of targeted phishing attacks that successfully compromise employee credentials. Which type of threat actor is most likely behind these attacks?",
+      "choices": [
+        "Hacktivists seeking to expose financial corruption",
+        "Cybercriminals aiming for financial gain",
+        "Nation-state actors attempting to gather intelligence",
+        "Script kiddies using automated tools"
+      ],
+      "correctAnswer": "Cybercriminals aiming for financial gain",
+      "explanation": "Cybercriminals typically conduct phishing attacks to steal credentials for financial gain, making them the most likely threat actor in this scenario."
+    },
+    {
+      "question": "A company discovers that its sensitive data has been leaked online, and the leak was traced back to an insider who was disgruntled after being laid off. What type of threat actor does this insider represent?",
+      "choices": [
+        "Hacktivist",
+        "Insider threat",
+        "Nation-state actor",
+        "Script kiddie"
+      ],
+      "correctAnswer": "Insider threat",
+      "explanation": "An insider threat refers to individuals within the organization who misuse their access to harm the organization, which fits the scenario of a disgruntled former employee."
+    },
+    {
+      "question": "A multinational corporation is targeted by a sophisticated attack that involves advanced persistent threats (APTs) over several months, with the attackers using custom malware. What type of threat actor is most likely responsible for this type of attack?",
+      "choices": [
+        "Cybercriminals",
+        "Hacktivists",
+        "Nation-state actors",
+        "Script kiddies"
+      ],
+      "correctAnswer": "Nation-state actors",
+      "explanation": "Nation-state actors often engage in APTs, utilizing advanced techniques and resources to achieve long-term objectives against high-value targets."
+    },
+    {
+      "question": "A group of activists launches a denial-of-service (DoS) attack against a government website to protest a new law. What type of threat actor are they classified as?",
+      "choices": [
+        "Hacktivists",
+        "Cybercriminals",
+        "Insider threats",
+        "Nation-state actors"
+      ],
+      "correctAnswer": "Hacktivists",
+      "explanation": "Hacktivists use cyberattacks to promote political agendas or social change, making them the correct classification for activists engaging in a DoS attack."
+    },
+    {
+      "question": "An organization notices that its systems are being probed for vulnerabilities by an unknown entity. The probing is done using automated tools, and the attacks are not sophisticated. What type of threat actor is most likely responsible?",
+      "choices": [
+        "Cybercriminals",
+        "Script kiddies",
+        "Nation-state actors",
+        "Insider threats"
+      ],
+      "correctAnswer": "Script kiddies",
+      "explanation": "Script kiddies typically use pre-written scripts and tools to probe for vulnerabilities without deep technical knowledge, which aligns with the scenario described."
+    },
+    {
+      "question": "A healthcare provider experiences a ransomware attack where patient records are encrypted, and a ransom is demanded for their release. Which type of threat actor is most likely behind this attack?",
+      "choices": [
+        "Hacktivists",
+        "Cybercriminals",
+        "Insider threats",
+        "Nation-state actors"
+      ],
+      "correctAnswer": "Cybercriminals",
+      "explanation": "Cybercriminals often use ransomware to extort money from organizations, especially in sectors like healthcare where data is valuable."
+    },
+    {
+      "question": "A tech company is targeted by a group that aims to steal proprietary software and intellectual property. They employ social engineering tactics to gain access to sensitive areas. What type of threat actor is this group most likely classified as?",
+      "choices": [
+        "Insider threats",
+        "Nation-state actors",
+        "Cybercriminals",
+        "Hacktivists"
+      ],
+      "correctAnswer": "Nation-state actors",
+      "explanation": "Nation-state actors often target intellectual property for economic advantage, using sophisticated techniques including social engineering to achieve their goals."
+    },
+    {
+      "question": "A small business receives an email from a supposed vendor asking for payment details but later finds out it was a phishing attempt. What type of threat actor is likely responsible for this attack?",
+      "choices": [
+        "Hacktivists",
+        "Cybercriminals",
+        "Nation-state actors",
+        "Script kiddies"
+      ],
+      "correctAnswer": "Cybercriminals",
+      "explanation": "Cybercriminals typically engage in phishing attacks to steal sensitive information for financial gain, which fits the scenario described."
+    },
+    {
+      "question": "An employee at a corporation is caught stealing sensitive data and selling it to competitors. What type of threat actor does this employee represent?",
+      "choices": [
+        "Insider threat",
+        "Nation-state actor",
+        "Cybercriminal",
+        "Hacktivist"
+      ],
+      "correctAnswer": "Insider threat",
+      "explanation": "An insider threat is characterized by individuals within the organization who misuse their access for malicious purposes, such as selling data."
+    },
+    {
+      "question": "A group of individuals is found to be exploiting vulnerabilities in outdated software to gain unauthorized access to systems for fun and bragging rights. What type of threat actor does this group represent?",
+      "choices": [
+        "Hacktivists",
+        "Script kiddies",
+        "Cybercriminals",
+        "Nation-state actors"
+      ],
+      "correctAnswer": "Script kiddies",
+      "explanation": "Script kiddies often exploit vulnerabilities for personal amusement or to gain recognition among peers, rather than for financial or political motives."
+    }
+  ],
+  "attributes": [
+    {
+      "question": "A financial institution experiences a data breach that exposes customer information. The attack is traced back to a group operating from a foreign nation known for its advanced cyber capabilities. Which type of threat actor is most likely responsible for this attack?",
+      "choices": [
+        "Script kiddies",
+        "Nation-state actors",
+        "Hacktivists",
+        "Insider threats"
+      ],
+      "correctAnswer": "Nation-state actors",
+      "explanation": "Nation-state actors are typically well-resourced and sophisticated, often targeting financial institutions to gather intelligence or disrupt services."
+    },
+    {
+      "question": "A company notices that its proprietary software has been reverse-engineered and is being sold on the dark web. The attackers are skilled and have managed to bypass several security measures. What type of threat actor is most likely involved in this scenario?",
+      "choices": [
+        "Cybercriminals",
+        "Hacktivists",
+        "Script kiddies",
+        "Nation-state actors"
+      ],
+      "correctAnswer": "Cybercriminals",
+      "explanation": "Cybercriminals often seek financial gain and have the skills to reverse-engineer software, making them the most plausible threat actor in this situation."
+    },
+    {
+      "question": "An employee at a tech firm is found to be leaking sensitive information to competitors. This individual has been with the company for years and has access to critical systems. What type of threat actor does this represent?",
+      "choices": [
+        "Script kiddies",
+        "Insider threats",
+        "Hacktivists",
+        "Nation-state actors"
+      ],
+      "correctAnswer": "Insider threats",
+      "explanation": "Insider threats involve individuals within an organization who misuse their access to compromise security, which fits this scenario perfectly."
+    },
+    {
+      "question": "A group of activists launches a campaign to deface a government website as a protest against a new law. They use basic tools available online and have limited technical skills. What type of threat actor are they most likely to be classified as?",
+      "choices": [
+        "Nation-state actors",
+        "Cybercriminals",
+        "Hacktivists",
+        "Script kiddies"
+      ],
+      "correctAnswer": "Hacktivists",
+      "explanation": "Hacktivists are motivated by political or social causes and often use available tools to execute their campaigns, which aligns with the actions described."
+    },
+    {
+      "question": "A large corporation is targeted by a sophisticated phishing campaign that successfully compromises several executive accounts. The attackers are believed to have extensive resources and knowledge of the company's operations. Which type of threat actor is most likely responsible?",
+      "choices": [
+        "Script kiddies",
+        "Nation-state actors",
+        "Cybercriminals",
+        "Insider threats"
+      ],
+      "correctAnswer": "Nation-state actors",
+      "explanation": "The level of sophistication and resources required for a successful phishing campaign targeting executives suggests the involvement of nation-state actors."
+    },
+    {
+      "question": "A small startup is hit by a ransomware attack that demands payment in cryptocurrency. The attackers use a well-known ransomware strain and have a reputation for targeting small businesses. What type of threat actor is likely responsible?",
+      "choices": [
+        "Hacktivists",
+        "Cybercriminals",
+        "Nation-state actors",
+        "Insider threats"
+      ],
+      "correctAnswer": "Cybercriminals",
+      "explanation": "Cybercriminals typically engage in ransomware attacks for financial gain, especially targeting vulnerable small businesses."
+    },
+    {
+      "question": "An organization discovers that its network has been infiltrated by a group that is stealing intellectual property to gain a competitive advantage. The attackers are highly skilled and operate from multiple countries. What type of threat actor does this scenario represent?",
+      "choices": [
+        "Insider threats",
+        "Hacktivists",
+        "Nation-state actors",
+        "Cybercriminals"
+      ],
+      "correctAnswer": "Nation-state actors",
+      "explanation": "The focus on stealing intellectual property for competitive advantage suggests the involvement of nation-state actors, who often engage in economic espionage."
+    },
+    {
+      "question": "A teenager uses a popular hacking tool to deface a local school’s website, posting a message about the importance of cybersecurity. What type of threat actor does this behavior exemplify?",
+      "choices": [
+        "Script kiddies",
+        "Cybercriminals",
+        "Hacktivists",
+        "Nation-state actors"
+      ],
+      "correctAnswer": "Script kiddies",
+      "explanation": "Script kiddies typically use pre-existing tools to carry out attacks without deep technical knowledge, which fits the scenario of a teenager defacing a website."
+    },
+    {
+      "question": "A company discovers that a competitor has been accessing its confidential data through a series of sophisticated attacks that exploit zero-day vulnerabilities. The attackers are believed to be highly skilled and funded. What type of threat actor does this indicate?",
+      "choices": [
+        "Insider threats",
+        "Hacktivists",
+        "Nation-state actors",
+        "Cybercriminals"
+      ],
+      "correctAnswer": "Nation-state actors",
+      "explanation": "The use of zero-day vulnerabilities and the sophistication of the attacks suggest that nation-state actors are involved, as they typically have the resources and skills to conduct such operations."
+    },
+    {
+      "question": "A group of former employees is found to be selling sensitive company information to competitors. They have insider knowledge and access to proprietary systems. What type of threat actor does this represent?",
+      "choices": [
+        "Insider threats",
+        "Cybercriminals",
+        "Hacktivists",
+        "Nation-state actors"
+      ],
+      "correctAnswer": "Insider threats",
+      "explanation": "This scenario clearly represents insider threats, as the individuals involved are former employees with access to sensitive information and systems."
+    }
+  ],
+  "motivations": [
+    {
+      "question": "A hacker gains access to a financial institution's database and steals customer information. What is the most likely motivation behind this attack?",
+      "choices": [
+        "To expose the institution's security flaws to the public",
+        "To sell the stolen data on the dark web for financial gain",
+        "To disrupt the institution's operations as a form of protest",
+        "To gain notoriety among peers in the hacking community"
+      ],
+      "correctAnswer": "To sell the stolen data on the dark web for financial gain",
+      "explanation": "The primary motivation for stealing customer information from a financial institution is typically financial gain, often achieved by selling the data on the dark web."
+    },
+    {
+      "question": "A group of hacktivists defaces a government website to protest a new law. What is their likely motivation?",
+      "choices": [
+        "To steal sensitive government data",
+        "To promote their political agenda and raise awareness",
+        "To recruit new members for their group",
+        "To disrupt government operations for personal gain"
+      ],
+      "correctAnswer": "To promote their political agenda and raise awareness",
+      "explanation": "Hacktivists are usually motivated by political or social causes, aiming to raise awareness and promote their agenda through acts of defacement."
+    },
+    {
+      "question": "A cybercriminal uses ransomware to encrypt a company's files and demands payment for the decryption key. What is the primary motivation for this attack?",
+      "choices": [
+        "To demonstrate technical skills",
+        "To gain access to sensitive information",
+        "To extort money from the company",
+        "To sabotage the company's operations"
+      ],
+      "correctAnswer": "To extort money from the company",
+      "explanation": "Ransomware attacks are primarily motivated by financial gain, as attackers seek to extort money from victims in exchange for restoring access to their data."
+    },
+    {
+      "question": "An insider threat within a company leaks confidential trade secrets to a competitor. What is the most likely motivation for this action?",
+      "choices": [
+        "To seek revenge against the company for a perceived wrong",
+        "To improve their own skills in cybersecurity",
+        "To gain recognition in the industry",
+        "To comply with legal obligations"
+      ],
+      "correctAnswer": "To seek revenge against the company for a perceived wrong",
+      "explanation": "Insider threats often stem from personal grievances, and leaking trade secrets can be a form of retaliation against the employer."
+    },
+    {
+      "question": "A teenager hacks into a local school’s network and changes grades for fun. What is the likely motivation behind this action?",
+      "choices": [
+        "To demonstrate their hacking skills to peers",
+        "To seek financial gain from selling the access",
+        "To disrupt the school's operations",
+        "To expose vulnerabilities in the school's network"
+      ],
+      "correctAnswer": "To demonstrate their hacking skills to peers",
+      "explanation": "Teenagers often engage in hacking for the thrill and to impress their peers, rather than for financial gain or malicious intent."
+    },
+    {
+      "question": "A state-sponsored attacker infiltrates a foreign government’s infrastructure to gather intelligence. What is their primary motivation?",
+      "choices": [
+        "To disrupt the foreign government’s operations",
+        "To steal intellectual property for commercial advantage",
+        "To gather information for national security purposes",
+        "To create chaos and instability in the region"
+      ],
+      "correctAnswer": "To gather information for national security purposes",
+      "explanation": "State-sponsored attacks are typically motivated by the need to gather intelligence that can enhance national security."
+    },
+    {
+      "question": "A cybercriminal compromises a popular social media account to spread misinformation. What could be their motivation?",
+      "choices": [
+        "To gain followers for their own account",
+        "To manipulate public opinion for political gain",
+        "To test their hacking skills",
+        "To sell the account for profit"
+      ],
+      "correctAnswer": "To manipulate public opinion for political gain",
+      "explanation": "Spreading misinformation is often aimed at influencing public opinion or political outcomes, making it a politically motivated attack."
+    },
+    {
+      "question": "A disgruntled employee downloads sensitive company data before leaving their job. What is the likely motivation for this action?",
+      "choices": [
+        "To sell the data to competitors",
+        "To use the information for personal gain",
+        "To expose the company’s unethical practices",
+        "To improve their resume with more experience"
+      ],
+      "correctAnswer": "To use the information for personal gain",
+      "explanation": "Disgruntled employees may take sensitive data with the intention of using it for personal advantage, such as leveraging it in a new job or selling it."
+    },
+    {
+      "question": "A group of cybercriminals launches a Distributed Denial of Service (DDoS) attack against a rival online gaming platform. What is their primary motivation?",
+      "choices": [
+        "To demonstrate their technical prowess",
+        "To disrupt competition and gain market share",
+        "To expose vulnerabilities in the rival platform",
+        "To gain attention from the media"
+      ],
+      "correctAnswer": "To disrupt competition and gain market share",
+      "explanation": "DDoS attacks against competitors are often motivated by the desire to disrupt their operations and gain an advantage in the market."
+    },
+    {
+      "question": "An individual hacks into a charity's donation system and reroutes funds to their own account. What is the most likely motivation for this crime?",
+      "choices": [
+        "To expose the charity's financial mismanagement",
+        "To gain personal financial benefit",
+        "To demonstrate hacking skills to peers",
+        "To create awareness about charity fraud"
+      ],
+      "correctAnswer": "To gain personal financial benefit",
+      "explanation": "Hacking into a charity's donation system for personal gain indicates a clear financial motivation, as the attacker seeks to benefit from the funds."
+    }
+  ]
+}

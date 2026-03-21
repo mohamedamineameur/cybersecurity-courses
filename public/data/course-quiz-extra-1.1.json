@@ -1,0 +1,226 @@
+{
+  "Categories": [
+    {
+      "question": "A company has implemented a firewall to monitor and control incoming and outgoing network traffic based on predetermined security rules. What category of security control does this represent?",
+      "choices": [
+        "Preventive control",
+        "Detective control",
+        "Corrective control",
+        "Compensatory control"
+      ],
+      "correctAnswer": "Preventive control",
+      "explanation": "A firewall is designed to prevent unauthorized access to or from a private network, making it a preventive control."
+    },
+    {
+      "question": "After a recent security breach, a company decides to implement a system that will log and analyze user activities to detect any anomalies. Which category of security control is this?",
+      "choices": [
+        "Preventive control",
+        "Detective control",
+        "Corrective control",
+        "Administrative control"
+      ],
+      "correctAnswer": "Detective control",
+      "explanation": "Logging and analyzing user activities is aimed at detecting security incidents, thus it falls under detective controls."
+    },
+    {
+      "question": "An organization is planning to install a software patch to fix a vulnerability that was exploited in a recent attack. What type of security control is this action classified as?",
+      "choices": [
+        "Preventive control",
+        "Detective control",
+        "Corrective control",
+        "Physical control"
+      ],
+      "correctAnswer": "Corrective control",
+      "explanation": "Installing a patch to fix a vulnerability is a corrective action taken to remediate an issue after it has been identified."
+    },
+    {
+      "question": "A financial institution has developed a set of policies and procedures to ensure compliance with regulatory requirements. What category of security control does this represent?",
+      "choices": [
+        "Technical control",
+        "Operational control",
+        "Administrative control",
+        "Physical control"
+      ],
+      "correctAnswer": "Administrative control",
+      "explanation": "Policies and procedures are administrative controls that guide the behavior of employees and the operation of the organization."
+    },
+    {
+      "question": "A company utilizes a two-factor authentication system that requires both a password and a fingerprint scan for access to sensitive data. Which category does this control belong to?",
+      "choices": [
+        "Preventive control",
+        "Detective control",
+        "Corrective control",
+        "Compensatory control"
+      ],
+      "correctAnswer": "Preventive control",
+      "explanation": "Two-factor authentication is a preventive measure designed to stop unauthorized access before it occurs."
+    },
+    {
+      "question": "After discovering a data leak, a company implements a data loss prevention (DLP) solution to monitor and control data transfers. What type of security control is this?",
+      "choices": [
+        "Preventive control",
+        "Detective control",
+        "Corrective control",
+        "Technical control"
+      ],
+      "correctAnswer": "Technical control",
+      "explanation": "A data loss prevention solution is a technical control that helps monitor and manage data security."
+    },
+    {
+      "question": "A security team conducts regular audits and assessments to identify potential vulnerabilities in the system. What category of security control does this activity fall under?",
+      "choices": [
+        "Preventive control",
+        "Detective control",
+        "Corrective control",
+        "Compensatory control"
+      ],
+      "correctAnswer": "Detective control",
+      "explanation": "Regular audits and assessments are designed to detect vulnerabilities and weaknesses within the system."
+    },
+    {
+      "question": "An organization decides to use an external service to handle its data backup and recovery processes. This is an example of which type of control?",
+      "choices": [
+        "Preventive control",
+        "Detective control",
+        "Corrective control",
+        "Compensatory control"
+      ],
+      "correctAnswer": "Compensatory control",
+      "explanation": "Using an external service for backup and recovery acts as a compensatory control, providing an alternative to in-house solutions."
+    },
+    {
+      "question": "A company implements an intrusion detection system (IDS) that alerts administrators to suspicious activities on the network. What category of control is this?",
+      "choices": [
+        "Preventive control",
+        "Detective control",
+        "Corrective control",
+        "Physical control"
+      ],
+      "correctAnswer": "Detective control",
+      "explanation": "An intrusion detection system is designed to detect and alert on potential security incidents, classifying it as a detective control."
+    },
+    {
+      "question": "Following a security incident, a company deploys a new antivirus solution to remove malware. What type of control is this considered?",
+      "choices": [
+        "Preventive control",
+        "Detective control",
+        "Corrective control",
+        "Administrative control"
+      ],
+      "correctAnswer": "Corrective control",
+      "explanation": "Deploying antivirus software to address and remove malware is a corrective action taken to fix a security issue."
+    }
+  ],
+  "Control Types": [
+    {
+      "question": "A company has implemented a firewall to control incoming and outgoing network traffic based on predetermined security rules. What type of control is this?",
+      "choices": [
+        "Preventive control",
+        "Detective control",
+        "Corrective control",
+        "Compensating control"
+      ],
+      "correctAnswer": "Preventive control",
+      "explanation": "A firewall is designed to prevent unauthorized access and attacks by controlling traffic, making it a preventive control."
+    },
+    {
+      "question": "After a recent security breach, a company decides to implement a system that monitors network traffic and alerts administrators of suspicious activities. What type of control is this?",
+      "choices": [
+        "Preventive control",
+        "Detective control",
+        "Corrective control",
+        "Deterrent control"
+      ],
+      "correctAnswer": "Detective control",
+      "explanation": "Monitoring and alerting for suspicious activities is characteristic of a detective control, as it identifies and reports potential security incidents."
+    },
+    {
+      "question": "A business has experienced data loss due to accidental deletion by employees. To mitigate this risk, they implement regular backups and a data recovery plan. What type of control does this represent?",
+      "choices": [
+        "Preventive control",
+        "Corrective control",
+        "Detective control",
+        "Compensating control"
+      ],
+      "correctAnswer": "Corrective control",
+      "explanation": "Regular backups and a recovery plan are corrective measures aimed at restoring lost data after an incident has occurred."
+    },
+    {
+      "question": "An organization conducts regular security training sessions for its employees to reduce the risk of social engineering attacks. What type of control is this?",
+      "choices": [
+        "Preventive control",
+        "Detective control",
+        "Corrective control",
+        "Deterrent control"
+      ],
+      "correctAnswer": "Preventive control",
+      "explanation": "Training employees to recognize and avoid social engineering attacks is a preventive measure aimed at reducing the likelihood of such incidents."
+    },
+    {
+      "question": "A security team implements a logging system that records all access to sensitive data. If unauthorized access occurs, the logs can be reviewed to identify the perpetrator. What type of control is this?",
+      "choices": [
+        "Preventive control",
+        "Detective control",
+        "Corrective control",
+        "Compensating control"
+      ],
+      "correctAnswer": "Detective control",
+      "explanation": "The logging system serves to detect and identify unauthorized access after it happens, making it a detective control."
+    },
+    {
+      "question": "Following a malware infection, a company installs antivirus software that actively scans and removes malicious files. What type of control does this represent?",
+      "choices": [
+        "Preventive control",
+        "Detective control",
+        "Corrective control",
+        "Deterrent control"
+      ],
+      "correctAnswer": "Corrective control",
+      "explanation": "Antivirus software that removes malware after infection is a corrective control, as it addresses the issue after it has occurred."
+    },
+    {
+      "question": "An organization uses a security policy that prohibits employees from using personal devices to access company resources. What type of control is this?",
+      "choices": [
+        "Preventive control",
+        "Detective control",
+        "Corrective control",
+        "Compensating control"
+      ],
+      "correctAnswer": "Preventive control",
+      "explanation": "The policy is designed to prevent potential security risks associated with personal devices accessing company resources, classifying it as a preventive control."
+    },
+    {
+      "question": "A company implements an intrusion detection system (IDS) that alerts administrators when suspicious activity is detected on the network. What type of control is this?",
+      "choices": [
+        "Preventive control",
+        "Detective control",
+        "Corrective control",
+        "Deterrent control"
+      ],
+      "correctAnswer": "Detective control",
+      "explanation": "An IDS is designed to detect and alert on suspicious activities, thus serving as a detective control."
+    },
+    {
+      "question": "After a data breach, a company decides to change its encryption methods to enhance data security. What type of control does this represent?",
+      "choices": [
+        "Preventive control",
+        "Detective control",
+        "Corrective control",
+        "Compensating control"
+      ],
+      "correctAnswer": "Corrective control",
+      "explanation": "Changing encryption methods after a breach is a corrective action taken to improve security and prevent future incidents."
+    },
+    {
+      "question": "An organization employs a security guard to monitor physical access to its data center. What type of control is this?",
+      "choices": [
+        "Preventive control",
+        "Detective control",
+        "Corrective control",
+        "Deterrent control"
+      ],
+      "correctAnswer": "Deterrent control",
+      "explanation": "The presence of a security guard serves as a deterrent to potential intruders, discouraging unauthorized access."
+    }
+  ]
+}

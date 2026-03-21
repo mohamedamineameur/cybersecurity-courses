@@ -1,0 +1,140 @@
+{
+  "brand": {
+    "title": "Révision Security+",
+    "subtitle": "Cours + quiz + acronymes"
+  },
+  "nav": {
+    "revise": "Réviser",
+    "quizzes": "Quiz",
+    "acronyms": "Acronymes",
+    "home": "Accueil"
+  },
+  "loading": "Chargement des cours…",
+  "error": "Erreur",
+  "hero": {
+    "title": "Révise vite, révise bien.",
+    "subtitle": "Recherche instantanée, cours lisibles sur mobile, quiz par topic, progression sauvegardée.",
+    "progress": "Progression",
+    "topicsChecked": "topics cochés",
+    "version": "Version",
+    "localData": "Données locales (JSON)"
+  },
+  "search": {
+    "placeholder": "Rechercher un concept (ex: Zero Trust, CIA, AES, IDS...)",
+    "label": "Recherche",
+    "clear": "Effacer",
+    "hint": "Astuce: les acronymes connus sont surlignés dans les pages de cours."
+  },
+  "topic": {
+    "quiz": "Quiz",
+    "course": "Cours",
+    "done": "Fait",
+    "todo": "À faire",
+    "bestQuiz": "Best quiz: {best}/{total}"
+  },
+  "outline": {
+    "title": "Plan de révision (par sections)",
+    "topicsCount": "topics"
+  },
+  "topicPage": {
+    "back": "← Retour",
+    "markDone": "Marquer comme fait",
+    "markedDone": "✓ Marqué comme fait",
+    "startQuiz": "Lancer le quiz ({count})",
+    "quizUnavailable": "Quiz indisponible",
+    "bestScore": "Meilleur score quiz",
+    "keyPoints": "Points clés",
+    "miniQuiz": "Mini-quiz (aperçu)",
+    "miniQuizHint": "Tu peux lancer le quiz complet en haut.",
+    "answer": "Réponse"
+  },
+  "quiz": {
+    "bravo": "Bravo",
+    "backToCourse": "Revenir au cours",
+    "question": "Question {current}/{total}",
+    "answered": "{answered}/{total} répondues",
+    "progress": "Progression",
+    "correct": "Correct",
+    "wrong": "Pas tout à fait",
+    "wellDone": "Bien joué.",
+    "correctWas": "La bonne réponse était: {answer}.",
+    "prev": "Précédent",
+    "next": "Suivant",
+    "finish": "Terminer",
+    "restart": "Recommencer",
+    "allQuizzes": "Tous les quiz",
+    "scoreLabel": "Score : {score} / {total}",
+    "savedAt": "Sauvegardé le",
+    "savedAttemptAvailable": "Dernière tentative disponible",
+    "reviewSaved": "Voir mes anciennes réponses"
+  },
+  "quizHub": {
+    "kicker": "Espace quiz",
+    "title": "Tous les quiz",
+    "subtitle": "Retrouve chaque quiz avec son topic, sa section, sa sous-section et tes réponses sauvegardées.",
+    "available": "Quiz disponibles",
+    "savedResults": "{count} résultats sauvegardés",
+    "searchPlaceholder": "Rechercher un quiz, un topic ou une section…",
+    "searchLabel": "Recherche quiz",
+    "topicId": "Topic",
+    "questions": "{count} questions",
+    "best": "Meilleur : {score}/{total}",
+    "lastScore": "Dernier score : {score}/{total}",
+    "inProgress": "En cours : {count}/{total}",
+    "savedAt": "Dernière tentative",
+    "resume": "Reprendre",
+    "openQuiz": "Ouvrir le quiz",
+    "openTopic": "Voir le cours"
+  },
+  "mockExam": {
+    "cardTitle": "Mode examen CompTIA Security+",
+    "cardSubtitle": "Mock test chronométré de 90 minutes avec 90 questions aléatoires couvrant largement tout le programme.",
+    "historyTitle": "Historique des examens complets",
+    "historyCount": "{count} examen(s) sauvegardé(s)",
+    "historyEntryTitle": "Examen complet sauvegardé",
+    "historyEmpty": "Aucun examen terminé n'est encore sauvegardé.",
+    "reviewSavedExam": "Revoir cet examen",
+    "reviewBanner": "Relecture d'un examen sauvegardé",
+    "closeReview": "Fermer la relecture",
+    "questionCount": "{count} questions",
+    "duration": "{duration}",
+    "coverageHint": "Répartition aléatoire multi-sections et multi-topics",
+    "resumeAvailable": "Session en cours",
+    "resumeExam": "Reprendre l'examen",
+    "startExam": "Démarrer l'examen",
+    "newExam": "Nouvel examen",
+    "kicker": "Mock exam",
+    "title": "Examen blanc Security+",
+    "subtitle": "Format proche de l'épreuve: réponses sans correction immédiate, correction à la fin.",
+    "remaining": "Temps restant",
+    "answeredCount": "{answered}/{total} répondues",
+    "format": "Format",
+    "multipleChoiceOnly": "QCM issus de tes quiz",
+    "resultTitle": "Résultat de l'examen",
+    "resultScore": "Score : {score}/{total}",
+    "finishedAt": "Terminé le",
+    "backToQuizHub": "Retour aux quiz",
+    "clearExam": "Effacer cette session",
+    "submitExam": "Rendre l'examen",
+    "navigator": "Navigation rapide",
+    "emptyTitle": "Aucun examen en cours",
+    "emptyBody": "Lance un nouvel examen blanc pour générer une session de 90 questions."
+  },
+  "acronyms": {
+    "kicker": "Glossaire",
+    "title": "Acronymes Security",
+    "subtitle": "Recherche rapide. Appuie sur un acronyme pour copier.",
+    "placeholder": "Ex: AES, RBAC, SIEM…",
+    "searchLabel": "Recherche acronymes",
+    "copy": "Copier"
+  },
+  "auth": {
+    "signInGoogle": "Connexion Google",
+    "signOut": "Déconnexion",
+    "syncing": "Synchronisation…"
+  },
+  "pwa": {
+    "install": "Installer l'app",
+    "installed": "Installée"
+  }
+}

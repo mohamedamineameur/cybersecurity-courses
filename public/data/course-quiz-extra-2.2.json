@@ -1,0 +1,898 @@
+{
+  "message-based": [
+    {
+      "question": "An employee receives a message on a popular messaging platform claiming to be from the IT department. The message asks them to click a link to reset their password due to a security breach. What should the employee do?",
+      "choices": [
+        "Click the link and follow the instructions to reset the password.",
+        "Verify the request by contacting the IT department directly before taking any action.",
+        "Ignore the message and continue with their work.",
+        "Report the message to their supervisor for further instructions."
+      ],
+      "correctAnswer": "Verify the request by contacting the IT department directly before taking any action.",
+      "explanation": "The employee should verify the request with the IT department to ensure it is legitimate, as this is a common tactic used in phishing attacks."
+    },
+    {
+      "question": "A user receives a direct message on a social media platform from a friend, containing a link to a video that appears to be funny. The user notices that their friend has not been active for a while. What is the best course of action?",
+      "choices": [
+        "Click the link to view the video since it’s from a friend.",
+        "Ask the friend if they sent the message before clicking the link.",
+        "Ignore the message and log out of the social media account.",
+        "Report the message as spam to the social media platform."
+      ],
+      "correctAnswer": "Ask the friend if they sent the message before clicking the link.",
+      "explanation": "The user should confirm with their friend to avoid falling for a potential phishing attempt, as accounts can be compromised and used to send malicious links."
+    },
+    {
+      "question": "During a team meeting, an employee receives a message on their work chat application stating that they need to download an urgent software update from a provided link. What should the employee do?",
+      "choices": [
+        "Download the update immediately to ensure compliance.",
+        "Check with the IT department for the legitimacy of the update.",
+        "Ignore the message as it seems suspicious.",
+        "Ask the sender for more details about the update."
+      ],
+      "correctAnswer": "Check with the IT department for the legitimacy of the update.",
+      "explanation": "The employee should verify the update with IT, as attackers often use urgency to trick users into downloading malware."
+    },
+    {
+      "question": "A user receives a message from an unknown number on their mobile device, claiming they have won a prize and need to click a link to claim it. What is the most appropriate response?",
+      "choices": [
+        "Click the link to claim the prize.",
+        "Delete the message and block the number.",
+        "Respond to the message asking for more details.",
+        "Forward the message to friends to warn them."
+      ],
+      "correctAnswer": "Delete the message and block the number.",
+      "explanation": "The message is likely a phishing attempt; the safest action is to delete it and block the sender to prevent further contact."
+    },
+    {
+      "question": "An employee receives a message on a collaboration platform from a colleague asking them to review a document via a link. The link appears to lead to a legitimate file-sharing service. What should the employee do first?",
+      "choices": [
+        "Click the link and review the document.",
+        "Check the URL carefully for any discrepancies.",
+        "Ask the colleague for the document in another way.",
+        "Report the message to the IT security team."
+      ],
+      "correctAnswer": "Check the URL carefully for any discrepancies.",
+      "explanation": "Before clicking any links, the employee should verify the URL to ensure it is not a phishing attempt disguised as a legitimate service."
+    },
+    {
+      "question": "After receiving a message on a messaging app that appears to be from a bank, requesting verification of account details due to suspicious activity, what should a user do?",
+      "choices": [
+        "Provide the requested information to avoid account suspension.",
+        "Contact the bank directly using official contact information.",
+        "Ignore the message since it seems suspicious.",
+        "Reply to the message asking for more information."
+      ],
+      "correctAnswer": "Contact the bank directly using official contact information.",
+      "explanation": "The user should reach out to the bank directly to verify the message's authenticity, as this is a common phishing tactic."
+    },
+    {
+      "question": "A team member sends a message containing a link to a 'mandatory' training video. However, the message seems out of character for the sender. What is the best action to take?",
+      "choices": [
+        "Watch the video to comply with the training requirement.",
+        "Ask the team member if they really sent the message.",
+        "Ignore the message and wait for further instructions.",
+        "Report the message to HR for review."
+      ],
+      "correctAnswer": "Ask the team member if they really sent the message.",
+      "explanation": "Confirming with the sender is crucial, as the message could be a phishing attempt if it seems unusual."
+    },
+    {
+      "question": "A user receives an instant message from a colleague with an attachment that contains a 'confidential' report. The colleague has not mentioned anything about this report previously. What should the user do?",
+      "choices": [
+        "Open the attachment to review the report.",
+        "Contact the colleague to verify the attachment's legitimacy.",
+        "Delete the message without opening the attachment.",
+        "Forward the message to IT for analysis."
+      ],
+      "correctAnswer": "Contact the colleague to verify the attachment's legitimacy.",
+      "explanation": "Verifying the attachment with the colleague is essential to avoid opening potentially malicious files."
+    },
+    {
+      "question": "An employee receives a message on a messaging platform claiming to be from a trusted vendor, asking them to confirm their account details to avoid service interruption. What is the most secure response?",
+      "choices": [
+        "Provide the account details as requested.",
+        "Ignore the message and continue working.",
+        "Contact the vendor directly using known contact information.",
+        "Forward the message to the security team for investigation."
+      ],
+      "correctAnswer": "Contact the vendor directly using known contact information.",
+      "explanation": "The employee should reach out to the vendor through official channels to verify the request, as this is a common tactic used in social engineering."
+    },
+    {
+      "question": "A user receives a message on a chat application from a stranger offering a free gift card in exchange for completing a survey. What should the user do?",
+      "choices": [
+        "Complete the survey to claim the gift card.",
+        "Ignore the message and report it as spam.",
+        "Ask the stranger for more details about the offer.",
+        "Share the message with friends to warn them."
+      ],
+      "correctAnswer": "Ignore the message and report it as spam.",
+      "explanation": "This is likely a scam, and the user should avoid engaging with the sender and report the message to protect themselves and others."
+    }
+  ],
+  "file-image": [
+    {
+      "question": "A company receives a PDF file from a trusted partner. After opening it, employees notice unusual behavior on their systems. What is the most likely explanation for this incident?",
+      "choices": [
+        "The PDF file was corrupted during transmission.",
+        "The PDF file contained embedded malicious code.",
+        "The employees' systems had outdated antivirus software.",
+        "The PDF was too large for the systems to handle."
+      ],
+      "correctAnswer": "The PDF file contained embedded malicious code.",
+      "explanation": "Attackers often embed malicious code in files like PDFs to exploit vulnerabilities. This can lead to unusual system behavior when the file is opened."
+    },
+    {
+      "question": "An employee downloads an image file from an unverified website. Shortly after, their computer starts behaving erratically. What should the employee suspect?",
+      "choices": [
+        "The image file was too large for the system to process.",
+        "The employee's computer was already infected.",
+        "The image file may have contained hidden malware.",
+        "The website was experiencing technical difficulties."
+      ],
+      "correctAnswer": "The image file may have contained hidden malware.",
+      "explanation": "Image files can be manipulated to include malicious code. Downloading from unverified sources increases the risk of such attacks."
+    },
+    {
+      "question": "A security analyst discovers that a series of JPEG images on the company server have been modified. What is the most appropriate first step to investigate?",
+      "choices": [
+        "Delete the images immediately.",
+        "Analyze the images for embedded malicious code.",
+        "Inform the employees to avoid opening images.",
+        "Change all user passwords on the server."
+      ],
+      "correctAnswer": "Analyze the images for embedded malicious code.",
+      "explanation": "Before taking any action, it's critical to analyze the images to determine if they contain malicious code that could compromise the server."
+    },
+    {
+      "question": "During a routine security audit, a team finds that several Word documents have been flagged for containing macros. What should the team do next?",
+      "choices": [
+        "Disable macros in all Word documents.",
+        "Investigate the documents for potential malicious code.",
+        "Inform users to avoid opening any Word documents.",
+        "Delete all flagged documents immediately."
+      ],
+      "correctAnswer": "Investigate the documents for potential malicious code.",
+      "explanation": "Macros can be used to execute malicious code. Investigating the flagged documents is essential to understand the risk before taking further action."
+    },
+    {
+      "question": "A user reports that their system crashed after opening a ZIP file received via email. What is the most likely cause?",
+      "choices": [
+        "The ZIP file was too large for the system.",
+        "The ZIP file contained a malicious executable.",
+        "The user's system was already unstable.",
+        "The email client had a temporary glitch."
+      ],
+      "correctAnswer": "The ZIP file contained a malicious executable.",
+      "explanation": "ZIP files can contain various file types, including executables. If the user opened a malicious executable within the ZIP, it could cause system crashes."
+    },
+    {
+      "question": "A cybersecurity team receives a report of users being redirected to malicious websites after opening image files. What is the most likely vector for this attack?",
+      "choices": [
+        "The image files were too large.",
+        "The image files contained steganography.",
+        "The users were using outdated browsers.",
+        "The image files were corrupted."
+      ],
+      "correctAnswer": "The image files contained steganography.",
+      "explanation": "Steganography can hide malicious payloads within image files, leading to redirection to malicious sites when the images are processed."
+    },
+    {
+      "question": "An organization notices that certain documents are being flagged for containing suspicious links. What should the security team prioritize?",
+      "choices": [
+        "Updating the organization's antivirus software.",
+        "Training employees on phishing awareness.",
+        "Investigating the documents for embedded threats.",
+        "Restricting access to document editing."
+      ],
+      "correctAnswer": "Investigating the documents for embedded threats.",
+      "explanation": "The flagged documents may contain embedded threats that could compromise security. Investigating them helps to identify and mitigate risks."
+    },
+    {
+      "question": "A user downloads an image file from a social media platform and immediately experiences a ransomware attack. What is the most plausible explanation?",
+      "choices": [
+        "The social media platform was hacked.",
+        "The image file contained a ransomware payload.",
+        "The user's antivirus was outdated.",
+        "The user clicked on a suspicious link."
+      ],
+      "correctAnswer": "The image file contained a ransomware payload.",
+      "explanation": "Ransomware can be embedded in image files. Downloading and opening such a file can trigger the ransomware attack."
+    },
+    {
+      "question": "After an employee opens a file attachment from an unknown sender, their computer begins to act strangely. What should the IT department do first?",
+      "choices": [
+        "Isolate the affected computer from the network.",
+        "Run a full antivirus scan immediately.",
+        "Instruct the employee to delete the file.",
+        "Reinstall the operating system."
+      ],
+      "correctAnswer": "Isolate the affected computer from the network.",
+      "explanation": "Isolating the affected computer helps prevent potential spread of malware to the network while further investigation is conducted."
+    },
+    {
+      "question": "A security team discovers that several image files have been altered to include malicious scripts. What is the most effective way to prevent this in the future?",
+      "choices": [
+        "Implement file type restrictions on uploads.",
+        "Educate users about safe file handling.",
+        "Regularly update security software.",
+        "Monitor network traffic for anomalies."
+      ],
+      "correctAnswer": "Implement file type restrictions on uploads.",
+      "explanation": "Restricting the types of files that can be uploaded helps reduce the risk of malicious files being introduced into the system."
+    }
+  ],
+  "other-vectors": [
+    {
+      "question": "During a company meeting, an employee notices a USB drive left on the conference table. What should the employee do with the USB drive?",
+      "choices": [
+        "Plug it into their computer to see who it belongs to",
+        "Hand it over to the IT department for analysis",
+        "Keep it for personal use if it looks interesting",
+        "Throw it away to avoid any potential issues"
+      ],
+      "correctAnswer": "Hand it over to the IT department for analysis",
+      "explanation": "Plugging in an unknown USB drive can introduce malware to the computer. The safest action is to report it to IT for proper handling."
+    },
+    {
+      "question": "A company has implemented a new policy requiring employees to use a specific mobile app for secure communications. However, some employees continue to use personal messaging apps. What is the primary risk associated with this behavior?",
+      "choices": [
+        "Increased productivity due to faster communication",
+        "Potential data leakage from unencrypted channels",
+        "Improved employee morale from using familiar tools",
+        "Lower costs associated with app subscriptions"
+      ],
+      "correctAnswer": "Potential data leakage from unencrypted channels",
+      "explanation": "Using personal messaging apps can expose sensitive company information to interception and unauthorized access, as these apps may not provide adequate security."
+    },
+    {
+      "question": "An employee receives a phone call from someone claiming to be from the IT department, asking for their login credentials to resolve a supposed issue. What should the employee do?",
+      "choices": [
+        "Provide the credentials since it's an IT call",
+        "Ask for a callback number and verify the request",
+        "Hang up immediately without responding",
+        "Report the call to their manager and do nothing else"
+      ],
+      "correctAnswer": "Ask for a callback number and verify the request",
+      "explanation": "This scenario describes a potential phishing attempt. Employees should verify such requests through official channels before divulging sensitive information."
+    },
+    {
+      "question": "A company is experiencing frequent unauthorized access attempts on its Wi-Fi network. What is the most effective measure to enhance network security?",
+      "choices": [
+        "Change the SSID to something less recognizable",
+        "Implement WPA3 encryption and a strong passphrase",
+        "Limit the number of devices that can connect",
+        "Disable the Wi-Fi network during off-hours"
+      ],
+      "correctAnswer": "Implement WPA3 encryption and a strong passphrase",
+      "explanation": "Using WPA3 encryption provides stronger security for the Wi-Fi network, making it more difficult for unauthorized users to gain access."
+    },
+    {
+      "question": "An employee finds a company laptop unattended in a public area. What is the best course of action?",
+      "choices": [
+        "Take the laptop to the nearest IT office",
+        "Leave it there and inform the employee when they return",
+        "Check the laptop for any sensitive information",
+        "Use it to access company resources since it's a company device"
+      ],
+      "correctAnswer": "Take the laptop to the nearest IT office",
+      "explanation": "Taking the laptop to IT ensures it is secured and any potential data breaches are mitigated, rather than leaving it vulnerable to theft."
+    },
+    {
+      "question": "A user receives an email with a link to reset their password, but they did not request a reset. What should they do?",
+      "choices": [
+        "Click the link to see what happens",
+        "Forward the email to the IT security team",
+        "Ignore the email and continue using their current password",
+        "Reply to the email asking for clarification"
+      ],
+      "correctAnswer": "Forward the email to the IT security team",
+      "explanation": "This email may be a phishing attempt. Reporting it allows IT to investigate and take necessary actions to protect the organization."
+    },
+    {
+      "question": "A company has recently implemented a Bring Your Own Device (BYOD) policy. What is the primary concern regarding this practice?",
+      "choices": [
+        "Increased employee satisfaction with their devices",
+        "Difficulty in managing various operating systems and applications",
+        "Reduction in company expenses for hardware",
+        "Improved overall productivity from familiar devices"
+      ],
+      "correctAnswer": "Difficulty in managing various operating systems and applications",
+      "explanation": "BYOD introduces challenges in ensuring consistent security measures across different devices and operating systems, increasing the risk of security vulnerabilities."
+    },
+    {
+      "question": "A security team discovers that an employee has been using a personal cloud storage service to store company documents. What is the most significant risk posed by this action?",
+      "choices": [
+        "Increased accessibility to documents for remote work",
+        "Potential violation of data protection regulations",
+        "Improved collaboration with external partners",
+        "Lower costs associated with storage solutions"
+      ],
+      "correctAnswer": "Potential violation of data protection regulations",
+      "explanation": "Storing company documents on personal cloud services can lead to compliance issues and data breaches, as these services may not adhere to necessary security standards."
+    },
+    {
+      "question": "A company is conducting a security awareness training session. Which scenario should be highlighted as a common attack vector?",
+      "choices": [
+        "Using strong passwords for all accounts",
+        "Recognizing phishing emails and social engineering tactics",
+        "Regularly updating software and systems",
+        "Implementing two-factor authentication"
+      ],
+      "correctAnswer": "Recognizing phishing emails and social engineering tactics",
+      "explanation": "Phishing and social engineering are prevalent attack vectors that exploit human behavior, making awareness and recognition critical for prevention."
+    },
+    {
+      "question": "An employee is using a public computer to access company email. What is the primary risk they should be aware of?",
+      "choices": [
+        "The computer may be running outdated software",
+        "Public networks are generally slower than private ones",
+        "There is a risk of keyloggers capturing their credentials",
+        "They may forget to log out of their email account"
+      ],
+      "correctAnswer": "There is a risk of keyloggers capturing their credentials",
+      "explanation": "Public computers can be compromised with keyloggers or malware that can capture sensitive information, making it risky to access company accounts on such devices."
+    }
+  ],
+  "software": [
+    {
+      "question": "A company discovers that its web application is vulnerable to SQL injection attacks. What should the security team prioritize to mitigate this risk?",
+      "choices": [
+        "Implement input validation and parameterized queries",
+        "Increase the server's firewall rules",
+        "Educate users about secure passwords",
+        "Disable all database access"
+      ],
+      "correctAnswer": "Implement input validation and parameterized queries",
+      "explanation": "Input validation and parameterized queries are essential for preventing SQL injection by ensuring that user input is properly sanitized and treated as data, not executable code."
+    },
+    {
+      "question": "An organization is alerted to a critical vulnerability in its email server software that could allow remote code execution. What should the IT department do first?",
+      "choices": [
+        "Immediately apply the latest security patch",
+        "Disconnect the email server from the network",
+        "Notify all users to stop using email",
+        "Review the server's access logs for suspicious activity"
+      ],
+      "correctAnswer": "Immediately apply the latest security patch",
+      "explanation": "Applying the latest security patch is the most effective immediate response to mitigate the risk of exploitation from the known vulnerability."
+    },
+    {
+      "question": "A software vendor releases an update that addresses several vulnerabilities. However, the update also introduces new bugs. What should the organization's IT team do before deploying the update?",
+      "choices": [
+        "Deploy the update immediately to ensure security",
+        "Test the update in a staging environment first",
+        "Ignore the update due to potential bugs",
+        "Consult the vendor for additional support"
+      ],
+      "correctAnswer": "Test the update in a staging environment first",
+      "explanation": "Testing the update in a staging environment allows the organization to evaluate the impact of the update and ensure that it does not introduce new issues before deployment."
+    },
+    {
+      "question": "A user reports that their workstation is running slowly and displaying unusual pop-up ads. What type of software vulnerability is most likely affecting the system?",
+      "choices": [
+        "Malware infection",
+        "Outdated antivirus software",
+        "Weak password policy",
+        "Unpatched operating system"
+      ],
+      "correctAnswer": "Malware infection",
+      "explanation": "The symptoms described suggest a malware infection, which can cause performance issues and display unwanted advertisements, indicating a vulnerability that has been exploited."
+    },
+    {
+      "question": "After a recent security audit, a company finds that many employees are using outdated software versions. What is the best course of action to mitigate vulnerabilities?",
+      "choices": [
+        "Enforce a strict software update policy",
+        "Educate employees on the importance of updates",
+        "Limit internet access for all employees",
+        "Monitor software usage without taking action"
+      ],
+      "correctAnswer": "Enforce a strict software update policy",
+      "explanation": "Enforcing a strict software update policy ensures that all software is kept current, reducing the risk of vulnerabilities being exploited due to outdated versions."
+    },
+    {
+      "question": "A security team discovers that a widely used application in the organization has a zero-day vulnerability. What is the most effective immediate response?",
+      "choices": [
+        "Block the application from accessing the network",
+        "Wait for the vendor to release a patch",
+        "Inform the users to stop using the application",
+        "Implement a workaround until a patch is available"
+      ],
+      "correctAnswer": "Implement a workaround until a patch is available",
+      "explanation": "Implementing a workaround can help mitigate the risk associated with the zero-day vulnerability while waiting for a vendor patch to be released."
+    },
+    {
+      "question": "A developer accidentally includes a library in their application that has known vulnerabilities. What should the security team do to address this situation?",
+      "choices": [
+        "Ignore the vulnerabilities if the application is not in production",
+        "Conduct a risk assessment of the application",
+        "Remove the library immediately without testing",
+        "Notify users to avoid using the application"
+      ],
+      "correctAnswer": "Conduct a risk assessment of the application",
+      "explanation": "Conducting a risk assessment helps the security team understand the potential impact of the vulnerabilities and decide on the best course of action to mitigate risks."
+    },
+    {
+      "question": "An organization is using an outdated content management system (CMS) that has multiple known vulnerabilities. What should be the first step in addressing this issue?",
+      "choices": [
+        "Upgrade to the latest version of the CMS",
+        "Disable the CMS until it can be updated",
+        "Conduct a security audit of the CMS",
+        "Implement additional security controls around the CMS"
+      ],
+      "correctAnswer": "Upgrade to the latest version of the CMS",
+      "explanation": "Upgrading to the latest version of the CMS is the most effective way to address known vulnerabilities and improve the overall security posture of the organization."
+    },
+    {
+      "question": "A company’s antivirus software is not detecting a new strain of ransomware that is spreading rapidly. What should the IT department do to enhance their defenses?",
+      "choices": [
+        "Update the antivirus software immediately",
+        "Switch to a different antivirus vendor",
+        "Educate employees on ransomware prevention",
+        "Isolate infected machines from the network"
+      ],
+      "correctAnswer": "Update the antivirus software immediately",
+      "explanation": "Updating the antivirus software ensures that it has the latest definitions and capabilities to detect and respond to new strains of ransomware effectively."
+    },
+    {
+      "question": "An organization's web application is found to be vulnerable to cross-site scripting (XSS) attacks. What should the development team prioritize to fix this issue?",
+      "choices": [
+        "Implement Content Security Policy (CSP)",
+        "Increase server-side logging",
+        "Add more input fields to the application",
+        "Disable JavaScript in the application"
+      ],
+      "correctAnswer": "Implement Content Security Policy (CSP)",
+      "explanation": "Implementing a Content Security Policy (CSP) is an effective way to mitigate XSS attacks by controlling which resources can be loaded and executed in the browser."
+    }
+  ],
+  "networks": [
+    {
+      "question": "A company has set up a public Wi-Fi network for guests. Employees have reported that some devices are unable to connect securely. What should the IT team do to enhance security on this network?",
+      "choices": [
+        "Enable WPA3 encryption on the guest network.",
+        "Allow all devices to connect without authentication.",
+        "Disable the guest network entirely.",
+        "Limit the guest network to only specific devices."
+      ],
+      "correctAnswer": "Enable WPA3 encryption on the guest network.",
+      "explanation": "Enabling WPA3 encryption will provide stronger security for the guest network, helping to protect against unauthorized access and eavesdropping."
+    },
+    {
+      "question": "During a routine security audit, an organization discovers that employees are using personal devices to access corporate resources over an unsecured public network. What is the best immediate action to take?",
+      "choices": [
+        "Implement a policy banning personal devices.",
+        "Educate employees about the risks of unsecured networks.",
+        "Require all devices to connect through a VPN.",
+        "Monitor network traffic for suspicious activity."
+      ],
+      "correctAnswer": "Require all devices to connect through a VPN.",
+      "explanation": "Requiring a VPN for all devices accessing corporate resources will encrypt the data transmitted over the unsecured public network, reducing the risk of interception."
+    },
+    {
+      "question": "A user reports that their laptop is acting strangely after connecting to a public Wi-Fi network. They suspect malware. What should the user do first?",
+      "choices": [
+        "Disconnect from the Wi-Fi and run a full antivirus scan.",
+        "Reset the laptop to factory settings.",
+        "Install a new antivirus program.",
+        "Connect to a different public Wi-Fi network."
+      ],
+      "correctAnswer": "Disconnect from the Wi-Fi and run a full antivirus scan.",
+      "explanation": "Disconnecting from the Wi-Fi prevents further potential infection or data loss, and running a full antivirus scan can help identify and remove any malware."
+    },
+    {
+      "question": "An employee connects to a public Wi-Fi network and is prompted to enter their corporate credentials. What is the most likely risk they are facing?",
+      "choices": [
+        "They are connecting to a legitimate network.",
+        "They are being targeted by a man-in-the-middle attack.",
+        "Their credentials are stored securely.",
+        "They are using a secured VPN connection."
+      ],
+      "correctAnswer": "They are being targeted by a man-in-the-middle attack.",
+      "explanation": "The prompt for corporate credentials on a public Wi-Fi network is a common tactic used in man-in-the-middle attacks, where attackers intercept data between the user and the legitimate network."
+    },
+    {
+      "question": "A small business owner wants to provide free Wi-Fi to customers but is concerned about security. What should they implement to protect their network?",
+      "choices": [
+        "Use a captive portal for guest authentication.",
+        "Disable all security features to improve connectivity.",
+        "Allow unlimited bandwidth for all users.",
+        "Share the same network for guests and employees."
+      ],
+      "correctAnswer": "Use a captive portal for guest authentication.",
+      "explanation": "A captive portal can help authenticate users and provide terms of service, which can deter misuse and improve security on the guest network."
+    },
+    {
+      "question": "After connecting to a public Wi-Fi, a user notices that their browser is redirecting them to suspicious websites. What is the most appropriate action to take?",
+      "choices": [
+        "Clear the browser cache and cookies.",
+        "Change all passwords immediately.",
+        "Disconnect from the network and report the issue.",
+        "Ignore the redirects and continue browsing."
+      ],
+      "correctAnswer": "Disconnect from the network and report the issue.",
+      "explanation": "Disconnecting from the network prevents further exposure to potential threats, and reporting the issue can help identify and mitigate risks for others."
+    },
+    {
+      "question": "A company allows employees to work remotely using unsecured home networks. What is a significant risk associated with this practice?",
+      "choices": [
+        "Increased productivity from remote work.",
+        "Potential exposure to eavesdropping and data theft.",
+        "Reduced need for physical office space.",
+        "Enhanced employee satisfaction."
+      ],
+      "correctAnswer": "Potential exposure to eavesdropping and data theft.",
+      "explanation": "Unsecured home networks can be easily compromised, allowing attackers to intercept sensitive data and communications, posing a significant risk to the organization."
+    },
+    {
+      "question": "An organization discovers that an employee has been using an unsecured public network to access sensitive company data. What should the organization implement to mitigate this risk in the future?",
+      "choices": [
+        "Encourage employees to use public networks more often.",
+        "Provide training on secure network practices.",
+        "Ban all public network usage.",
+        "Allow unrestricted access to company data."
+      ],
+      "correctAnswer": "Provide training on secure network practices.",
+      "explanation": "Training employees on secure network practices can help them understand the risks and make informed decisions when accessing sensitive data over potentially insecure networks."
+    },
+    {
+      "question": "A user connects to a public Wi-Fi network and notices that their device is automatically connecting to various networks. What should they do to enhance their security?",
+      "choices": [
+        "Disable automatic connection to Wi-Fi networks.",
+        "Keep automatic connection enabled for convenience.",
+        "Use a personal hotspot instead.",
+        "Change the device's MAC address."
+      ],
+      "correctAnswer": "Disable automatic connection to Wi-Fi networks.",
+      "explanation": "Disabling automatic connections prevents the device from connecting to potentially malicious networks without the user's knowledge, enhancing overall security."
+    },
+    {
+      "question": "A security analyst is reviewing logs and notices multiple failed login attempts from a public IP address. What is the most likely explanation for this activity?",
+      "choices": [
+        "A user is trying to access their account from a public network.",
+        "An attacker is attempting to brute-force credentials.",
+        "The system is experiencing a technical issue.",
+        "The IP address belongs to a trusted partner."
+      ],
+      "correctAnswer": "An attacker is attempting to brute-force credentials.",
+      "explanation": "Multiple failed login attempts from a single public IP address typically indicate an attacker trying to gain unauthorized access through brute-force methods."
+    }
+  ],
+  "misconfig": [
+    {
+      "question": "A company has a web server that is accessible from the internet. The server is running outdated software with known vulnerabilities. What is the primary risk associated with this misconfiguration?",
+      "choices": [
+        "Increased server performance issues",
+        "Potential for data loss due to hardware failure",
+        "Exploitation of vulnerabilities leading to unauthorized access",
+        "Incompatibility with newer web technologies"
+      ],
+      "correctAnswer": "Exploitation of vulnerabilities leading to unauthorized access",
+      "explanation": "Outdated software can contain known vulnerabilities that attackers can exploit to gain unauthorized access to the server, significantly increasing the attack surface."
+    },
+    {
+      "question": "During a routine audit, it is discovered that an organization's database server allows remote access without any IP restrictions. What is the main concern with this configuration?",
+      "choices": [
+        "Increased database performance",
+        "Potential for unauthorized access from any location",
+        "Enhanced user experience for remote employees",
+        "Simplified database management"
+      ],
+      "correctAnswer": "Potential for unauthorized access from any location",
+      "explanation": "Allowing remote access without IP restrictions exposes the database server to potential attacks from any IP address, increasing the risk of unauthorized access."
+    },
+    {
+      "question": "A network administrator mistakenly leaves the default credentials on a new firewall device. What is the most critical risk posed by this misconfiguration?",
+      "choices": [
+        "Increased network latency",
+        "Easier troubleshooting for network issues",
+        "Unauthorized users gaining control of the firewall",
+        "Reduced effectiveness of network monitoring tools"
+      ],
+      "correctAnswer": "Unauthorized users gaining control of the firewall",
+      "explanation": "Default credentials are widely known and can be easily exploited by attackers, allowing them to gain control of the firewall and compromise the network security."
+    },
+    {
+      "question": "An organization has implemented a new cloud storage solution but has not configured access controls properly. What is the primary risk associated with this oversight?",
+      "choices": [
+        "Increased storage costs",
+        "Data leakage and unauthorized access to sensitive information",
+        "Improved collaboration among employees",
+        "Slower data retrieval times"
+      ],
+      "correctAnswer": "Data leakage and unauthorized access to sensitive information",
+      "explanation": "Improperly configured access controls can lead to unauthorized users accessing sensitive data, resulting in data leakage and potential compliance violations."
+    },
+    {
+      "question": "A company has a public-facing application that is not using HTTPS for secure communication. What is the main risk of this misconfiguration?",
+      "choices": [
+        "Increased server load",
+        "Potential interception of sensitive data by attackers",
+        "Reduced application functionality",
+        "Incompatibility with mobile devices"
+      ],
+      "correctAnswer": "Potential interception of sensitive data by attackers",
+      "explanation": "Without HTTPS, data transmitted between the client and server is not encrypted, making it vulnerable to interception and eavesdropping by attackers."
+    },
+    {
+      "question": "A system administrator notices that a critical server has unnecessary services running that are not needed for its operation. What is the primary risk associated with this configuration?",
+      "choices": [
+        "Increased server maintenance costs",
+        "Higher likelihood of service outages",
+        "Expanded attack surface for potential exploitation",
+        "Improved server performance"
+      ],
+      "correctAnswer": "Expanded attack surface for potential exploitation",
+      "explanation": "Running unnecessary services increases the number of potential entry points for attackers, thereby expanding the attack surface and increasing the risk of exploitation."
+    },
+    {
+      "question": "An organization has set up a guest Wi-Fi network but has not isolated it from the main corporate network. What is the primary risk of this configuration?",
+      "choices": [
+        "Increased internet speed for guests",
+        "Potential for attackers to access internal resources",
+        "Improved guest user experience",
+        "Simplified network management"
+      ],
+      "correctAnswer": "Potential for attackers to access internal resources",
+      "explanation": "Failing to isolate the guest network from the corporate network allows potential attackers on the guest network to access sensitive internal resources, posing a significant security risk."
+    },
+    {
+      "question": "A company has enabled file sharing on all workstations without any restrictions. What is the most significant risk associated with this configuration?",
+      "choices": [
+        "Improved collaboration among team members",
+        "Increased risk of malware propagation",
+        "Enhanced user productivity",
+        "Simplified file management"
+      ],
+      "correctAnswer": "Increased risk of malware propagation",
+      "explanation": "Unrestricted file sharing can lead to the spread of malware across the network, as malicious files can be easily shared and executed on multiple workstations."
+    },
+    {
+      "question": "A security audit reveals that a company's email server is configured to allow relaying from any external address. What is the primary risk of this configuration?",
+      "choices": [
+        "Increased email delivery times",
+        "Potential for the server to be used for spamming",
+        "Improved email filtering capabilities",
+        "Reduced server resource usage"
+      ],
+      "correctAnswer": "Potential for the server to be used for spamming",
+      "explanation": "Allowing open relaying can enable attackers to use the email server to send spam or malicious emails, which can lead to blacklisting and reputational damage."
+    },
+    {
+      "question": "A company has deployed a new application but has not updated its firewall rules to allow traffic to the application. What is the main risk associated with this oversight?",
+      "choices": [
+        "Increased application performance",
+        "Inability for users to access the application",
+        "Enhanced security for the application",
+        "Simplified network configuration"
+      ],
+      "correctAnswer": "Inability for users to access the application",
+      "explanation": "Without the appropriate firewall rules, users will be unable to access the application, leading to disruptions in business operations and user frustration."
+    }
+  ],
+  "supply-chain": [
+    {
+      "question": "A company is integrating a new third-party payment processor. During a security review, the team discovers that the processor has a history of data breaches. What should the company prioritize to mitigate risks from this third-party provider?",
+      "choices": [
+        "Implementing additional encryption on all transactions.",
+        "Conducting a thorough risk assessment of the third-party provider.",
+        "Switching to a different payment processor without further review.",
+        "Relying on the processor's claims of improved security."
+      ],
+      "correctAnswer": "Conducting a thorough risk assessment of the third-party provider.",
+      "explanation": "Conducting a thorough risk assessment allows the company to understand the specific risks associated with the third-party provider and develop a strategy to mitigate them effectively."
+    },
+    {
+      "question": "A manufacturing firm relies on a third-party supplier for critical components. Recently, the supplier's factory was compromised due to a ransomware attack. What is the best immediate action for the manufacturing firm to take?",
+      "choices": [
+        "Continue production as usual and monitor for issues.",
+        "Switch to a different supplier without further investigation.",
+        "Assess the impact of the supplier's breach on their own operations.",
+        "Publicly disclose the supplier's breach to the media."
+      ],
+      "correctAnswer": "Assess the impact of the supplier's breach on their own operations.",
+      "explanation": "Assessing the impact allows the manufacturing firm to understand how the breach affects their supply chain and take appropriate measures to mitigate potential disruptions."
+    },
+    {
+      "question": "A software company is using an open-source library from a third-party provider. A vulnerability is discovered in the library that could affect their application. What should the company do first?",
+      "choices": [
+        "Immediately remove the library and replace it with a proprietary solution.",
+        "Patch the vulnerability and continue using the library.",
+        "Evaluate the risk posed by the vulnerability and determine the impact.",
+        "Ignore the vulnerability if the application is not widely used."
+      ],
+      "correctAnswer": "Evaluate the risk posed by the vulnerability and determine the impact.",
+      "explanation": "Evaluating the risk allows the company to make an informed decision on how to respond to the vulnerability, whether through patching, replacing, or other measures."
+    },
+    {
+      "question": "A financial institution is considering a cloud service provider for data storage. What is the most critical factor to assess regarding the provider's security practices?",
+      "choices": [
+        "The provider's marketing materials and claims.",
+        "The number of clients the provider has.",
+        "The provider's compliance with industry standards and regulations.",
+        "The geographic location of the provider's data centers."
+      ],
+      "correctAnswer": "The provider's compliance with industry standards and regulations.",
+      "explanation": "Compliance with industry standards and regulations is crucial as it indicates that the provider follows established security practices and is accountable for data protection."
+    },
+    {
+      "question": "An organization discovers that a third-party vendor has been sharing sensitive data without authorization. What is the best course of action for the organization?",
+      "choices": [
+        "Terminate the contract with the vendor immediately.",
+        "Conduct an internal investigation to assess the breach.",
+        "Ignore the issue if no harm has been done.",
+        "Notify the vendor and request a detailed explanation."
+      ],
+      "correctAnswer": "Conduct an internal investigation to assess the breach.",
+      "explanation": "Conducting an internal investigation helps the organization understand the extent of the breach, the potential impact, and the necessary steps to mitigate risks moving forward."
+    },
+    {
+      "question": "A healthcare provider uses a third-party application for patient management. They learn that the application has not been updated in over a year. What should the provider do?",
+      "choices": [
+        "Continue using the application as it is still functional.",
+        "Request an update schedule from the vendor.",
+        "Conduct a risk assessment to evaluate potential vulnerabilities.",
+        "Switch to a different application without further analysis."
+      ],
+      "correctAnswer": "Conduct a risk assessment to evaluate potential vulnerabilities.",
+      "explanation": "Conducting a risk assessment allows the healthcare provider to identify potential vulnerabilities due to the lack of updates and make informed decisions about the application's use."
+    },
+    {
+      "question": "A company is evaluating a new third-party logistics provider. They find that the provider has a history of delivery delays but no security incidents. What should the company prioritize in their evaluation?",
+      "choices": [
+        "The provider's ability to meet delivery schedules.",
+        "The provider's security certifications.",
+        "The cost of services compared to competitors.",
+        "The provider's customer service reputation."
+      ],
+      "correctAnswer": "The provider's ability to meet delivery schedules.",
+      "explanation": "Prioritizing the provider's ability to meet delivery schedules is crucial for the company's operations, as delays can disrupt their supply chain and impact customer satisfaction."
+    },
+    {
+      "question": "An organization is using a third-party vendor for software development. They discover that the vendor's employees have been accessing sensitive client data without proper authorization. What should the organization do?",
+      "choices": [
+        "Request an audit of the vendor's access controls.",
+        "Ignore the issue if no clients have complained.",
+        "Change the vendor to avoid further issues.",
+        "Limit access to client data on their end."
+      ],
+      "correctAnswer": "Request an audit of the vendor's access controls.",
+      "explanation": "Requesting an audit helps the organization understand how the vendor manages access to sensitive data and ensures that proper controls are in place to protect client information."
+    },
+    {
+      "question": "A company is considering outsourcing its IT support to a third-party provider. What is the most important factor to consider regarding data security?",
+      "choices": [
+        "The cost savings associated with outsourcing.",
+        "The provider's experience in the industry.",
+        "The provider's data handling and security policies.",
+        "The geographic location of the provider's headquarters."
+      ],
+      "correctAnswer": "The provider's data handling and security policies.",
+      "explanation": "The provider's data handling and security policies are critical as they determine how client data will be protected and managed, directly impacting the company's security posture."
+    },
+    {
+      "question": "A retail company uses a third-party vendor for its online payment processing. After a recent breach, the company is concerned about the security of customer payment information. What is the best action for the company to take?",
+      "choices": [
+        "Reassure customers that their data is safe.",
+        "Conduct a thorough review of the vendor's security practices.",
+        "Switch to a different vendor without further investigation.",
+        "Limit the payment options available to customers."
+      ],
+      "correctAnswer": "Conduct a thorough review of the vendor's security practices.",
+      "explanation": "Conducting a thorough review of the vendor's security practices allows the retail company to identify vulnerabilities and ensure that customer payment information is adequately protected."
+    }
+  ],
+  "social-engineering": [
+    {
+      "question": "An employee receives a phone call from someone claiming to be from the IT department, asking for their login credentials to resolve an urgent issue. What should the employee do?",
+      "choices": [
+        "Provide the credentials as requested to resolve the issue quickly.",
+        "Ask the caller for their employee ID and call back on the official IT number.",
+        "Ignore the call and continue with their work.",
+        "Report the call to their manager without taking any action."
+      ],
+      "correctAnswer": "Ask the caller for their employee ID and call back on the official IT number.",
+      "explanation": "The employee should verify the identity of the caller before providing any sensitive information. Calling back on the official IT number ensures that they are speaking to a legitimate representative."
+    },
+    {
+      "question": "A company receives an email that appears to be from a trusted vendor, requesting an urgent payment update. The email contains a link to a website that looks similar to the vendor's site. What is the best course of action?",
+      "choices": [
+        "Click the link to confirm the payment details.",
+        "Forward the email to the finance department for immediate action.",
+        "Contact the vendor directly using known contact information to verify the request.",
+        "Delete the email as it seems suspicious."
+      ],
+      "correctAnswer": "Contact the vendor directly using known contact information to verify the request.",
+      "explanation": "Contacting the vendor directly ensures that the request is legitimate and not a phishing attempt. Clicking the link could compromise sensitive information."
+    },
+    {
+      "question": "During a company meeting, an outsider poses as a consultant and starts asking employees about their projects and internal processes. What should the employees do?",
+      "choices": [
+        "Share information to help the consultant understand their projects.",
+        "Politely decline to answer and report the incident to management.",
+        "Engage with the consultant to gain insights for their own work.",
+        "Assume the consultant has been vetted and share information freely."
+      ],
+      "correctAnswer": "Politely decline to answer and report the incident to management.",
+      "explanation": "Employees should be cautious and not disclose sensitive information to outsiders. Reporting the incident helps protect the organization from potential threats."
+    },
+    {
+      "question": "A user receives a text message claiming to be from their bank, asking them to verify their account information due to suspicious activity. What is the safest action for the user?",
+      "choices": [
+        "Respond to the text with the requested information.",
+        "Call the bank using the number on their official website to verify the message.",
+        "Click on the link provided in the text to secure their account.",
+        "Ignore the message as it is likely a scam."
+      ],
+      "correctAnswer": "Call the bank using the number on their official website to verify the message.",
+      "explanation": "The user should always verify such messages through official channels rather than responding directly or clicking links, which could lead to phishing attacks."
+    },
+    {
+      "question": "An employee receives a USB drive found in the parking lot and plugs it into their work computer to see what files are on it. What is the potential risk here?",
+      "choices": [
+        "The USB drive could contain malware that infects the work computer.",
+        "The employee might find useful information to help with their job.",
+        "It is safe to use as long as the employee does not open any files.",
+        "The drive could be a legitimate company device."
+      ],
+      "correctAnswer": "The USB drive could contain malware that infects the work computer.",
+      "explanation": "Plugging in unknown USB drives poses a significant risk of malware infection, which can compromise the entire network. Employees should never use unverified devices."
+    },
+    {
+      "question": "After a recent data breach, a company sends out an email reminding employees to be cautious of unsolicited requests for personal information. What type of social engineering tactic is this an example of?",
+      "choices": [
+        "Phishing",
+        "Pretexting",
+        "Spear phishing",
+        "Social proof"
+      ],
+      "correctAnswer": "Phishing",
+      "explanation": "The reminder is aimed at preventing phishing attempts, where attackers impersonate trusted entities to obtain sensitive information from employees."
+    },
+    {
+      "question": "An employee receives a message on a social media platform from a person claiming to be a former colleague, asking for help with a project. What should the employee do?",
+      "choices": [
+        "Respond to the message and provide the requested help.",
+        "Verify the identity of the person through a phone call or a video chat.",
+        "Ignore the message as it could be a scam.",
+        "Accept the request and provide assistance without verification."
+      ],
+      "correctAnswer": "Verify the identity of the person through a phone call or a video chat.",
+      "explanation": "It's important to verify the identity of individuals reaching out through social media to avoid falling victim to social engineering scams."
+    },
+    {
+      "question": "A new employee is approached by a person in the office who claims to be from security and asks to see their ID badge for verification. What should the new employee do?",
+      "choices": [
+        "Show the ID badge as requested.",
+        "Politely ask for the person's identification and the reason for the request.",
+        "Ignore the request and walk away.",
+        "Report the incident to HR without responding."
+      ],
+      "correctAnswer": "Politely ask for the person's identification and the reason for the request.",
+      "explanation": "The new employee should verify the identity of the person requesting sensitive information before complying, as this is a common tactic used in social engineering."
+    },
+    {
+      "question": "A user receives a phone call from someone claiming to be from a software vendor, offering a free upgrade in exchange for remote access to their computer. What is the best response?",
+      "choices": [
+        "Allow remote access to get the free upgrade.",
+        "Hang up and report the call to the IT department.",
+        "Ask for more details about the upgrade before deciding.",
+        "Request a callback number to verify the offer."
+      ],
+      "correctAnswer": "Hang up and report the call to the IT department.",
+      "explanation": "The call is likely a social engineering attempt to gain unauthorized access to the user's computer. Reporting it helps protect the organization from potential threats."
+    },
+    {
+      "question": "An employee receives an email that appears to be from their manager, requesting an urgent transfer of funds to a vendor. What should the employee do before acting on the request?",
+      "choices": [
+        "Immediately process the transfer to meet the urgent request.",
+        "Verify the request by contacting the manager directly using known contact information.",
+        "Assume the email is legitimate since it appears to come from their manager.",
+        "Consult with the finance department before taking any action."
+      ],
+      "correctAnswer": "Verify the request by contacting the manager directly using known contact information.",
+      "explanation": "Verifying the request directly with the manager helps prevent falling victim to business email compromise, a common social engineering tactic."
+    }
+  ]
+}
