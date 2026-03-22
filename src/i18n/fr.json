@@ -36,6 +36,14 @@
     "title": "Plan de révision (par sections)",
     "topicsCount": "topics"
   },
+  "homeFocus": {
+    "title": "Continuer la révision",
+    "subtitle": "Retrouve vite ce que tu viens de terminer et ce que tu peux attaquer ensuite.",
+    "recentDone": "3 derniers topics faits",
+    "nextTodo": "3 prochains topics à faire",
+    "emptyRecentDone": "Aucun topic n'est encore marqué comme fait.",
+    "emptyNextTodo": "Tous les topics sont déjà marqués comme faits."
+  },
   "topicPage": {
     "back": "← Retour",
     "markDone": "Marquer comme fait",

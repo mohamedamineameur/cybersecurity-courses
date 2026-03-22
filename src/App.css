@@ -1,3 +1,7 @@
+@import './styles/base.css';
+@import './styles/content.css';
+@import './styles/quiz.css';
+@import './styles/navigation.css';
 /* ——— Design system ——— */
 
 :root {
@@ -302,6 +306,24 @@
   min-width: 0;
 }
 
+.sectionHead {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.sectionHead h2 {
+  margin: 0;
+}
+
+.sectionSubTitle {
+  margin: 0 0 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
 .pill {
   display: inline-flex;
   align-items: center;
@@ -406,6 +428,20 @@
 /* ——— Topic cards ——— */
 
 .grid {
+  display: grid;
+  gap: 12px;
+}
+
+.homeFocusGrid {
+  display: grid;
+  gap: 20px;
+}
+
+.homeFocusCol {
+  min-width: 0;
+}
+
+.homeFocusList {
   display: grid;
   gap: 12px;
 }
@@ -995,6 +1031,10 @@
 
   .grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .homeFocusGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .quizHubList {

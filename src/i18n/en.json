@@ -36,6 +36,14 @@
     "title": "Revision plan (by sections)",
     "topicsCount": "topics"
   },
+  "homeFocus": {
+    "title": "Keep Going",
+    "subtitle": "Quickly jump back into what you just finished and what to study next.",
+    "recentDone": "Last 3 done topics",
+    "nextTodo": "Next 3 topics to do",
+    "emptyRecentDone": "No topic has been marked as done yet.",
+    "emptyNextTodo": "All topics are already marked as done."
+  },
   "topicPage": {
     "back": "← Back",
     "markDone": "Mark as done",
