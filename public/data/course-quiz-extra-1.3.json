@@ -65,6 +65,50 @@
       ],
       "correctAnswer": "Implement a strict approval process for all changes",
       "explanation": "A strict approval process ensures that all changes are reviewed and authorized, reducing the likelihood of unplanned outages caused by unauthorized modifications."
+    },
+    {
+      "question": "Before a firewall rule change is deployed, who should be clearly identified as responsible for implementing and maintaining the change?",
+      "choices": [
+        "Any available technician",
+        "The defined owner of the change",
+        "The newest employee on the team",
+        "The external auditor"
+      ],
+      "correctAnswer": "The defined owner of the change",
+      "explanation": "Ownership ensures there is clear accountability for implementing, validating, and maintaining the change."
+    },
+    {
+      "question": "Which artifact is most useful for confirming a change works as expected before production deployment?",
+      "choices": [
+        "Marketing approval",
+        "Test results from a controlled environment",
+        "A screenshot of the login page",
+        "A verbal promise from the administrator"
+      ],
+      "correctAnswer": "Test results from a controlled environment",
+      "explanation": "Validated test results from QA or staging help prove that the change behaves as intended before it reaches production."
+    },
+    {
+      "question": "Why is a backout plan included in a formal change request?",
+      "choices": [
+        "To increase deployment speed",
+        "To remove the need for testing",
+        "To allow safe recovery if the change fails",
+        "To avoid stakeholder communication"
+      ],
+      "correctAnswer": "To allow safe recovery if the change fails",
+      "explanation": "A backout plan defines how to restore the previous state if the new change introduces problems."
+    },
+    {
+      "question": "What is the main reason to schedule risky changes during a maintenance window?",
+      "choices": [
+        "To guarantee no testing is needed",
+        "To minimize operational impact on users",
+        "To avoid documenting the change",
+        "To bypass the approval process"
+      ],
+      "correctAnswer": "To minimize operational impact on users",
+      "explanation": "Maintenance windows are chosen to reduce disruption while updates or service interruptions occur."
     }
   ],
   "technical-implications": [
@@ -89,6 +133,94 @@
       ],
       "correctAnswer": "Investigate the issues and gather user feedback",
       "explanation": "Investigating the issues and gathering feedback is essential to understand the root cause and determine the best course of action to resolve the problems."
+    },
+    {
+      "question": "A security team updates a web server configuration but forgets that the application depends on a legacy library. What is the most likely result?",
+      "choices": [
+        "Automatic improvement in performance",
+        "System instability or failure",
+        "Removal of all vulnerabilities",
+        "No impact because dependencies do not matter"
+      ],
+      "correctAnswer": "System instability or failure",
+      "explanation": "Ignoring dependencies or legacy application constraints can break services and introduce outages."
+    },
+    {
+      "question": "Why are allow lists useful during a controlled change process?",
+      "choices": [
+        "They permit only approved resources or traffic",
+        "They permanently disable logging",
+        "They remove the need for authentication",
+        "They automatically patch servers"
+      ],
+      "correctAnswer": "They permit only approved resources or traffic",
+      "explanation": "Allow lists explicitly define what is permitted, which reduces unexpected exposure during changes."
+    },
+    {
+      "question": "During a database upgrade, administrators temporarily block normal user actions. What technical implication does this represent?",
+      "choices": [
+        "Restricted activities",
+        "Data masking",
+        "Certificate revocation",
+        "Code signing"
+      ],
+      "correctAnswer": "Restricted activities",
+      "explanation": "Restricting actions during a risky change reduces the chance of conflicts, corruption, or abuse."
+    },
+    {
+      "question": "A planned operating system update requires a server reboot and makes the service unavailable for 15 minutes. Which term best describes this period?",
+      "choices": [
+        "Version drift",
+        "Downtime",
+        "Tokenization",
+        "Branching"
+      ],
+      "correctAnswer": "Downtime",
+      "explanation": "Downtime is the time during which a service is unavailable because of maintenance or failure."
+    },
+    {
+      "question": "Why might a service restart be required after modifying a configuration file?",
+      "choices": [
+        "To delete all cached data",
+        "To ensure the new configuration is loaded",
+        "To avoid stakeholder review",
+        "To create a backup of the database"
+      ],
+      "correctAnswer": "To ensure the new configuration is loaded",
+      "explanation": "Many services only apply configuration changes after they are restarted or reloaded."
+    },
+    {
+      "question": "An updated application package was deployed successfully, but users still see the old behavior until the application is restarted. What was most likely missing?",
+      "choices": [
+        "A certificate authority",
+        "An application restart",
+        "A penetration test",
+        "A new firewall"
+      ],
+      "correctAnswer": "An application restart",
+      "explanation": "Some application changes do not take effect until the running process is restarted."
+    },
+    {
+      "question": "Why are legacy applications often considered risky during change implementation?",
+      "choices": [
+        "They usually support all modern standards",
+        "They may lack updates and compatibility",
+        "They automatically document themselves",
+        "They reduce the need for testing"
+      ],
+      "correctAnswer": "They may lack updates and compatibility",
+      "explanation": "Legacy systems often have outdated dependencies and may not support current security or operational requirements."
+    },
+    {
+      "question": "What should be assessed before changing an API that feeds data to several other systems?",
+      "choices": [
+        "Only the color of the dashboard",
+        "Its dependencies and downstream impact",
+        "Only the password policy",
+        "Only the training schedule"
+      ],
+      "correctAnswer": "Its dependencies and downstream impact",
+      "explanation": "Understanding dependencies prevents breaking integrated services during a change."
     }
   ],
   "documentation": [
@@ -113,7 +245,206 @@
       ],
       "correctAnswer": "Document the suggestion and conduct a formal review",
       "explanation": "Documenting the suggestion and conducting a formal review ensures that all potential impacts are considered before any implementation, adhering to change management protocols."
+    },
+    {
+      "question": "Why should network diagrams be updated after a major infrastructure change?",
+      "choices": [
+        "To make reports look more attractive",
+        "To reflect the current environment accurately",
+        "To eliminate the need for backups",
+        "To prevent users from accessing systems"
+      ],
+      "correctAnswer": "To reflect the current environment accurately",
+      "explanation": "Updated diagrams help teams understand the real architecture and troubleshoot issues correctly."
+    },
+    {
+      "question": "What is the main purpose of updating security procedures after implementing a new access control method?",
+      "choices": [
+        "To reduce the number of users",
+        "To align documentation with the new process",
+        "To avoid audits",
+        "To speed up firewall performance"
+      ],
+      "correctAnswer": "To align documentation with the new process",
+      "explanation": "Policies and procedures must match operational reality so teams can follow the correct steps."
+    },
+    {
+      "question": "A responder is troubleshooting an outage using an outdated system diagram. What risk does this create?",
+      "choices": [
+        "Faster incident resolution",
+        "Misunderstanding the current environment",
+        "Improved policy compliance",
+        "Automatic rollback of changes"
+      ],
+      "correctAnswer": "Misunderstanding the current environment",
+      "explanation": "Outdated diagrams can lead responders to investigate the wrong components or relationships."
+    },
+    {
+      "question": "Which documentation update is most important after modifying an incident response workflow?",
+      "choices": [
+        "The cafeteria menu",
+        "The related procedures and runbooks",
+        "The company logo",
+        "The browser bookmarks"
+      ],
+      "correctAnswer": "The related procedures and runbooks",
+      "explanation": "Operational documents must be updated so responders follow the revised process correctly."
+    },
+    {
+      "question": "Why is documentation often reviewed during audits after a system change?",
+      "choices": [
+        "Because diagrams replace testing",
+        "Because records prove what changed and how it should operate",
+        "Because auditors manage the deployment",
+        "Because documentation increases CPU performance"
+      ],
+      "correctAnswer": "Because records prove what changed and how it should operate",
+      "explanation": "Documentation provides evidence of control, traceability, and expected system configuration."
+    },
+    {
+      "question": "What is the best reason to update both diagrams and procedures after a firewall segmentation project?",
+      "choices": [
+        "To ensure architecture and process documentation stay consistent",
+        "To avoid using version control",
+        "To eliminate the need for change approval",
+        "To make log retention unnecessary"
+      ],
+      "correctAnswer": "To ensure architecture and process documentation stay consistent",
+      "explanation": "Technical diagrams and operational procedures should both reflect the same current state."
+    },
+    {
+      "question": "A new administrator joins the team after several undocumented changes were made. What is the most likely challenge?",
+      "choices": [
+        "Immediate mastery of the environment",
+        "Difficulty understanding the actual system setup",
+        "Automatic creation of missing records",
+        "Reduced need for troubleshooting"
+      ],
+      "correctAnswer": "Difficulty understanding the actual system setup",
+      "explanation": "Without accurate documentation, onboarding and operational handoff become much harder."
+    },
+    {
+      "question": "What should happen to written procedures when a recurring maintenance process is changed?",
+      "choices": [
+        "They should remain unchanged for consistency",
+        "They should be removed entirely",
+        "They should be updated to reflect the new steps",
+        "They should only be updated after a breach"
+      ],
+      "correctAnswer": "They should be updated to reflect the new steps",
+      "explanation": "Procedures need to match the actual approved workflow so staff can perform maintenance consistently."
     }
   ],
-  "version-control": []
+  "version-control": [
+    {
+      "question": "What is the purpose of version control?",
+      "choices": [
+        "Encrypt files",
+        "Track changes",
+        "Monitor users",
+        "Block attacks"
+      ],
+      "correctAnswer": "Track changes",
+      "explanation": "Version control ensures traceability."
+    },
+    {
+      "question": "Which tool is used for version control?",
+      "choices": [
+        "Docker",
+        "Git",
+        "Firewall",
+        "IDS"
+      ],
+      "correctAnswer": "Git",
+      "explanation": "Git is a version control system."
+    },
+    {
+      "question": "Why is version control valuable when changing security configurations?",
+      "choices": [
+        "It records who changed what and when",
+        "It removes the need for testing",
+        "It prevents all outages automatically",
+        "It replaces change approval boards"
+      ],
+      "correctAnswer": "It records who changed what and when",
+      "explanation": "Version control improves accountability and traceability for configuration changes."
+    },
+    {
+      "question": "A deployment introduces an error in a configuration file. What version control feature is most useful immediately afterward?",
+      "choices": [
+        "A rollback to a previous known-good version",
+        "A new employee account",
+        "A larger maintenance window",
+        "A vulnerability scanner"
+      ],
+      "correctAnswer": "A rollback to a previous known-good version",
+      "explanation": "Version control helps teams restore a stable prior state when a change fails."
+    },
+    {
+      "question": "Why should configuration files be stored in version control instead of edited with no history?",
+      "choices": [
+        "Because history and review reduce risk",
+        "Because it increases encryption strength",
+        "Because it avoids documentation",
+        "Because it removes the need for backups"
+      ],
+      "correctAnswer": "Because history and review reduce risk",
+      "explanation": "Tracked history makes it easier to review, audit, and recover from problematic changes."
+    },
+    {
+      "question": "What is the main benefit of requiring a review before merging a security-related change?",
+      "choices": [
+        "It guarantees the code is bug-free",
+        "It adds a validation step before deployment",
+        "It removes the need for ownership",
+        "It makes rollback impossible"
+      ],
+      "correctAnswer": "It adds a validation step before deployment",
+      "explanation": "Peer review can catch mistakes and ensure the change follows policy before it is applied."
+    },
+    {
+      "question": "A team wants to compare the current firewall rules with last month's approved rules. Which capability helps most?",
+      "choices": [
+        "Version history and diffs",
+        "Disk encryption",
+        "Endpoint detection",
+        "Network segmentation"
+      ],
+      "correctAnswer": "Version history and diffs",
+      "explanation": "Version control systems make it easy to compare changes between revisions."
+    },
+    {
+      "question": "How does version control support audits?",
+      "choices": [
+        "By showing a history of tracked modifications",
+        "By generating antivirus signatures",
+        "By replacing security policies",
+        "By preventing all human error"
+      ],
+      "correctAnswer": "By showing a history of tracked modifications",
+      "explanation": "Auditors often need proof of what changed, when it changed, and who made the change."
+    },
+    {
+      "question": "Why is storing scripts in a shared version control repository better than keeping them only on one administrator's laptop?",
+      "choices": [
+        "It makes them harder to run",
+        "It improves access, recovery, and collaboration",
+        "It prevents the need for testing",
+        "It guarantees no one can edit them"
+      ],
+      "correctAnswer": "It improves access, recovery, and collaboration",
+      "explanation": "A shared repository prevents knowledge silos and preserves operational history."
+    },
+    {
+      "question": "A team discovers that a recent commit changed a server hardening script in an unsafe way. What should they examine first?",
+      "choices": [
+        "The commit history and the exact diff",
+        "The office Wi-Fi password",
+        "The physical badge system",
+        "The browser home page"
+      ],
+      "correctAnswer": "The commit history and the exact diff",
+      "explanation": "Reviewing the tracked change shows what was modified and helps decide how to remediate it."
+    }
+  ]
 }

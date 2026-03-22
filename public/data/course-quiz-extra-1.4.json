@@ -10,6 +10,105 @@
       ],
       "correctAnswer": "To verify the identity of users and devices",
       "explanation": "Digital certificates are used to confirm the identity of entities in a PKI, ensuring that communications are secure and from trusted sources."
+    },
+    {
+      "question": "In a PKI environment, which key should be openly shared with others?",
+      "choices": [
+        "Private key",
+        "Recovery key",
+        "Public key",
+        "Escrow key only"
+      ],
+      "correctAnswer": "Public key",
+      "explanation": "The public key is designed to be shared, while the private key must remain secret."
+    },
+    {
+      "question": "Which key must remain secret in an asymmetric cryptography system?",
+      "choices": [
+        "Public key",
+        "Private key",
+        "Certificate serial number",
+        "Hash output"
+      ],
+      "correctAnswer": "Private key",
+      "explanation": "The private key is used to decrypt or sign and must never be exposed."
+    },
+    {
+      "question": "What is the main role of PKI?",
+      "choices": [
+        "Compress files for storage",
+        "Manage trust, certificates, and keys",
+        "Monitor bandwidth usage",
+        "Replace firewalls"
+      ],
+      "correctAnswer": "Manage trust, certificates, and keys",
+      "explanation": "PKI provides the framework for identity validation, certificate use, and key management."
+    },
+    {
+      "question": "Why would an enterprise use key escrow?",
+      "choices": [
+        "To publish all private keys on the internet",
+        "To allow secure recovery of cryptographic keys",
+        "To weaken encryption for compatibility",
+        "To avoid certificate issuance"
+      ],
+      "correctAnswer": "To allow secure recovery of cryptographic keys",
+      "explanation": "Key escrow stores keys securely so authorized recovery is possible if needed."
+    },
+    {
+      "question": "A server uses its private key during a TLS handshake. What must be true about that key?",
+      "choices": [
+        "It can be shared with every client",
+        "It should remain confidential",
+        "It should be replaced by a hash",
+        "It should be stored in plaintext on the website"
+      ],
+      "correctAnswer": "It should remain confidential",
+      "explanation": "Compromise of the private key undermines trust and can expose secure communications."
+    },
+    {
+      "question": "What is a common use of a public key in PKI?",
+      "choices": [
+        "Decrypting all backups alone",
+        "Encrypting data or verifying signatures",
+        "Storing passwords in a browser",
+        "Disabling certificate checks"
+      ],
+      "correctAnswer": "Encrypting data or verifying signatures",
+      "explanation": "Public keys are commonly used to encrypt data for the owner or verify digital signatures."
+    },
+    {
+      "question": "If an organization loses a critical private key and has no recovery option, what PKI-related control would have helped?",
+      "choices": [
+        "Key escrow",
+        "Tokenization",
+        "Masking",
+        "Steganography"
+      ],
+      "correctAnswer": "Key escrow",
+      "explanation": "Key escrow can provide a secure recovery path for important encryption keys."
+    },
+    {
+      "question": "Why is PKI important for secure authentication between systems?",
+      "choices": [
+        "It provides a way to establish digital trust",
+        "It removes the need for encryption",
+        "It ensures every system uses the same password",
+        "It replaces logging and monitoring"
+      ],
+      "correctAnswer": "It provides a way to establish digital trust",
+      "explanation": "PKI lets systems validate identities using certificates and cryptographic keys."
+    },
+    {
+      "question": "What is the biggest risk if a private signing key is exposed?",
+      "choices": [
+        "Files become compressed",
+        "Attackers may impersonate the legitimate owner",
+        "Network speed decreases automatically",
+        "Public keys stop working permanently"
+      ],
+      "correctAnswer": "Attackers may impersonate the legitimate owner",
+      "explanation": "With the private key, an attacker may decrypt protected data or create fraudulent signatures."
     }
   ],
   "encryption": [
@@ -89,10 +188,265 @@
       ],
       "correctAnswer": "The encryption key can be easily accessed by attackers",
       "explanation": "Storing the encryption key alongside the encrypted data creates a significant security risk, as attackers who gain access to the data can also access the key, rendering the encryption ineffective."
+    },
+    {
+      "question": "Which type of encryption commonly uses a single shared key for both encryption and decryption?",
+      "choices": [
+        "Symmetric encryption",
+        "Asymmetric encryption",
+        "Hashing",
+        "Tokenization"
+      ],
+      "correctAnswer": "Symmetric encryption",
+      "explanation": "Symmetric encryption uses the same shared secret key on both sides."
+    },
+    {
+      "question": "What is the main purpose of key exchange in a secure communication session?",
+      "choices": [
+        "To compress traffic",
+        "To securely establish encryption keys",
+        "To revoke certificates",
+        "To store passwords in logs"
+      ],
+      "correctAnswer": "To securely establish encryption keys",
+      "explanation": "Key exchange mechanisms allow both parties to agree on secret material securely."
+    },
+    {
+      "question": "Which encryption approach is best suited for protecting data transmitted over HTTPS?",
+      "choices": [
+        "Transport encryption",
+        "Data masking",
+        "Tokenization only",
+        "Certificate revocation"
+      ],
+      "correctAnswer": "Transport encryption",
+      "explanation": "Transport encryption protects data while it travels between systems, such as with HTTPS."
     }
   ],
-  "tools": [],
-  "obfuscation": [],
+  "tools": [
+    {
+      "question": "Which cryptographic tool is built into many computers and is commonly used to store BitLocker-related keys securely?",
+      "choices": [
+        "HSM",
+        "TPM",
+        "KMS",
+        "OCSP"
+      ],
+      "correctAnswer": "TPM",
+      "explanation": "A Trusted Platform Module is a hardware component designed to store cryptographic material securely."
+    },
+    {
+      "question": "What is the primary function of a Hardware Security Module (HSM)?",
+      "choices": [
+        "Blocking malicious IP addresses",
+        "Secure key generation and protection",
+        "Compressing certificate files",
+        "Creating network segments"
+      ],
+      "correctAnswer": "Secure key generation and protection",
+      "explanation": "An HSM is dedicated hardware used to manage sensitive keys and cryptographic operations securely."
+    },
+    {
+      "question": "Why would a cloud environment use a Key Management System (KMS)?",
+      "choices": [
+        "To manage and rotate encryption keys centrally",
+        "To perform packet inspection",
+        "To replace all certificates",
+        "To hide data in image files"
+      ],
+      "correctAnswer": "To manage and rotate encryption keys centrally",
+      "explanation": "A KMS helps generate, store, rotate, and manage keys in a controlled way."
+    },
+    {
+      "question": "Which tool provides an isolated secure execution environment on some devices?",
+      "choices": [
+        "Secure enclave",
+        "Wildcard certificate",
+        "CRL",
+        "CA"
+      ],
+      "correctAnswer": "Secure enclave",
+      "explanation": "A secure enclave is an isolated environment designed to protect sensitive operations and secrets."
+    },
+    {
+      "question": "A payment system needs extremely strong protection for signing keys used in financial transactions. Which solution is most appropriate?",
+      "choices": [
+        "Store the keys in a text file",
+        "Use an HSM",
+        "Use public Wi-Fi",
+        "Disable encryption logs"
+      ],
+      "correctAnswer": "Use an HSM",
+      "explanation": "HSMs are specifically designed for high-security key storage and cryptographic operations."
+    },
+    {
+      "question": "What advantage does a TPM provide for endpoint security?",
+      "choices": [
+        "It stores keys in dedicated hardware",
+        "It replaces user passwords completely",
+        "It performs blockchain validation",
+        "It creates wildcard certificates"
+      ],
+      "correctAnswer": "It stores keys in dedicated hardware",
+      "explanation": "TPMs help protect secrets from being easily extracted from software alone."
+    },
+    {
+      "question": "Which cryptographic tool is most likely to help automate key rotation across many cloud resources?",
+      "choices": [
+        "KMS",
+        "Steganography",
+        "CRL",
+        "Hashing"
+      ],
+      "correctAnswer": "KMS",
+      "explanation": "A key management system is intended to centrally administer keys and related lifecycle operations."
+    },
+    {
+      "question": "Why might a mobile device use a secure enclave for biometric authentication data?",
+      "choices": [
+        "To isolate sensitive secrets from the main operating environment",
+        "To increase network throughput",
+        "To publish user identities",
+        "To remove the need for encryption"
+      ],
+      "correctAnswer": "To isolate sensitive secrets from the main operating environment",
+      "explanation": "Secure enclaves protect highly sensitive operations and data from broader compromise."
+    },
+    {
+      "question": "Which statement best describes the difference between a TPM and an HSM?",
+      "choices": [
+        "A TPM is endpoint-focused hardware, while an HSM is a dedicated high-security cryptographic device",
+        "A TPM is for tokenization, while an HSM is for masking",
+        "A TPM stores certificates only, while an HSM stores logs only",
+        "They are unrelated to cryptography"
+      ],
+      "correctAnswer": "A TPM is endpoint-focused hardware, while an HSM is a dedicated high-security cryptographic device",
+      "explanation": "Both protect keys, but TPMs are commonly embedded in endpoints while HSMs are dedicated devices for stronger centralized protection."
+    },
+    {
+      "question": "A company wants centralized visibility into which applications are using which keys. Which tool best fits that need?",
+      "choices": [
+        "Key management system",
+        "Steganography tool",
+        "Certificate wildcard",
+        "Password reset portal"
+      ],
+      "correctAnswer": "Key management system",
+      "explanation": "A KMS helps organizations manage, audit, and control key usage across systems."
+    }
+  ],
+  "obfuscation": [
+    {
+      "question": "Tokenization replaces data with:",
+      "choices": [
+        "Keys",
+        "Tokens",
+        "Hashes",
+        "Encryption"
+      ],
+      "correctAnswer": "Tokens",
+      "explanation": "Sensitive data is replaced."
+    },
+    {
+      "question": "Which obfuscation technique hides information inside another file, such as an image?",
+      "choices": [
+        "Steganography",
+        "Hashing",
+        "Symmetric encryption",
+        "Key stretching"
+      ],
+      "correctAnswer": "Steganography",
+      "explanation": "Steganography conceals data inside another medium rather than simply encrypting it."
+    },
+    {
+      "question": "What is the main goal of data masking?",
+      "choices": [
+        "To make sensitive values unreadable in displayed data",
+        "To create digital signatures",
+        "To revoke certificates",
+        "To store private keys"
+      ],
+      "correctAnswer": "To make sensitive values unreadable in displayed data",
+      "explanation": "Data masking hides portions of sensitive information while preserving enough structure for use."
+    },
+    {
+      "question": "Why might a payment application use tokenization for credit card numbers?",
+      "choices": [
+        "To replace sensitive values with non-sensitive substitutes",
+        "To increase processor speed",
+        "To create root certificates",
+        "To verify code commits"
+      ],
+      "correctAnswer": "To replace sensitive values with non-sensitive substitutes",
+      "explanation": "Tokenization reduces exposure by replacing sensitive data with tokens."
+    },
+    {
+      "question": "Which option is an example of masked data?",
+      "choices": [
+        "4111-1111-1111-1111",
+        "XXXX-XXXX-1234",
+        "SHA-256 digest",
+        "TLS handshake"
+      ],
+      "correctAnswer": "XXXX-XXXX-1234",
+      "explanation": "Masked data hides part of the original value while keeping a limited visible portion."
+    },
+    {
+      "question": "How does tokenization differ from encryption?",
+      "choices": [
+        "Tokenization substitutes the data, while encryption transforms it mathematically",
+        "Tokenization always uses a private key",
+        "Encryption never protects data",
+        "They are exactly the same process"
+      ],
+      "correctAnswer": "Tokenization substitutes the data, while encryption transforms it mathematically",
+      "explanation": "Tokenization replaces the value with a reference token, while encryption converts plaintext into ciphertext."
+    },
+    {
+      "question": "Which technique is best when an organization wants employees to see only partial account numbers on screen?",
+      "choices": [
+        "Data masking",
+        "Certificate revocation",
+        "Blockchain",
+        "CSR generation"
+      ],
+      "correctAnswer": "Data masking",
+      "explanation": "Masking hides part of the sensitive value while still letting the user identify the record."
+    },
+    {
+      "question": "An attacker steals a database containing only surrogate values instead of real card data. Which control likely reduced the risk?",
+      "choices": [
+        "Tokenization",
+        "Steganography",
+        "OCSP",
+        "Wildcard certificates"
+      ],
+      "correctAnswer": "Tokenization",
+      "explanation": "Tokenization limits the usefulness of stolen records by replacing sensitive data with tokens."
+    },
+    {
+      "question": "Which statement about steganography is correct?",
+      "choices": [
+        "It hides the existence of the data itself",
+        "It is only used for password hashing",
+        "It replaces certificates",
+        "It is the same as version control"
+      ],
+      "correctAnswer": "It hides the existence of the data itself",
+      "explanation": "Steganography aims to conceal the presence of information inside another file or medium."
+    },
+    {
+      "question": "When would obfuscation be preferred over displaying the real value to a support representative?",
+      "choices": [
+        "When the representative only needs limited visibility into sensitive data",
+        "When creating root CAs",
+        "When sharing private keys",
+        "When rotating HSM firmware"
+      ],
+      "correctAnswer": "When the representative only needs limited visibility into sensitive data",
+      "explanation": "Obfuscation techniques reduce exposure when full sensitive values are unnecessary for the task."
+    }
+  ],
   "hashing": [
     {
       "question": "A developer is tasked with implementing data integrity checks for a file transfer application. Which cryptographic solution should they use to ensure that the files have not been altered during transmission?",
@@ -115,8 +469,318 @@
       ],
       "correctAnswer": "Digital signatures",
       "explanation": "Digital signatures provide non-repudiation, ensuring that once a transaction is signed, the signer cannot deny having completed it."
+    },
+    {
+      "question": "Which characteristic best describes hashing?",
+      "choices": [
+        "It is reversible with the correct key",
+        "It is a one-way transformation",
+        "It always hides data in images",
+        "It requires a certificate authority"
+      ],
+      "correctAnswer": "It is a one-way transformation",
+      "explanation": "Hashing is designed to be one-way and is commonly used to verify integrity."
+    },
+    {
+      "question": "Why is salting used when hashing passwords?",
+      "choices": [
+        "To add randomness and reduce precomputed attack effectiveness",
+        "To make passwords shorter",
+        "To convert hashes back into plaintext",
+        "To issue certificates automatically"
+      ],
+      "correctAnswer": "To add randomness and reduce precomputed attack effectiveness",
+      "explanation": "Salting helps protect against rainbow tables and identical hash outputs for the same password."
+    },
+    {
+      "question": "What is the main security benefit of digital signatures?",
+      "choices": [
+        "They provide integrity and non-repudiation",
+        "They compress large files",
+        "They replace multifactor authentication",
+        "They store encryption keys in hardware"
+      ],
+      "correctAnswer": "They provide integrity and non-repudiation",
+      "explanation": "Digital signatures help prove the origin of data and that it has not been altered."
+    },
+    {
+      "question": "Which technique strengthens password storage by making hash computation more expensive?",
+      "choices": [
+        "Key stretching",
+        "Wildcard certificates",
+        "Data masking",
+        "Transport encryption"
+      ],
+      "correctAnswer": "Key stretching",
+      "explanation": "Key stretching uses repeated or intentionally costly operations to slow brute-force attempts."
+    },
+    {
+      "question": "If two files produce different hash values, what does that usually indicate?",
+      "choices": [
+        "They are identical",
+        "Their contents are different",
+        "They were both tokenized",
+        "They share the same certificate"
+      ],
+      "correctAnswer": "Their contents are different",
+      "explanation": "A different hash generally indicates that the underlying data has changed."
+    },
+    {
+      "question": "Why should passwords generally be hashed instead of encrypted for storage?",
+      "choices": [
+        "Because hashing is one-way and better suited for verification",
+        "Because encryption is always insecure",
+        "Because hashes are reversible",
+        "Because hashing requires no computation"
+      ],
+      "correctAnswer": "Because hashing is one-way and better suited for verification",
+      "explanation": "Password systems usually need to verify submitted values, not recover the original password."
+    },
+    {
+      "question": "Which algorithm type is commonly associated with hashing rather than encryption?",
+      "choices": [
+        "SHA-256",
+        "AES",
+        "TLS",
+        "RSA key exchange"
+      ],
+      "correctAnswer": "SHA-256",
+      "explanation": "SHA-256 is a hashing algorithm used to produce fixed-length digests."
+    },
+    {
+      "question": "What is the primary reason to compare a newly computed file hash with an expected hash from a trusted source?",
+      "choices": [
+        "To verify integrity",
+        "To obtain a certificate",
+        "To rotate encryption keys",
+        "To create a token"
+      ],
+      "correctAnswer": "To verify integrity",
+      "explanation": "Matching trusted and computed hashes helps confirm the file was not modified."
     }
   ],
-  "blockchain": [],
-  "certificates": []
+  "blockchain": [
+    {
+      "question": "What is the defining characteristic of a blockchain ledger?",
+      "choices": [
+        "It is stored on a single central server",
+        "It is decentralized and distributed",
+        "It is only used for password storage",
+        "It is a type of certificate"
+      ],
+      "correctAnswer": "It is decentralized and distributed",
+      "explanation": "Blockchain is best known for maintaining a distributed ledger across multiple participants."
+    },
+    {
+      "question": "Why is blockchain often described as an open public ledger?",
+      "choices": [
+        "Because transaction records are distributed and visible to participants",
+        "Because anyone can change past blocks freely",
+        "Because it stores only encrypted passwords",
+        "Because it removes the need for consensus"
+      ],
+      "correctAnswer": "Because transaction records are distributed and visible to participants",
+      "explanation": "Blockchain systems maintain transaction history across multiple nodes rather than one central owner."
+    },
+    {
+      "question": "What is a major security benefit of using a blockchain-style ledger?",
+      "choices": [
+        "It helps make records difficult to alter retroactively",
+        "It replaces all firewalls",
+        "It makes certificates unnecessary",
+        "It prevents any possible fraud automatically"
+      ],
+      "correctAnswer": "It helps make records difficult to alter retroactively",
+      "explanation": "The structure of chained records across multiple participants makes tampering more difficult."
+    },
+    {
+      "question": "Which scenario best fits the use of blockchain?",
+      "choices": [
+        "Maintaining a distributed record of transactions",
+        "Creating a local antivirus signature file",
+        "Masking phone numbers on a screen",
+        "Generating a CSR for a website"
+      ],
+      "correctAnswer": "Maintaining a distributed record of transactions",
+      "explanation": "Blockchain is designed for maintaining shared ledgers across multiple parties."
+    },
+    {
+      "question": "What does decentralized mean in the context of blockchain?",
+      "choices": [
+        "All data is controlled by one administrator",
+        "The ledger is maintained by multiple participants rather than one central authority",
+        "The system has no rules",
+        "Only one server can validate transactions"
+      ],
+      "correctAnswer": "The ledger is maintained by multiple participants rather than one central authority",
+      "explanation": "Decentralization means that no single entity alone controls the complete ledger."
+    },
+    {
+      "question": "Why would an organization choose blockchain for audit-style record keeping?",
+      "choices": [
+        "Because it offers a shared transaction history",
+        "Because it eliminates encryption",
+        "Because it stores files as images",
+        "Because it creates wildcard certificates"
+      ],
+      "correctAnswer": "Because it offers a shared transaction history",
+      "explanation": "Blockchain can provide a transparent, distributed history of recorded events."
+    },
+    {
+      "question": "What is one limitation of saying blockchain is 'encrypted only'?",
+      "choices": [
+        "It ignores the importance of distributed ledger structure",
+        "It means blockchain has no transactions",
+        "It proves blockchain is centralized",
+        "It shows blockchain is the same as masking"
+      ],
+      "correctAnswer": "It ignores the importance of distributed ledger structure",
+      "explanation": "Blockchain is not just about encryption; its distributed ledger model is central to how it works."
+    },
+    {
+      "question": "Which phrase best summarizes blockchain?",
+      "choices": [
+        "A centralized password vault",
+        "A decentralized ledger for recording transactions",
+        "A type of hardware key store",
+        "A certificate revocation service"
+      ],
+      "correctAnswer": "A decentralized ledger for recording transactions",
+      "explanation": "This captures the core idea of blockchain in a concise way."
+    },
+    {
+      "question": "What is one reason organizations may trust blockchain-based records for tracking events?",
+      "choices": [
+        "The records are maintained across multiple nodes",
+        "Users can edit old records at will",
+        "It does not need any validation",
+        "It only works offline"
+      ],
+      "correctAnswer": "The records are maintained across multiple nodes",
+      "explanation": "Distribution across many participants helps strengthen trust in the shared record."
+    },
+    {
+      "question": "A team wants to avoid relying on a single database owner for transaction history. Which technology from this topic best supports that goal?",
+      "choices": [
+        "Blockchain",
+        "Data masking",
+        "TPM",
+        "Key stretching"
+      ],
+      "correctAnswer": "Blockchain",
+      "explanation": "Blockchain supports shared, distributed record keeping without a single centralized ledger owner."
+    }
+  ],
+  "certificates": [
+    {
+      "question": "What does a CA do?",
+      "choices": [
+        "Encrypt data",
+        "Issue certificates",
+        "Monitor traffic",
+        "Store keys"
+      ],
+      "correctAnswer": "Issue certificates",
+      "explanation": "CA validates identities."
+    },
+    {
+      "question": "OCSP is used for:",
+      "choices": [
+        "Encryption",
+        "Real-time validation",
+        "Hashing",
+        "Tokenization"
+      ],
+      "correctAnswer": "Real-time validation",
+      "explanation": "Checks certificate status."
+    },
+    {
+      "question": "What is the purpose of a certificate revocation list (CRL)?",
+      "choices": [
+        "To list certificates that should no longer be trusted",
+        "To store encryption keys",
+        "To create wildcard certificates",
+        "To compress public keys"
+      ],
+      "correctAnswer": "To list certificates that should no longer be trusted",
+      "explanation": "A CRL identifies certificates that were issued but later revoked before expiration."
+    },
+    {
+      "question": "Which type of certificate is commonly used in development environments but is not inherently trusted by public clients?",
+      "choices": [
+        "Self-signed certificate",
+        "Third-party certificate",
+        "Wildcard certificate",
+        "Root certificate only"
+      ],
+      "correctAnswer": "Self-signed certificate",
+      "explanation": "Self-signed certificates are signed by themselves and are commonly used in test or dev setups."
+    },
+    {
+      "question": "What is the advantage of a third-party certificate for a public website?",
+      "choices": [
+        "It is issued by a trusted certificate authority",
+        "It never expires",
+        "It removes the need for HTTPS",
+        "It stores private keys in the browser"
+      ],
+      "correctAnswer": "It is issued by a trusted certificate authority",
+      "explanation": "Third-party certificates are trusted because they are signed by recognized certificate authorities."
+    },
+    {
+      "question": "What is meant by the root of trust in certificate systems?",
+      "choices": [
+        "The top-level trusted certificate authority anchor",
+        "The browser history file",
+        "The last certificate issued that day",
+        "A one-time password"
+      ],
+      "correctAnswer": "The top-level trusted certificate authority anchor",
+      "explanation": "The root of trust is the highest trusted certificate from which chains of trust are built."
+    },
+    {
+      "question": "Why is a Certificate Signing Request (CSR) generated?",
+      "choices": [
+        "To request issuance of a certificate",
+        "To revoke a certificate instantly",
+        "To mask sensitive data",
+        "To hash application logs"
+      ],
+      "correctAnswer": "To request issuance of a certificate",
+      "explanation": "A CSR contains information used by a CA to issue a certificate."
+    },
+    {
+      "question": "Which certificate type is most useful when a company wants one certificate for many subdomains like `api.example.com` and `shop.example.com`?",
+      "choices": [
+        "Wildcard certificate",
+        "Self-signed certificate",
+        "CRL entry",
+        "Root certificate"
+      ],
+      "correctAnswer": "Wildcard certificate",
+      "explanation": "Wildcard certificates are intended to cover multiple subdomains under the same base domain."
+    },
+    {
+      "question": "What problem does OCSP solve compared with relying only on the certificate file itself?",
+      "choices": [
+        "It helps verify whether a certificate is still valid in real time",
+        "It stores private keys more securely",
+        "It encrypts traffic faster",
+        "It creates hashes for passwords"
+      ],
+      "correctAnswer": "It helps verify whether a certificate is still valid in real time",
+      "explanation": "OCSP allows systems to check the current revocation status of a certificate."
+    },
+    {
+      "question": "A browser trusts a website certificate because it can trace the signing chain back to a recognized authority. What concept is being used?",
+      "choices": [
+        "Chain of trust",
+        "Tokenization",
+        "Key stretching",
+        "Data masking"
+      ],
+      "correctAnswer": "Chain of trust",
+      "explanation": "Certificates are validated through a chain that ultimately leads to a trusted root authority."
+    }
+  ]
 }
