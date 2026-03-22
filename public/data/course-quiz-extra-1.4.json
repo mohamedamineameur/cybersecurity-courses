@@ -1,0 +1,122 @@
+{
+  "pki": [
+    {
+      "question": "A company is using a public key infrastructure (PKI) to secure communications. What is the primary purpose of the digital certificates issued by the PKI?",
+      "choices": [
+        "To encrypt emails",
+        "To verify the identity of users and devices",
+        "To generate encryption keys",
+        "To store sensitive data"
+      ],
+      "correctAnswer": "To verify the identity of users and devices",
+      "explanation": "Digital certificates are used to confirm the identity of entities in a PKI, ensuring that communications are secure and from trusted sources."
+    }
+  ],
+  "encryption": [
+    {
+      "question": "A company needs to securely transmit sensitive financial data over the internet. Which cryptographic solution should they implement to ensure confidentiality during transmission?",
+      "choices": [
+        "Hashing the data before transmission",
+        "Using SSL/TLS for secure communication",
+        "Encrypting the data with a symmetric key",
+        "Digitally signing the data"
+      ],
+      "correctAnswer": "Using SSL/TLS for secure communication",
+      "explanation": "SSL/TLS provides a secure channel over the internet, ensuring that data is encrypted during transmission, thus maintaining confidentiality."
+    },
+    {
+      "question": "An organization wants to protect sensitive files on their employees' laptops. Which cryptographic method would be most effective for ensuring that only authorized users can access these files?",
+      "choices": [
+        "File hashing",
+        "Full disk encryption",
+        "Public key infrastructure",
+        "Digital signatures"
+      ],
+      "correctAnswer": "Full disk encryption",
+      "explanation": "Full disk encryption secures all data on the disk, ensuring that only authorized users with the correct credentials can access the files."
+    },
+    {
+      "question": "A security team is evaluating a new encryption algorithm for their data at rest. They want to ensure that the algorithm is resistant to brute-force attacks. Which characteristic of the algorithm should they prioritize?",
+      "choices": [
+        "Short key length",
+        "Complexity of the algorithm",
+        "Key management practices",
+        "Long key length"
+      ],
+      "correctAnswer": "Long key length",
+      "explanation": "A longer key length increases the number of possible keys, making it significantly more difficult for attackers to successfully perform brute-force attacks."
+    },
+    {
+      "question": "During a security audit, it was discovered that an employee is using a weak password for accessing encrypted files. What cryptographic practice should the organization enforce to enhance security?",
+      "choices": [
+        "Implementing multi-factor authentication",
+        "Switching to a different encryption algorithm",
+        "Using a password manager",
+        "Regularly changing encryption keys"
+      ],
+      "correctAnswer": "Implementing multi-factor authentication",
+      "explanation": "Multi-factor authentication adds an additional layer of security, making it harder for unauthorized users to access encrypted files, even if they have the password."
+    },
+    {
+      "question": "An organization is transitioning to a cloud service provider and needs to ensure that sensitive data is secure in transit and at rest. Which combination of cryptographic solutions should they implement?",
+      "choices": [
+        "Only encrypt data at rest",
+        "Only use hashing for data integrity",
+        "Use encryption for both data at rest and in transit",
+        "Use digital signatures for all data"
+      ],
+      "correctAnswer": "Use encryption for both data at rest and in transit",
+      "explanation": "Encrypting data both at rest and in transit ensures comprehensive protection against unauthorized access and data breaches."
+    },
+    {
+      "question": "A company is implementing a new system that requires secure user authentication. They want to use a method that involves a shared secret. Which cryptographic solution should they consider?",
+      "choices": [
+        "Public key encryption",
+        "Symmetric key encryption",
+        "Asymmetric key encryption",
+        "Digital certificates"
+      ],
+      "correctAnswer": "Symmetric key encryption",
+      "explanation": "Symmetric key encryption uses a shared secret key for both encryption and decryption, making it suitable for secure user authentication."
+    },
+    {
+      "question": "A cybersecurity team is reviewing the encryption methods used for sensitive customer data. They notice that some data is encrypted with a key that is stored alongside the encrypted data. What is the primary risk associated with this practice?",
+      "choices": [
+        "Data integrity is compromised",
+        "The encryption algorithm is weak",
+        "The encryption key can be easily accessed by attackers",
+        "The data may be lost if the key is deleted"
+      ],
+      "correctAnswer": "The encryption key can be easily accessed by attackers",
+      "explanation": "Storing the encryption key alongside the encrypted data creates a significant security risk, as attackers who gain access to the data can also access the key, rendering the encryption ineffective."
+    }
+  ],
+  "tools": [],
+  "obfuscation": [],
+  "hashing": [
+    {
+      "question": "A developer is tasked with implementing data integrity checks for a file transfer application. Which cryptographic solution should they use to ensure that the files have not been altered during transmission?",
+      "choices": [
+        "Symmetric encryption",
+        "Hash functions",
+        "Asymmetric encryption",
+        "Public key encryption"
+      ],
+      "correctAnswer": "Hash functions",
+      "explanation": "Hash functions create a unique hash value for the files, allowing the application to verify that the files have not been altered during transmission."
+    },
+    {
+      "question": "A financial institution is concerned about the security of customer transactions. They want to ensure that transactions cannot be denied after they are completed. Which cryptographic solution should they implement?",
+      "choices": [
+        "Encryption of transaction data",
+        "Digital signatures",
+        "Hashing transaction details",
+        "Public key infrastructure"
+      ],
+      "correctAnswer": "Digital signatures",
+      "explanation": "Digital signatures provide non-repudiation, ensuring that once a transaction is signed, the signer cannot deny having completed it."
+    }
+  ],
+  "blockchain": [],
+  "certificates": []
+}

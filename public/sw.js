@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'security-plus-v2'
+const CACHE_VERSION = 'security-plus-v3'
 const APP_SHELL = [
   '/',
   '/index.html',
@@ -9,36 +9,10 @@ const APP_SHELL = [
   '/pwa-512.png',
 ]
 
-const DATA_FILES = [
+const CORE_DATA_FILES = [
   '/data/course.json',
   '/data/acronyms.json',
   '/data/course-quiz-extras.json',
-  '/data/course-quiz-extra-1.1.json',
-  '/data/course-quiz-extra-1.2.json',
-  '/data/course-quiz-extra-2.1.json',
-  '/data/course-quiz-extra-2.2.json',
-  '/data/course-quiz-extra-2.3.json',
-  '/data/course-quiz-extra-2.4.json',
-  '/data/course-quiz-extra-2.5.json',
-  '/data/course-quiz-extra-3.1.json',
-  '/data/course-quiz-extra-3.2.json',
-  '/data/course-quiz-extra-3.3.json',
-  '/data/course-quiz-extra-3.4.json',
-  '/data/course-quiz-extra-4.1.json',
-  '/data/course-quiz-extra-4.2.json',
-  '/data/course-quiz-extra-4.3.json',
-  '/data/course-quiz-extra-4.4.json',
-  '/data/course-quiz-extra-4.5.json',
-  '/data/course-quiz-extra-4.6.json',
-  '/data/course-quiz-extra-4.7.json',
-  '/data/course-quiz-extra-4.8.json',
-  '/data/course-quiz-extra-4.9.json',
-  '/data/course-quiz-extra-5.1.json',
-  '/data/course-quiz-extra-5.2.json',
-  '/data/course-quiz-extra-5.3.json',
-  '/data/course-quiz-extra-5.4.json',
-  '/data/course-quiz-extra-5.5.json',
-  '/data/course-quiz-extra-5.6.json',
 ]
 
 function unique(values) {
@@ -72,6 +46,22 @@ function extractLocalAssetUrls(html) {
   return unique(urls)
 }
 
+async function getDataFiles() {
+  try {
+    const response = await fetch('/data/course-quiz-extras.json', { cache: 'no-store' })
+    if (!response.ok) return CORE_DATA_FILES
+
+    const manifest = await response.json()
+    const extraFiles = Array.isArray(manifest?.files)
+      ? manifest.files.map((name) => `/data/${name}`)
+      : []
+
+    return unique([...CORE_DATA_FILES, ...extraFiles])
+  } catch {
+    return CORE_DATA_FILES
+  }
+}
+
 async function putInCache(cache, request, response) {
   if (!isCacheableResponse(response)) return response
   await cache.put(request, response.clone())
@@ -82,13 +72,14 @@ async function precacheApp() {
   const cache = await caches.open(CACHE_VERSION)
   const htmlResponse = await fetch('/index.html', { cache: 'no-store' })
   const htmlText = await htmlResponse.text()
+  const dataFiles = await getDataFiles()
 
   await cache.put('/index.html', new Response(htmlText, {
     headers: { 'Content-Type': 'text/html; charset=utf-8' },
   }))
 
   const assetFiles = extractLocalAssetUrls(htmlText)
-  const urlsToCache = unique([...APP_SHELL, ...DATA_FILES, ...assetFiles])
+  const urlsToCache = unique([...APP_SHELL, ...dataFiles, ...assetFiles])
 
   await Promise.all(urlsToCache.map(async (url) => {
     try {

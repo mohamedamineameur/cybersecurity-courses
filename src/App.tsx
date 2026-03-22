@@ -639,16 +639,48 @@ function topicText(t: CourseTopic) {
 }
 
 function formatInline(text: string, acronymMap: Map<string, string>) {
+  function InlineAcronym({ short, expanded }: { short: string; expanded: string }) {
+    const [open, setOpen] = useState(false)
+
+    return (
+      <span
+        className={['acronymWrap', open ? 'open' : ''].join(' ')}
+        onBlur={(e) => {
+          const next = e.relatedTarget
+          if (!(next instanceof Node) || !e.currentTarget.contains(next)) setOpen(false)
+        }}
+        onKeyDown={(e) => {
+          if (e.key === 'Escape') {
+            e.preventDefault()
+            setOpen(false)
+          }
+        }}
+      >
+        <button
+          type="button"
+          className="acronym"
+          title={expanded}
+          aria-expanded={open}
+          aria-label={`${short}: ${expanded}`}
+          onClick={() => setOpen((v) => !v)}
+        >
+          {short}
+        </button>
+        {open ? (
+          <span className="acronymPopover" role="tooltip">
+            {expanded}
+          </span>
+        ) : null}
+      </span>
+    )
+  }
+
   const words = text.split(/(\b)/)
   return words.map((w, idx) => {
     const key = w.toUpperCase()
     const expanded = acronymMap.get(key)
     if (!expanded) return <span key={idx}>{w}</span>
-    return (
-      <span key={idx} className="acronym" title={expanded} aria-label={`${w}: ${expanded}`}>
-        {w}
-      </span>
-    )
+    return <InlineAcronym key={idx} short={w} expanded={expanded} />
   })
 }
 
