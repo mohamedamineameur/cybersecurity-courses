@@ -1,73 +1,53 @@
-# React + TypeScript + Vite
+# Révision CompTIA Security+
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Cette application est un aide-mémoire interactif pour réviser les notions principales de la certification **CompTIA Security+**.
 
-Currently, two official plugins are available:
+Son objectif est simple :
+- relire rapidement les concepts importants
+- parcourir les acronymes
+- s'entraîner avec des quiz
+- consolider ses connaissances avant l'examen
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Important
 
-## React Compiler
+Cette application est avant tout un support de révision.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Elle **ne remplace pas** :
+- les ressources officielles
+- les objectifs d'examen de CompTIA
+- une formation complète
+- une vérification croisée avec des sources fiables
 
-## Expanding the ESLint configuration
+Même si nous essayons d'améliorer le contenu en continu, certaines informations peuvent être :
+- incomplètes
+- imprécises
+- obsolètes
+- erronées
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Si vous repérez une erreur, merci de nous le signaler. Nous veillons a mettre le contenu a jour aussi souvent que possible.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Fonctionnalités
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- fiches de révision par thème
+- quiz par sujet
+- examen blanc
+- liste d'acronymes
+- progression locale
+- interface en français et en anglais
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Lancement du projet
+
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Build
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build
 ```
+
+## Remarque
+
+Le contenu pédagogique évolue régulièrement. L'application est pensée comme un compagnon de révision rapide, pas comme une source officielle unique.
