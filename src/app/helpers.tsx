@@ -342,8 +342,7 @@ async function fetchJsonIfOk<T>(url: string): Promise<T | null> {
 }
 
 function joinBaseUrl(relativePath: string) {
-  const base = import.meta.env.BASE_URL
-  return new URL(relativePath.replace(/^\.\//, ''), window.location.origin + base).toString()
+  return new URL(relativePath.replace(/^\.\//, ''), document.baseURI).toString()
 }
 
 function toFrenchFileName(fileName: string) {
