@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, motion, type Variants } from 'framer-motion'
 import { useMemo, useState } from 'react'
 import { courseKeys } from '../i18n/course-keys'
 import { useTranslate } from '../app/i18n'
@@ -23,11 +23,14 @@ function topicCardLayoutId(subsectionId: string, topicId: string) {
 }
 
 const sectionVariant = {
+const smoothEase = [0.22, 1, 0.36, 1] as const
+
+const sectionVariant: Variants = {
   hidden: { opacity: 0, y: 18 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.34, ease: 'easeOut' },
+    transition: { duration: 0.34, ease: smoothEase },
   },
 }
 

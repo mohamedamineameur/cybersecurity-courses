@@ -14,7 +14,7 @@ type ItemListProps = {
   t: (key: string) => string
 }
 
-type ItemCardProps = ItemListProps & {
+type ItemCardProps = Omit<ItemListProps, 'items'> & {
   item: CourseItem
   index: number
 }
