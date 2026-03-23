@@ -1,7 +1,7 @@
 import { AnimatePresence, motion, type Variants } from 'framer-motion'
 import { useState } from 'react'
 import { courseKeys } from '../i18n/course-keys'
-import { useTranslate } from '../app/i18n'
+import { useAppI18n, useTranslate } from '../app/i18n'
 import { tr } from '../app/helpers'
 import type { CourseData, FlatTopicEntry } from '../app/types'
 import { AnimatedCounter } from '../components/AnimatedCounter'
@@ -10,6 +10,7 @@ import { StreakBadge } from '../components/StreakBadge'
 
 type HomePageProps = {
   course: CourseData
+  showWelcomeIntro: boolean
   query: string
   onQuery: (value: string) => void
   completionPct: number
@@ -23,6 +24,7 @@ type HomePageProps = {
   nextTodoTopics: FlatTopicEntry[]
   doneTopics: Record<string, number>
   quizScores: Record<string, { best: number; total: number; at: number }>
+  onDismissWelcomeIntro: () => void
   onOpenTopic: (subsectionId: string, topicId: string) => void
 }
 
@@ -66,6 +68,7 @@ function applyCardLightEffect(element: HTMLElement, clientX: number, clientY: nu
 
 export function HomePage({
   course,
+  showWelcomeIntro,
   query,
   onQuery,
   completionPct,
@@ -79,9 +82,11 @@ export function HomePage({
   nextTodoTopics,
   doneTopics,
   quizScores,
+  onDismissWelcomeIntro,
   onOpenTopic,
 }: HomePageProps) {
   const { t } = useTranslate()
+  const { language } = useAppI18n()
   const [heroOffset, setHeroOffset] = useState({ x: 0, y: 0 })
   const [openSections, setOpenSections] = useState<string[]>(() => course.sections.slice(0, 1).map((section) => section.id))
 
@@ -147,6 +152,59 @@ export function HomePage({
 
   return (
     <div className="stack">
+      {showWelcomeIntro ? (
+        <motion.section
+          className="heroCard welcomeIntro"
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.45, ease: smoothEase }}
+        >
+          <div className="heroGlow" aria-hidden="true" />
+          <div className="heroInner welcomeIntroInner">
+            <div className="welcomeMedia">
+              <img className="welcomeImage" src="/hero.png" alt="Illustration cybersécurité de l'application" />
+            </div>
+            <div className="welcomeContent">
+              <div className="heroKicker">{course.domain}</div>
+              <h1 className="heroTitle">
+                {language === 'en'
+                  ? 'A quick revision companion for Security+'
+                  : 'Un aide-memoire rapide pour reviser Security+'}
+              </h1>
+              <p className="heroSubtitle">
+                {language === 'en'
+                  ? 'Review the main concepts, revise acronyms, practice with quizzes, and stay focused on the exam essentials.'
+                  : "Parcours les notions importantes, revise les acronymes, entraine-toi avec les quiz et concentre-toi sur l'essentiel de la certification."}
+              </p>
+              <div className="welcomeBullets">
+                <div className="welcomeBullet">
+                  {language === 'en' ? 'Topic-by-topic revision sheets' : 'Fiches de revision organisees par sujet'}
+                </div>
+                <div className="welcomeBullet">
+                  {language === 'en' ? 'Quiz and mock exam practice' : 'Quiz et examen blanc pour t entrainer'}
+                </div>
+                <div className="welcomeBullet">
+                  {language === 'en' ? 'Acronyms and key concepts at a glance' : 'Acronymes et concepts cles accessibles rapidement'}
+                </div>
+              </div>
+              <p className="welcomeNote">
+                {language === 'en'
+                  ? 'This app is a revision aid. Some information may be incomplete or inaccurate and will be updated continuously.'
+                  : "Cette application est un support de revision. Certaines informations peuvent etre inexactes et seront mises a jour regulierement."}
+              </p>
+              <div className="welcomeActions">
+                <button className="btnPrimary" onClick={onDismissWelcomeIntro}>
+                  {language === 'en' ? 'Start revising' : 'Commencer la revision'}
+                </button>
+                <button className="btnSecondary" onClick={onDismissWelcomeIntro}>
+                  {language === 'en' ? 'Open dashboard' : "Ouvrir l'accueil"}
+                </button>
+              </div>
+            </div>
+          </div>
+        </motion.section>
+      ) : null}
+
       <motion.section
         className="heroCard heroCardInteractive"
         initial={{ opacity: 0, y: 24 }}
@@ -160,6 +218,7 @@ export function HomePage({
           })
         }}
         onMouseLeave={() => setHeroOffset({ x: 0, y: 0 })}
+        style={{ display: showWelcomeIntro ? 'none' : undefined }}
       >
         <motion.div
           className="heroGlow"
@@ -232,6 +291,7 @@ export function HomePage({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-10% 0px -10% 0px' }}
         transition={{ duration: 0.35 }}
+        style={{ display: showWelcomeIntro ? 'none' : undefined }}
       >
         <div className="searchRow">
           <input
@@ -255,6 +315,7 @@ export function HomePage({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-10% 0px -10% 0px' }}
         transition={{ duration: 0.35, delay: 0.05 }}
+        style={{ display: showWelcomeIntro ? 'none' : undefined }}
       >
         <div className="sectionHead">
           <h2>{t('homeFocus.title')}</h2>
@@ -286,6 +347,7 @@ export function HomePage({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-10% 0px -10% 0px' }}
         transition={{ duration: 0.35, delay: 0.1 }}
+        style={{ display: showWelcomeIntro ? 'none' : undefined }}
       >
         <h2>{t('outline.title')}</h2>
         <div className="outline">

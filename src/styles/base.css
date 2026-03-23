@@ -351,6 +351,77 @@
   min-width: 0;
 }
 
+.welcomeIntro {
+  animation-duration: var(--duration-slow);
+}
+
+.welcomeIntroInner {
+  display: grid;
+  gap: 20px;
+  align-items: center;
+}
+
+.welcomeMedia,
+.welcomeContent {
+  min-width: 0;
+}
+
+.welcomeImage {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: var(--shadow-lg);
+  object-fit: cover;
+}
+
+.welcomeBullets {
+  margin-top: 18px;
+  display: grid;
+  gap: 10px;
+}
+
+.welcomeBullet {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  color: var(--text);
+  font-weight: 600;
+}
+
+.welcomeBullet::before {
+  content: '✓';
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-bg);
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 800;
+  flex: 0 0 auto;
+}
+
+.welcomeNote {
+  margin: 18px 0 0;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.welcomeActions {
+  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
 .stat {
   padding: 16px;
   border-radius: var(--radius-lg);
@@ -1051,7 +1122,18 @@
   box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.12);
 }
 
+@media (min-width: 860px) {
+  .welcomeIntroInner {
+    grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
+  }
+}
+
 @media (max-width: 640px) {
+  .welcomeActions .btnPrimary,
+  .welcomeActions .btnSecondary {
+    width: 100%;
+  }
+
   .quizScoreSummary {
     flex-direction: column;
     align-items: flex-start;

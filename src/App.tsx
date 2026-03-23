@@ -100,6 +100,7 @@ function App() {
   const [pageDirection, setPageDirection] = useState<1 | -1>(1)
   const [timeSnapshot, setTimeSnapshot] = useState(() => Date.now())
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false)
+  const [welcomeIntroSeen, setWelcomeIntroSeen] = useLocalStorageState<boolean>('welcomeIntroSeenV1', false)
   const [isInstalled, setIsInstalled] = useState<boolean>(() => {
     const nav = navigator as Navigator & { standalone?: boolean }
     return window.matchMedia('(display-mode: standalone)').matches || nav.standalone === true
@@ -234,6 +235,12 @@ function App() {
 
   const totalTopics = flatTopics.length
   const doneCount = Object.keys(doneTopics).length
+  const hasStartedCourse = doneCount > 0
+    || Object.keys(quizScores).length > 0
+    || Object.keys(quizStates).length > 0
+    || mockExamHistory.length > 0
+    || mockExamState !== null
+  const showWelcomeIntro = !hasStartedCourse && !welcomeIntroSeen
   const completionPct = totalTopics ? Math.round((doneCount / totalTopics) * 100) : 0
   const completionMilestones = useMemo(() => [25, 50, 75, 100].filter((milestone) => completionPct >= milestone), [completionPct])
   const nextMilestone = useMemo(() => [25, 50, 75, 100].find((milestone) => completionPct < milestone) ?? null, [completionPct])
@@ -503,6 +510,11 @@ function App() {
     }
   }, [mockExamState, normalizedLanguage, playSound, setMockExamHistory, showToast, triggerCelebration])
 
+  useEffect(() => {
+    if (!hasStartedCourse || welcomeIntroSeen) return
+    setWelcomeIntroSeen(true)
+  }, [hasStartedCourse, setWelcomeIntroSeen, welcomeIntroSeen])
+
   const page = !course ? (
     err ? (
       <div className="panel">
@@ -640,6 +652,7 @@ function App() {
   ) : (
     <HomePage
       course={course}
+      showWelcomeIntro={showWelcomeIntro}
       query={query}
       onQuery={setQuery}
       completionPct={completionPct}
@@ -653,6 +666,7 @@ function App() {
       nextTodoTopics={nextTodoTopics}
       doneTopics={doneTopics}
       quizScores={quizScores}
+      onDismissWelcomeIntro={() => setWelcomeIntroSeen(true)}
       onOpenTopic={openTopic}
     />
   )
