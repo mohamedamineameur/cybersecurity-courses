@@ -1,18 +1,25 @@
 const CACHE_VERSION = 'security-plus-v3'
+const BASE_PATH = new URL(self.registration.scope).pathname.replace(/\/$/, '')
+
+function withBase(path) {
+  if (!path.startsWith('/')) return path
+  return `${BASE_PATH}${path}` || path
+}
+
 const APP_SHELL = [
-  '/',
-  '/index.html',
-  '/manifest.webmanifest',
-  '/favicon.svg',
-  '/apple-touch-icon.png',
-  '/pwa-192.png',
-  '/pwa-512.png',
+  withBase('/'),
+  withBase('/index.html'),
+  withBase('/manifest.webmanifest'),
+  withBase('/favicon.svg'),
+  withBase('/apple-touch-icon.png'),
+  withBase('/pwa-192.png'),
+  withBase('/pwa-512.png'),
 ]
 
 const CORE_DATA_FILES = [
-  '/data/course.json',
-  '/data/acronyms.json',
-  '/data/course-quiz-extras.json',
+  withBase('/data/course.json'),
+  withBase('/data/acronyms.json'),
+  withBase('/data/course-quiz-extras.json'),
 ]
 
 function unique(values) {
@@ -38,7 +45,11 @@ function extractLocalAssetUrls(html) {
     if (!raw || raw.startsWith('http:') || raw.startsWith('https:') || raw.startsWith('data:')) continue
     const normalized = normalizeUrlPath(raw)
     if (!normalized) continue
-    if (normalized.startsWith('/assets/') || normalized.startsWith('/data/') || normalized === '/favicon.svg') {
+    if (
+      normalized.startsWith(withBase('/assets/'))
+      || normalized.startsWith(withBase('/data/'))
+      || normalized === withBase('/favicon.svg')
+    ) {
       urls.push(normalized)
     }
   }
@@ -48,12 +59,12 @@ function extractLocalAssetUrls(html) {
 
 async function getDataFiles() {
   try {
-    const response = await fetch('/data/course-quiz-extras.json', { cache: 'no-store' })
+    const response = await fetch(withBase('/data/course-quiz-extras.json'), { cache: 'no-store' })
     if (!response.ok) return CORE_DATA_FILES
 
     const manifest = await response.json()
     const extraFiles = Array.isArray(manifest?.files)
-      ? manifest.files.map((name) => `/data/${name}`)
+      ? manifest.files.map((name) => withBase(`/data/${name}`))
       : []
 
     return unique([...CORE_DATA_FILES, ...extraFiles])
@@ -70,11 +81,12 @@ async function putInCache(cache, request, response) {
 
 async function precacheApp() {
   const cache = await caches.open(CACHE_VERSION)
-  const htmlResponse = await fetch('/index.html', { cache: 'no-store' })
+  const indexUrl = withBase('/index.html')
+  const htmlResponse = await fetch(indexUrl, { cache: 'no-store' })
   const htmlText = await htmlResponse.text()
   const dataFiles = await getDataFiles()
 
-  await cache.put('/index.html', new Response(htmlText, {
+  await cache.put(indexUrl, new Response(htmlText, {
     headers: { 'Content-Type': 'text/html; charset=utf-8' },
   }))
 
@@ -118,9 +130,9 @@ self.addEventListener('fetch', (event) => {
       const cache = await caches.open(CACHE_VERSION)
       try {
         const response = await fetch(request)
-        return await putInCache(cache, '/index.html', response)
+        return await putInCache(cache, withBase('/index.html'), response)
       } catch {
-        const cached = await cache.match('/index.html')
+        const cached = await cache.match(withBase('/index.html'))
         return cached || Response.error()
       }
     })())

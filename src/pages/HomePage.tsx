@@ -162,7 +162,7 @@ export function HomePage({
           <div className="heroGlow" aria-hidden="true" />
           <div className="heroInner welcomeIntroInner">
             <div className="welcomeMedia">
-              <img className="welcomeImage" src="/hero.png" alt="Illustration cybersécurité de l'application" />
+              <img className="welcomeImage" src={`${import.meta.env.BASE_URL}hero.png`} alt="Illustration cybersécurité de l'application" />
             </div>
             <div className="welcomeContent">
               <div className="heroKicker">{course.domain}</div>

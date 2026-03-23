@@ -341,13 +341,18 @@ async function fetchJsonIfOk<T>(url: string): Promise<T | null> {
   }
 }
 
+function joinBaseUrl(relativePath: string) {
+  const base = import.meta.env.BASE_URL
+  return new URL(relativePath.replace(/^\.\//, ''), window.location.origin + base).toString()
+}
+
 function toFrenchFileName(fileName: string) {
   return fileName.replace(/\.json$/i, '.fr.json')
 }
 
 function buildDataUrl(fileName: string, language: AppLanguage) {
-  if (language === 'fr') return `/data/translated-fr/${toFrenchFileName(fileName)}`
-  return `/data/${fileName}`
+  if (language === 'fr') return joinBaseUrl(`data/translated-fr/${toFrenchFileName(fileName)}`)
+  return joinBaseUrl(`data/${fileName}`)
 }
 
 async function fetchLocalizedJsonIfOk<T>(fileName: string, language: AppLanguage): Promise<T | null> {
