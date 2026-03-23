@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { InlineAcronym } from '../components/InlineAcronym'
 import type {
   AcronymsData,
+  AppLanguage,
   CourseData,
   CourseItem,
   CourseQuiz,
@@ -340,6 +341,23 @@ async function fetchJsonIfOk<T>(url: string): Promise<T | null> {
   }
 }
 
+function toFrenchFileName(fileName: string) {
+  return fileName.replace(/\.json$/i, '.fr.json')
+}
+
+function buildDataUrl(fileName: string, language: AppLanguage) {
+  if (language === 'fr') return `/data/translated-fr/${toFrenchFileName(fileName)}`
+  return `/data/${fileName}`
+}
+
+async function fetchLocalizedJsonIfOk<T>(fileName: string, language: AppLanguage): Promise<T | null> {
+  if (language === 'fr') {
+    const localized = await fetchJsonIfOk<T>(buildDataUrl(fileName, language))
+    if (localized) return localized
+  }
+  return fetchJsonIfOk<T>(buildDataUrl(fileName, 'en'))
+}
+
 const legacyExtraFiles = [
   'course-quiz-extra-1.0.json',
   'course-quiz-extra-2.json',
@@ -357,10 +375,15 @@ function qualifyExtraKey(fileName: string, key: string) {
   return topicKey(match[1], key)
 }
 
-async function loadQuizExtras() {
-  const manifest = await fetchJsonIfOk<QuizExtraManifest>('/data/course-quiz-extras.json')
+async function loadQuizExtras(language: AppLanguage) {
+  const manifest = await fetchLocalizedJsonIfOk<QuizExtraManifest>('course-quiz-extras.json', language)
   const files = manifest?.files?.length ? manifest.files : legacyExtraFiles
-  const all = await Promise.all(files.map(async (file) => ({ file, data: await fetchJsonIfOk<Record<string, CourseQuiz[]>>(`/data/${file}`) })))
+  const all = await Promise.all(
+    files.map(async (file) => ({
+      file,
+      data: await fetchLocalizedJsonIfOk<Record<string, CourseQuiz[]>>(file, language),
+    })),
+  )
   const merged: Record<string, CourseQuiz[]> = {}
 
   for (const { file, data } of all) {
@@ -402,20 +425,24 @@ function mergeQuizExtras(course: CourseData, extras: Record<string, CourseQuiz[]
   return course
 }
 
-export function useCourseData() {
+export function useCourseData(language: AppLanguage) {
   const [data, setData] = useState<CourseData | null>(null)
   const [err, setErr] = useState<string | null>(null)
 
   useEffect(() => {
     let cancelled = false
+    setErr(null)
+    setData(null)
 
     Promise.all([
-      fetch('/data/course.json').then((response) => response.json() as Promise<CourseData>),
-      fetch('/data/acronyms.json').then((response) => response.json() as Promise<AcronymsData>),
-      loadQuizExtras(),
+      fetchLocalizedJsonIfOk<CourseData>('course.json', language),
+      fetchLocalizedJsonIfOk<AcronymsData>('acronyms.json', language),
+      loadQuizExtras(language),
     ])
       .then(([course, acronyms, extras]) => {
         if (cancelled) return
+        if (!course) throw new Error(`Unable to load course data for language "${language}"`)
+        if (!acronyms) throw new Error(`Unable to load acronyms data for language "${language}"`)
 
         const normalized = normalizeCourseShape(course)
         setData(mergeQuizExtras(normalized, extras, 10))
@@ -429,7 +456,7 @@ export function useCourseData() {
     return () => {
       cancelled = true
     }
-  }, [])
+  }, [language])
 
   return { data, err }
 }

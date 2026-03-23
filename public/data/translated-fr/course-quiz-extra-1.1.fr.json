@@ -1,0 +1,226 @@
+{
+  "Categories": [
+    {
+      "question": "Une entreprise a mis en place un pare-feu pour surveiller et contrôler le trafic réseau entrant et sortant en fonction de règles de sécurité prédéterminées. Quelle catégorie de contrôle de sécurité cela représente-t-il ?",
+      "choices": [
+        "Contrôle préventif",
+        "Contrôle détecteur",
+        "Contrôle correctif",
+        "Contrôle compensatoire"
+      ],
+      "correctAnswer": "Contrôle préventif",
+      "explanation": "Un pare-feu est conçu pour empêcher l'accès non autorisé à un réseau privé ou en provenance de celui-ci, ce qui en fait un contrôle préventif."
+    },
+    {
+      "question": "Après une récente violation de la sécurité, une entreprise décide de mettre en œuvre un système qui enregistrera et analysera les activités des utilisateurs pour détecter d'éventuelles anomalies. Quelle catégorie de contrôle de sécurité cela représente-t-il ?",
+      "choices": [
+        "Contrôle préventif",
+        "Contrôle détecteur",
+        "Contrôle correctif",
+        "Contrôle administratif"
+      ],
+      "correctAnswer": "Contrôle détecteur",
+      "explanation": "L'enregistrement et l'analyse des activités des utilisateurs visent à détecter des incidents de sécurité, ce qui les classe dans les contrôles détecteurs."
+    },
+    {
+      "question": "Une organisation prévoit d'installer un correctif logiciel pour corriger une vulnérabilité qui a été exploitée lors d'une attaque récente. Quel type de contrôle de sécurité cette action est-elle classée ?",
+      "choices": [
+        "Contrôle préventif",
+        "Contrôle détecteur",
+        "Contrôle correctif",
+        "Contrôle physique"
+      ],
+      "correctAnswer": "Contrôle correctif",
+      "explanation": "Installer un correctif pour corriger une vulnérabilité est une action corrective prise pour remédier à un problème après qu'il a été identifié."
+    },
+    {
+      "question": "Une institution financière a développé un ensemble de politiques et de procédures pour garantir la conformité aux exigences réglementaires. Quelle catégorie de contrôle de sécurité cela représente-t-il ?",
+      "choices": [
+        "Contrôle technique",
+        "Contrôle opérationnel",
+        "Contrôle administratif",
+        "Contrôle physique"
+      ],
+      "correctAnswer": "Contrôle administratif",
+      "explanation": "Les politiques et procédures sont des contrôles administratifs qui guident le comportement des employés et le fonctionnement de l'organisation."
+    },
+    {
+      "question": "Une entreprise utilise un système d'authentification à deux facteurs qui nécessite à la fois un mot de passe et une empreinte digitale pour accéder à des données sensibles. À quelle catégorie ce contrôle appartient-il ?",
+      "choices": [
+        "Contrôle préventif",
+        "Contrôle détecteur",
+        "Contrôle correctif",
+        "Contrôle compensatoire"
+      ],
+      "correctAnswer": "Contrôle préventif",
+      "explanation": "L'authentification à deux facteurs est une mesure préventive conçue pour empêcher l'accès non autorisé avant qu'il ne se produise."
+    },
+    {
+      "question": "Après avoir découvert une fuite de données, une entreprise met en œuvre une solution de prévention des pertes de données (DLP) pour surveiller et contrôler les transferts de données. Quel type de contrôle de sécurité cela représente-t-il ?",
+      "choices": [
+        "Contrôle préventif",
+        "Contrôle détecteur",
+        "Contrôle correctif",
+        "Contrôle technique"
+      ],
+      "correctAnswer": "Contrôle technique",
+      "explanation": "Une solution de prévention des pertes de données est un contrôle technique qui aide à surveiller et gérer la sécurité des données."
+    },
+    {
+      "question": "Une équipe de sécurité effectue des audits et des évaluations réguliers pour identifier les vulnérabilités potentielles dans le système. Quelle catégorie de contrôle de sécurité cette activité relève-t-elle ?",
+      "choices": [
+        "Contrôle préventif",
+        "Contrôle détecteur",
+        "Contrôle correctif",
+        "Contrôle compensatoire"
+      ],
+      "correctAnswer": "Contrôle détecteur",
+      "explanation": "Les audits et évaluations réguliers sont conçus pour détecter les vulnérabilités et les faiblesses au sein du système."
+    },
+    {
+      "question": "Une organisation décide d'utiliser un service externe pour gérer ses processus de sauvegarde et de récupération de données. Cela est un exemple de quel type de contrôle ?",
+      "choices": [
+        "Contrôle préventif",
+        "Contrôle détecteur",
+        "Contrôle correctif",
+        "Contrôle compensatoire"
+      ],
+      "correctAnswer": "Contrôle compensatoire",
+      "explanation": "Utiliser un service externe pour la sauvegarde et la récupération agit comme un contrôle compensatoire, fournissant une alternative aux solutions internes."
+    },
+    {
+      "question": "Une entreprise met en œuvre un système de détection d'intrusion (IDS) qui alerte les administrateurs des activités suspectes sur le réseau. Quelle catégorie de contrôle est-ce ?",
+      "choices": [
+        "Contrôle préventif",
+        "Contrôle détecteur",
+        "Contrôle correctif",
+        "Contrôle physique"
+      ],
+      "correctAnswer": "Contrôle détecteur",
+      "explanation": "Un système de détection d'intrusion est conçu pour détecter et alerter sur des incidents de sécurité potentiels, le classant comme un contrôle détecteur."
+    },
+    {
+      "question": "Suite à un incident de sécurité, une entreprise déploie une nouvelle solution antivirus pour supprimer les logiciels malveillants. Quel type de contrôle cela est-il considéré ?",
+      "choices": [
+        "Contrôle préventif",
+        "Contrôle détecteur",
+        "Contrôle correctif",
+        "Contrôle administratif"
+      ],
+      "correctAnswer": "Contrôle correctif",
+      "explanation": "Déployer un logiciel antivirus pour traiter et supprimer les logiciels malveillants est une action corrective prise pour résoudre un problème de sécurité."
+    }
+  ],
+  "Control Types": [
+    {
+      "question": "Une entreprise a mis en place un pare-feu pour contrôler le trafic réseau entrant et sortant en fonction de règles de sécurité prédéterminées. Quel type de contrôle est-ce ?",
+      "choices": [
+        "Contrôle préventif",
+        "Contrôle détecteur",
+        "Contrôle correctif",
+        "Contrôle compensatoire"
+      ],
+      "correctAnswer": "Contrôle préventif",
+      "explanation": "Un pare-feu est conçu pour empêcher l'accès non autorisé et les attaques en contrôlant le trafic, ce qui en fait un contrôle préventif."
+    },
+    {
+      "question": "Après une récente violation de la sécurité, une entreprise décide de mettre en œuvre un système qui surveille le trafic réseau et alerte les administrateurs des activités suspectes. Quel type de contrôle est-ce ?",
+      "choices": [
+        "Contrôle préventif",
+        "Contrôle détecteur",
+        "Contrôle correctif",
+        "Contrôle dissuasif"
+      ],
+      "correctAnswer": "Contrôle détecteur",
+      "explanation": "La surveillance et l'alerte des activités suspectes sont caractéristiques d'un contrôle détecteur, car elles identifient et rapportent des incidents de sécurité potentiels."
+    },
+    {
+      "question": "Une entreprise a subi une perte de données en raison de la suppression accidentelle par des employés. Pour atténuer ce risque, elle met en œuvre des sauvegardes régulières et un plan de récupération de données. Quel type de contrôle cela représente-t-il ?",
+      "choices": [
+        "Contrôle préventif",
+        "Contrôle correctif",
+        "Contrôle détecteur",
+        "Contrôle compensatoire"
+      ],
+      "correctAnswer": "Contrôle correctif",
+      "explanation": "Les sauvegardes régulières et un plan de récupération sont des mesures correctives visant à restaurer les données perdues après qu'un incident s'est produit."
+    },
+    {
+      "question": "Une organisation organise des sessions de formation à la sécurité régulières pour ses employés afin de réduire le risque d'attaques d'ingénierie sociale. Quel type de contrôle est-ce ?",
+      "choices": [
+        "Contrôle préventif",
+        "Contrôle détecteur",
+        "Contrôle correctif",
+        "Contrôle dissuasif"
+      ],
+      "correctAnswer": "Contrôle préventif",
+      "explanation": "Former les employés à reconnaître et à éviter les attaques d'ingénierie sociale est une mesure préventive visant à réduire la probabilité de tels incidents."
+    },
+    {
+      "question": "Une équipe de sécurité met en œuvre un système d'enregistrement qui enregistre tous les accès aux données sensibles. Si un accès non autorisé se produit, les journaux peuvent être examinés pour identifier le coupable. Quel type de contrôle est-ce ?",
+      "choices": [
+        "Contrôle préventif",
+        "Contrôle détecteur",
+        "Contrôle correctif",
+        "Contrôle compensatoire"
+      ],
+      "correctAnswer": "Contrôle détecteur",
+      "explanation": "Le système d'enregistrement sert à détecter et identifier les accès non autorisés après qu'ils se soient produits, ce qui en fait un contrôle détecteur."
+    },
+    {
+      "question": "Suite à une infection par un logiciel malveillant, une entreprise installe un logiciel antivirus qui analyse activement et supprime les fichiers malveillants. Quel type de contrôle cela représente-t-il ?",
+      "choices": [
+        "Contrôle préventif",
+        "Contrôle détecteur",
+        "Contrôle correctif",
+        "Contrôle dissuasif"
+      ],
+      "correctAnswer": "Contrôle correctif",
+      "explanation": "Un logiciel antivirus qui supprime les logiciels malveillants après une infection est un contrôle correctif, car il traite le problème après qu'il se soit produit."
+    },
+    {
+      "question": "Une organisation utilise une politique de sécurité qui interdit aux employés d'utiliser des appareils personnels pour accéder aux ressources de l'entreprise. Quel type de contrôle est-ce ?",
+      "choices": [
+        "Contrôle préventif",
+        "Contrôle détecteur",
+        "Contrôle correctif",
+        "Contrôle compensatoire"
+      ],
+      "correctAnswer": "Contrôle préventif",
+      "explanation": "La politique est conçue pour prévenir les risques de sécurité potentiels associés à l'accès des appareils personnels aux ressources de l'entreprise, ce qui la classe comme un contrôle préventif."
+    },
+    {
+      "question": "Une entreprise met en œuvre un système de détection d'intrusion (IDS) qui alerte les administrateurs lorsque des activités suspectes sont détectées sur le réseau. Quel type de contrôle est-ce ?",
+      "choices": [
+        "Contrôle préventif",
+        "Contrôle détecteur",
+        "Contrôle correctif",
+        "Contrôle dissuasif"
+      ],
+      "correctAnswer": "Contrôle détecteur",
+      "explanation": "Un IDS est conçu pour détecter et alerter sur des activités suspectes, servant ainsi de contrôle détecteur."
+    },
+    {
+      "question": "Après une violation de données, une entreprise décide de changer ses méthodes de cryptage pour améliorer la sécurité des données. Quel type de contrôle cela représente-t-il ?",
+      "choices": [
+        "Contrôle préventif",
+        "Contrôle détecteur",
+        "Contrôle correctif",
+        "Contrôle compensatoire"
+      ],
+      "correctAnswer": "Contrôle correctif",
+      "explanation": "Changer les méthodes de cryptage après une violation est une action corrective prise pour améliorer la sécurité et prévenir de futurs incidents."
+    },
+    {
+      "question": "Une organisation emploie un agent de sécurité pour surveiller l'accès physique à son centre de données. Quel type de contrôle est-ce ?",
+      "choices": [
+        "Contrôle préventif",
+        "Contrôle détecteur",
+        "Contrôle correctif",
+        "Contrôle dissuasif"
+      ],
+      "correctAnswer": "Contrôle dissuasif",
+      "explanation": "La présence d'un agent de sécurité sert de dissuasion pour les intrus potentiels, décourageant l'accès non autorisé."
+    }
+  ]
+}

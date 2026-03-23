@@ -1,0 +1,338 @@
+{
+  "actors": [
+    {
+      "question": "Une institution financière a été victime d'une série d'attaques de phishing ciblées qui compromettent avec succès les identifiants des employés. Quel type d'acteur malveillant est le plus susceptible d'être derrière ces attaques ?",
+      "choices": [
+        "Des hacktivistes cherchant à exposer la corruption financière",
+        "Des cybercriminels visant un gain financier",
+        "Des acteurs étatiques cherchant à recueillir des renseignements",
+        "Des script kiddies utilisant des outils automatisés"
+      ],
+      "correctAnswer": "Des cybercriminels visant un gain financier",
+      "explanation": "Les cybercriminels mènent généralement des attaques de phishing pour voler des identifiants à des fins financières, ce qui en fait l'acteur malveillant le plus probable dans ce scénario."
+    },
+    {
+      "question": "Une entreprise découvre que ses données sensibles ont été divulguées en ligne, et la fuite a été retracée à un initié qui était mécontent après avoir été licencié. Quel type d'acteur malveillant cet initié représente-t-il ?",
+      "choices": [
+        "Hacktivist",
+        "Menace interne",
+        "Acteur étatique",
+        "Script kiddie"
+      ],
+      "correctAnswer": "Menace interne",
+      "explanation": "Une menace interne fait référence à des individus au sein de l'organisation qui abusent de leur accès pour nuire à l'organisation, ce qui correspond au scénario d'un ancien employé mécontent."
+    },
+    {
+      "question": "Une multinationale est ciblée par une attaque sophistiquée impliquant des menaces persistantes avancées (APT) pendant plusieurs mois, les attaquants utilisant des logiciels malveillants personnalisés. Quel type d'acteur malveillant est le plus susceptible d'être responsable de ce type d'attaque ?",
+      "choices": [
+        "Cybercriminals",
+        "Hacktivists",
+        "Acteurs étatiques",
+        "Script kiddies"
+      ],
+      "correctAnswer": "Acteurs étatiques",
+      "explanation": "Les acteurs étatiques s'engagent souvent dans des APT, utilisant des techniques et des ressources avancées pour atteindre des objectifs à long terme contre des cibles de grande valeur."
+    },
+    {
+      "question": "Un groupe d'activistes lance une attaque par déni de service (DoS) contre un site web gouvernemental pour protester contre une nouvelle loi. Quel type d'acteur malveillant sont-ils classés ?",
+      "choices": [
+        "Hacktivists",
+        "Cybercriminals",
+        "Menaces internes",
+        "Acteurs étatiques"
+      ],
+      "correctAnswer": "Hacktivists",
+      "explanation": "Les hacktivistes utilisent des cyberattaques pour promouvoir des agendas politiques ou un changement social, ce qui en fait la classification correcte pour les activistes engagés dans une attaque DoS."
+    },
+    {
+      "question": "Une organisation remarque que ses systèmes sont sondés pour des vulnérabilités par une entité inconnue. Le sondage est effectué à l'aide d'outils automatisés, et les attaques ne sont pas sophistiquées. Quel type d'acteur malveillant est le plus susceptible d'être responsable ?",
+      "choices": [
+        "Cybercriminals",
+        "Script kiddies",
+        "Acteurs étatiques",
+        "Menaces internes"
+      ],
+      "correctAnswer": "Script kiddies",
+      "explanation": "Les script kiddies utilisent généralement des scripts et des outils préécrits pour sonder des vulnérabilités sans connaissances techniques approfondies, ce qui correspond au scénario décrit."
+    },
+    {
+      "question": "Un fournisseur de soins de santé subit une attaque par ransomware où les dossiers des patients sont chiffrés, et une rançon est demandée pour leur libération. Quel type d'acteur malveillant est le plus susceptible d'être derrière cette attaque ?",
+      "choices": [
+        "Hacktivists",
+        "Cybercriminals",
+        "Menaces internes",
+        "Acteurs étatiques"
+      ],
+      "correctAnswer": "Cybercriminals",
+      "explanation": "Les cybercriminels utilisent souvent des ransomwares pour extorquer de l'argent aux organisations, en particulier dans des secteurs comme la santé où les données sont précieuses."
+    },
+    {
+      "question": "Une entreprise technologique est ciblée par un groupe qui vise à voler des logiciels propriétaires et de la propriété intellectuelle. Ils emploient des tactiques d'ingénierie sociale pour accéder à des zones sensibles. Quel type d'acteur malveillant ce groupe est-il le plus susceptible d'être classé ?",
+      "choices": [
+        "Menaces internes",
+        "Acteurs étatiques",
+        "Cybercriminals",
+        "Hacktivists"
+      ],
+      "correctAnswer": "Acteurs étatiques",
+      "explanation": "Les acteurs étatiques ciblent souvent la propriété intellectuelle pour un avantage économique, utilisant des techniques sophistiquées, y compris l'ingénierie sociale, pour atteindre leurs objectifs."
+    },
+    {
+      "question": "Une petite entreprise reçoit un e-mail d'un prétendu fournisseur demandant des détails de paiement mais découvre plus tard qu'il s'agissait d'une tentative de phishing. Quel type d'acteur malveillant est probablement responsable de cette attaque ?",
+      "choices": [
+        "Hacktivists",
+        "Cybercriminals",
+        "Acteurs étatiques",
+        "Script kiddies"
+      ],
+      "correctAnswer": "Cybercriminals",
+      "explanation": "Les cybercriminels s'engagent généralement dans des attaques de phishing pour voler des informations sensibles à des fins financières, ce qui correspond au scénario décrit."
+    },
+    {
+      "question": "Un employé d'une entreprise est surpris en train de voler des données sensibles et de les vendre à des concurrents. Quel type d'acteur malveillant cet employé représente-t-il ?",
+      "choices": [
+        "Menace interne",
+        "Acteur étatique",
+        "Cybercriminal",
+        "Hacktivist"
+      ],
+      "correctAnswer": "Menace interne",
+      "explanation": "Une menace interne se caractérise par des individus au sein de l'organisation qui abusent de leur accès à des fins malveillantes, comme la vente de données."
+    },
+    {
+      "question": "Un groupe d'individus est trouvé en train d'exploiter des vulnérabilités dans des logiciels obsolètes pour accéder sans autorisation à des systèmes pour le plaisir et pour se vanter. Quel type d'acteur malveillant ce groupe représente-t-il ?",
+      "choices": [
+        "Hacktivists",
+        "Script kiddies",
+        "Cybercriminals",
+        "Acteurs étatiques"
+      ],
+      "correctAnswer": "Script kiddies",
+      "explanation": "Les script kiddies exploitent souvent des vulnérabilités pour leur amusement personnel ou pour obtenir de la reconnaissance parmi leurs pairs, plutôt que pour des motifs financiers ou politiques."
+    }
+  ],
+  "attributes": [
+    {
+      "question": "Une institution financière subit une violation de données qui expose des informations clients. L'attaque est retracée à un groupe opérant depuis une nation étrangère connue pour ses capacités cybernétiques avancées. Quel type d'acteur malveillant est le plus susceptible d'être responsable de cette attaque ?",
+      "choices": [
+        "Script kiddies",
+        "Acteurs étatiques",
+        "Hacktivists",
+        "Menaces internes"
+      ],
+      "correctAnswer": "Acteurs étatiques",
+      "explanation": "Les acteurs étatiques sont généralement bien dotés en ressources et sophistiqués, ciblant souvent les institutions financières pour recueillir des renseignements ou perturber des services."
+    },
+    {
+      "question": "Une entreprise remarque que son logiciel propriétaire a été rétro-ingénieré et est vendu sur le dark web. Les attaquants sont qualifiés et ont réussi à contourner plusieurs mesures de sécurité. Quel type d'acteur malveillant est le plus susceptible d'être impliqué dans ce scénario ?",
+      "choices": [
+        "Cybercriminals",
+        "Hacktivists",
+        "Script kiddies",
+        "Acteurs étatiques"
+      ],
+      "correctAnswer": "Cybercriminals",
+      "explanation": "Les cybercriminels cherchent souvent un gain financier et ont les compétences nécessaires pour rétro-ingénier des logiciels, ce qui en fait l'acteur malveillant le plus plausible dans cette situation."
+    },
+    {
+      "question": "Un employé d'une entreprise technologique est trouvé en train de divulguer des informations sensibles à des concurrents. Cet individu travaille dans l'entreprise depuis des années et a accès à des systèmes critiques. Quel type d'acteur malveillant cela représente-t-il ?",
+      "choices": [
+        "Script kiddies",
+        "Menaces internes",
+        "Hacktivists",
+        "Acteurs étatiques"
+      ],
+      "correctAnswer": "Menaces internes",
+      "explanation": "Les menaces internes impliquent des individus au sein d'une organisation qui abusent de leur accès pour compromettre la sécurité, ce qui correspond parfaitement à ce scénario."
+    },
+    {
+      "question": "Un groupe d'activistes lance une campagne pour défigurer un site web gouvernemental en protestation contre une nouvelle loi. Ils utilisent des outils basiques disponibles en ligne et ont des compétences techniques limitées. Quel type d'acteur malveillant sont-ils le plus susceptibles d'être classés ?",
+      "choices": [
+        "Acteurs étatiques",
+        "Cybercriminals",
+        "Hacktivists",
+        "Script kiddies"
+      ],
+      "correctAnswer": "Hacktivists",
+      "explanation": "Les hacktivistes sont motivés par des causes politiques ou sociales et utilisent souvent des outils disponibles pour exécuter leurs campagnes, ce qui correspond aux actions décrites."
+    },
+    {
+      "question": "Une grande entreprise est ciblée par une campagne de phishing sophistiquée qui compromet avec succès plusieurs comptes d'exécutifs. Les attaquants sont censés avoir des ressources et des connaissances étendues sur les opérations de l'entreprise. Quel type d'acteur malveillant est le plus susceptible d'être responsable ?",
+      "choices": [
+        "Script kiddies",
+        "Acteurs étatiques",
+        "Cybercriminals",
+        "Menaces internes"
+      ],
+      "correctAnswer": "Acteurs étatiques",
+      "explanation": "Le niveau de sophistication et les ressources nécessaires pour une campagne de phishing réussie ciblant des exécutifs suggèrent l'implication d'acteurs étatiques."
+    },
+    {
+      "question": "Une petite startup est frappée par une attaque par ransomware qui exige un paiement en cryptomonnaie. Les attaquants utilisent une souche de ransomware bien connue et ont la réputation de cibler les petites entreprises. Quel type d'acteur malveillant est probablement responsable ?",
+      "choices": [
+        "Hacktivists",
+        "Cybercriminals",
+        "Acteurs étatiques",
+        "Menaces internes"
+      ],
+      "correctAnswer": "Cybercriminals",
+      "explanation": "Les cybercriminels s'engagent généralement dans des attaques par ransomware pour un gain financier, en ciblant particulièrement les petites entreprises vulnérables."
+    },
+    {
+      "question": "Une organisation découvre que son réseau a été infiltré par un groupe qui vole de la propriété intellectuelle pour obtenir un avantage concurrentiel. Les attaquants sont très qualifiés et opèrent depuis plusieurs pays. Quel type d'acteur malveillant ce scénario représente-t-il ?",
+      "choices": [
+        "Menaces internes",
+        "Hacktivists",
+        "Acteurs étatiques",
+        "Cybercriminals"
+      ],
+      "correctAnswer": "Acteurs étatiques",
+      "explanation": "L'accent mis sur le vol de propriété intellectuelle pour un avantage concurrentiel suggère l'implication d'acteurs étatiques, qui s'engagent souvent dans l'espionnage économique."
+    },
+    {
+      "question": "Un adolescent utilise un outil de hacking populaire pour défigurer le site web d'une école locale, publiant un message sur l'importance de la cybersécurité. Quel type d'acteur malveillant ce comportement exemplifie-t-il ?",
+      "choices": [
+        "Script kiddies",
+        "Cybercriminals",
+        "Hacktivists",
+        "Acteurs étatiques"
+      ],
+      "correctAnswer": "Script kiddies",
+      "explanation": "Les script kiddies utilisent généralement des outils préexistants pour mener des attaques sans connaissances techniques approfondies, ce qui correspond au scénario d'un adolescent défigurant un site web."
+    },
+    {
+      "question": "Une entreprise découvre qu'un concurrent a accédé à ses données confidentielles à travers une série d'attaques sophistiquées exploitant des vulnérabilités zero-day. Les attaquants sont censés être très qualifiés et financés. Quel type d'acteur malveillant cela indique-t-il ?",
+      "choices": [
+        "Menaces internes",
+        "Hacktivists",
+        "Acteurs étatiques",
+        "Cybercriminals"
+      ],
+      "correctAnswer": "Acteurs étatiques",
+      "explanation": "L'utilisation de vulnérabilités zero-day et la sophistication des attaques suggèrent que des acteurs étatiques sont impliqués, car ils ont généralement les ressources et les compétences nécessaires pour mener de telles opérations."
+    },
+    {
+      "question": "Un groupe d'anciens employés est trouvé en train de vendre des informations sensibles de l'entreprise à des concurrents. Ils ont des connaissances internes et un accès à des systèmes propriétaires. Quel type d'acteur malveillant cela représente-t-il ?",
+      "choices": [
+        "Menaces internes",
+        "Cybercriminals",
+        "Hacktivists",
+        "Acteurs étatiques"
+      ],
+      "correctAnswer": "Menaces internes",
+      "explanation": "Ce scénario représente clairement des menaces internes, car les individus impliqués sont d'anciens employés ayant accès à des informations et des systèmes sensibles."
+    }
+  ],
+  "motivations": [
+    {
+      "question": "Un hacker accède à la base de données d'une institution financière et vole des informations sur les clients. Quelle est la motivation la plus probable derrière cette attaque ?",
+      "choices": [
+        "Pour exposer les failles de sécurité de l'institution au public",
+        "Pour vendre les données volées sur le dark web à des fins financières",
+        "Pour perturber les opérations de l'institution en guise de protestation",
+        "Pour gagner en notoriété parmi ses pairs dans la communauté des hackers"
+      ],
+      "correctAnswer": "Pour vendre les données volées sur le dark web à des fins financières",
+      "explanation": "La motivation principale pour voler des informations sur les clients d'une institution financière est généralement le gain financier, souvent réalisé en vendant les données sur le dark web."
+    },
+    {
+      "question": "Un groupe de hacktivistes défigure un site web gouvernemental pour protester contre une nouvelle loi. Quelle est leur motivation probable ?",
+      "choices": [
+        "Pour voler des données gouvernementales sensibles",
+        "Pour promouvoir leur agenda politique et sensibiliser le public",
+        "Pour recruter de nouveaux membres pour leur groupe",
+        "Pour perturber les opérations gouvernementales à des fins personnelles"
+      ],
+      "correctAnswer": "Pour promouvoir leur agenda politique et sensibiliser le public",
+      "explanation": "Les hacktivistes sont généralement motivés par des causes politiques ou sociales, cherchant à sensibiliser et à promouvoir leur agenda par des actes de défiguration."
+    },
+    {
+      "question": "Un cybercriminel utilise un ransomware pour chiffrer les fichiers d'une entreprise et exige un paiement pour la clé de déchiffrement. Quelle est la motivation principale de cette attaque ?",
+      "choices": [
+        "Pour démontrer des compétences techniques",
+        "Pour accéder à des informations sensibles",
+        "Pour extorquer de l'argent à l'entreprise",
+        "Pour saboter les opérations de l'entreprise"
+      ],
+      "correctAnswer": "Pour extorquer de l'argent à l'entreprise",
+      "explanation": "Les attaques par ransomware sont principalement motivées par le gain financier, les attaquants cherchant à extorquer de l'argent aux victimes en échange de la restauration de l'accès à leurs données."
+    },
+    {
+      "question": "Une menace interne au sein d'une entreprise divulgue des secrets commerciaux confidentiels à un concurrent. Quelle est la motivation la plus probable pour cette action ?",
+      "choices": [
+        "Pour se venger de l'entreprise pour un tort perçu",
+        "Pour améliorer ses propres compétences en cybersécurité",
+        "Pour obtenir une reconnaissance dans l'industrie",
+        "Pour se conformer à des obligations légales"
+      ],
+      "correctAnswer": "Pour se venger de l'entreprise pour un tort perçu",
+      "explanation": "Les menaces internes proviennent souvent de griefs personnels, et la divulgation de secrets commerciaux peut être une forme de représailles contre l'employeur."
+    },
+    {
+      "question": "Un adolescent pirate le réseau d'une école locale et change des notes pour s'amuser. Quelle est la motivation probable derrière cette action ?",
+      "choices": [
+        "Pour démontrer ses compétences en hacking à ses pairs",
+        "Pour rechercher un gain financier en vendant l'accès",
+        "Pour perturber les opérations de l'école",
+        "Pour exposer les vulnérabilités du réseau de l'école"
+      ],
+      "correctAnswer": "Pour démontrer ses compétences en hacking à ses pairs",
+      "explanation": "Les adolescents s'engagent souvent dans le hacking pour le frisson et pour impressionner leurs pairs, plutôt que pour un gain financier ou une intention malveillante."
+    },
+    {
+      "question": "Un attaquant parrainé par l'État infiltre l'infrastructure d'un gouvernement étranger pour recueillir des renseignements. Quelle est leur motivation principale ?",
+      "choices": [
+        "Pour perturber les opérations du gouvernement étranger",
+        "Pour voler de la propriété intellectuelle à des fins commerciales",
+        "Pour recueillir des informations à des fins de sécurité nationale",
+        "Pour créer le chaos et l'instabilité dans la région"
+      ],
+      "correctAnswer": "Pour recueillir des informations à des fins de sécurité nationale",
+      "explanation": "Les attaques parrainées par l'État sont généralement motivées par le besoin de recueillir des renseignements pouvant améliorer la sécurité nationale."
+    },
+    {
+      "question": "Un cybercriminel compromet un compte de réseau social populaire pour diffuser de la désinformation. Quelle pourrait être sa motivation ?",
+      "choices": [
+        "Pour gagner des abonnés pour son propre compte",
+        "Pour manipuler l'opinion publique à des fins politiques",
+        "Pour tester ses compétences en hacking",
+        "Pour vendre le compte à profit"
+      ],
+      "correctAnswer": "Pour manipuler l'opinion publique à des fins politiques",
+      "explanation": "La diffusion de désinformation vise souvent à influencer l'opinion publique ou les résultats politiques, ce qui en fait une attaque motivée politiquement."
+    },
+    {
+      "question": "Un employé mécontent télécharge des données sensibles de l'entreprise avant de quitter son poste. Quelle est la motivation probable pour cette action ?",
+      "choices": [
+        "Pour vendre les données à des concurrents",
+        "Pour utiliser les informations à des fins personnelles",
+        "Pour exposer les pratiques contraires à l'éthique de l'entreprise",
+        "Pour améliorer son CV avec plus d'expérience"
+      ],
+      "correctAnswer": "Pour utiliser les informations à des fins personnelles",
+      "explanation": "Les employés mécontents peuvent emporter des données sensibles avec l'intention de les utiliser à des fins personnelles, comme les exploiter dans un nouvel emploi ou les vendre."
+    },
+    {
+      "question": "Un groupe de cybercriminels lance une attaque par déni de service distribué (DDoS) contre une plateforme de jeu en ligne rivale. Quelle est leur motivation principale ?",
+      "choices": [
+        "Pour démontrer leur expertise technique",
+        "Perturber la concurrence et gagner des parts de marché",
+        "Exposer les vulnérabilités de la plateforme rivale",
+        "Attirer l'attention des médias"
+      ],
+      "correctAnswer": "Perturber la concurrence et gagner des parts de marché",
+      "explanation": "Les attaques DDoS contre les concurrents sont souvent motivées par le désir de perturber leurs opérations et de gagner un avantage sur le marché."
+    },
+    {
+      "question": "Un individu pirate le système de dons d'une œuvre de charité et redirige les fonds vers son propre compte. Quelle est la motivation la plus probable pour ce crime ?",
+      "choices": [
+        "Exposer la mauvaise gestion financière de l'œuvre de charité",
+        "Obtenir un bénéfice financier personnel",
+        "Démontrer des compétences en hacking à des pairs",
+        "Sensibiliser à la fraude dans les œuvres de charité"
+      ],
+      "correctAnswer": "Obtenir un bénéfice financier personnel",
+      "explanation": "Pirater le système de dons d'une œuvre de charité pour un gain personnel indique une motivation financière claire, car l'attaquant cherche à bénéficier des fonds."
+    }
+  ]
+}

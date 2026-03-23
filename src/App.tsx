@@ -79,10 +79,11 @@ function forceScrollTop() {
 
 function App() {
   const route = useHashRoute()
-  const { data: course, err } = useCourseData()
   const audioEngine = useMemo(() => createAudioEngine(), [])
   const [query, setQuery] = useState('')
   const [language, setLanguageState] = useLocalStorageState<AppLanguage>('appLanguageV1', 'fr')
+  const normalizedLanguage = normalizeLanguage(language)
+  const { data: course, err } = useCourseData(normalizedLanguage)
   const [preferences, setPreferences] = useLocalStorageState<UXPreferences>('uxPreferencesV1', {
     soundEnabled: true,
     funAnimationsEnabled: true,
@@ -111,7 +112,6 @@ function App() {
     setLanguageState(normalizeLanguage(nextLanguage))
   }, [setLanguageState])
 
-  const normalizedLanguage = normalizeLanguage(language)
   const t = useMemo(() => createTranslator(normalizedLanguage), [normalizedLanguage])
   const i18nValue = useMemo(
     () => ({ language: normalizedLanguage, setLanguage, t }),

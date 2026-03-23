@@ -24,6 +24,8 @@ dist-ssr
 *.sw?
 Dockerfile
 /public/data/a.py
+/public/data/b.py
+/public/data/__pycache__/
 
 nginx.conf
 .npm-cache

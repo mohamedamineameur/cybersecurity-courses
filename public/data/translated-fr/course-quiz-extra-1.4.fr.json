@@ -1,0 +1,786 @@
+{
+  "pki": [
+    {
+      "question": "Une entreprise utilise une infrastructure à clé publique (PKI) pour sécuriser les communications. Quel est le principal objectif des certificats numériques émis par la PKI ?",
+      "choices": [
+        "Chiffrer les e-mails",
+        "Vérifier l'identité des utilisateurs et des dispositifs",
+        "Générer des clés de chiffrement",
+        "Stocker des données sensibles"
+      ],
+      "correctAnswer": "Vérifier l'identité des utilisateurs et des dispositifs",
+      "explanation": "Les certificats numériques sont utilisés pour confirmer l'identité des entités dans une PKI, garantissant que les communications sont sécurisées et proviennent de sources de confiance."
+    },
+    {
+      "question": "Dans un environnement PKI, quelle clé doit être partagée ouvertement avec d'autres ?",
+      "choices": [
+        "Clé privée",
+        "Clé de récupération",
+        "Clé publique",
+        "Clé d'entiercement uniquement"
+      ],
+      "correctAnswer": "Clé publique",
+      "explanation": "La clé publique est conçue pour être partagée, tandis que la clé privée doit rester secrète."
+    },
+    {
+      "question": "Quelle clé doit rester secrète dans un système de cryptographie asymétrique ?",
+      "choices": [
+        "Clé publique",
+        "Clé privée",
+        "Numéro de série du certificat",
+        "Sortie de hachage"
+      ],
+      "correctAnswer": "Clé privée",
+      "explanation": "La clé privée est utilisée pour déchiffrer ou signer et ne doit jamais être exposée."
+    },
+    {
+      "question": "Quel est le rôle principal de la PKI ?",
+      "choices": [
+        "Compresser des fichiers pour le stockage",
+        "Gérer la confiance, les certificats et les clés",
+        "Surveiller l'utilisation de la bande passante",
+        "Remplacer les pare-feu"
+      ],
+      "correctAnswer": "Gérer la confiance, les certificats et les clés",
+      "explanation": "La PKI fournit le cadre pour la validation d'identité, l'utilisation de certificats et la gestion des clés."
+    },
+    {
+      "question": "Pourquoi une entreprise utiliserait-elle l'entiercement des clés ?",
+      "choices": [
+        "Pour publier toutes les clés privées sur Internet",
+        "Pour permettre la récupération sécurisée des clés cryptographiques",
+        "Pour affaiblir le chiffrement pour la compatibilité",
+        "Pour éviter l'émission de certificats"
+      ],
+      "correctAnswer": "Pour permettre la récupération sécurisée des clés cryptographiques",
+      "explanation": "L'entiercement des clés stocke les clés en toute sécurité afin qu'une récupération autorisée soit possible si nécessaire."
+    },
+    {
+      "question": "Un serveur utilise sa clé privée lors d'une poignée de main TLS. Que doit-on dire de cette clé ?",
+      "choices": [
+        "Elle peut être partagée avec chaque client",
+        "Elle doit rester confidentielle",
+        "Elle doit être remplacée par un hachage",
+        "Elle doit être stockée en texte clair sur le site Web"
+      ],
+      "correctAnswer": "Elle doit rester confidentielle",
+      "explanation": "La compromission de la clé privée sape la confiance et peut exposer des communications sécurisées."
+    },
+    {
+      "question": "Quelle est une utilisation courante d'une clé publique dans la PKI ?",
+      "choices": [
+        "Déchiffrer toutes les sauvegardes seul",
+        "Chiffrer des données ou vérifier des signatures",
+        "Stocker des mots de passe dans un navigateur",
+        "Désactiver les vérifications de certificats"
+      ],
+      "correctAnswer": "Chiffrer des données ou vérifier des signatures",
+      "explanation": "Les clés publiques sont couramment utilisées pour chiffrer des données pour le propriétaire ou vérifier des signatures numériques."
+    },
+    {
+      "question": "Si une organisation perd une clé privée critique et n'a aucune option de récupération, quel contrôle lié à la PKI aurait aidé ?",
+      "choices": [
+        "Entiercement des clés",
+        "Tokenization",
+        "Masking",
+        "Steganography"
+      ],
+      "correctAnswer": "Entiercement des clés",
+      "explanation": "L'entiercement des clés peut fournir un chemin de récupération sécurisé pour des clés de chiffrement importantes."
+    },
+    {
+      "question": "Pourquoi la PKI est-elle importante pour une authentification sécurisée entre systèmes ?",
+      "choices": [
+        "Elle fournit un moyen d'établir une confiance numérique",
+        "Elle supprime le besoin de chiffrement",
+        "Elle garantit que chaque système utilise le même mot de passe",
+        "Elle remplace la journalisation et la surveillance"
+      ],
+      "correctAnswer": "Elle fournit un moyen d'établir une confiance numérique",
+      "explanation": "La PKI permet aux systèmes de valider les identités à l'aide de certificats et de clés cryptographiques."
+    },
+    {
+      "question": "Quel est le plus grand risque si une clé de signature privée est exposée ?",
+      "choices": [
+        "Les fichiers deviennent compressés",
+        "Les attaquants peuvent usurper l'identité du propriétaire légitime",
+        "La vitesse du réseau diminue automatiquement",
+        "Les clés publiques cessent de fonctionner définitivement"
+      ],
+      "correctAnswer": "Les attaquants peuvent usurper l'identité du propriétaire légitime",
+      "explanation": "Avec la clé privée, un attaquant peut déchiffrer des données protégées ou créer des signatures frauduleuses."
+    }
+  ],
+  "encryption": [
+    {
+      "question": "Une entreprise doit transmettre en toute sécurité des données financières sensibles sur Internet. Quelle solution cryptographique devraient-ils mettre en œuvre pour garantir la confidentialité lors de la transmission ?",
+      "choices": [
+        "Hacher les données avant la transmission",
+        "Utiliser SSL/TLS pour une communication sécurisée",
+        "Chiffrer les données avec une clé symétrique",
+        "Signer numériquement les données"
+      ],
+      "correctAnswer": "Utiliser SSL/TLS pour une communication sécurisée",
+      "explanation": "SSL/TLS fournit un canal sécurisé sur Internet, garantissant que les données sont chiffrées lors de la transmission, maintenant ainsi la confidentialité."
+    },
+    {
+      "question": "Une organisation souhaite protéger des fichiers sensibles sur les ordinateurs portables de ses employés. Quelle méthode cryptographique serait la plus efficace pour garantir que seuls les utilisateurs autorisés peuvent accéder à ces fichiers ?",
+      "choices": [
+        "Hachage de fichiers",
+        "Chiffrement de disque complet",
+        "Infrastructure à clé publique",
+        "Signatures numériques"
+      ],
+      "correctAnswer": "Chiffrement de disque complet",
+      "explanation": "Le chiffrement de disque complet sécurise toutes les données sur le disque, garantissant que seuls les utilisateurs autorisés avec les bonnes informations d'identification peuvent accéder aux fichiers."
+    },
+    {
+      "question": "Une équipe de sécurité évalue un nouvel algorithme de chiffrement pour leurs données au repos. Ils souhaitent s'assurer que l'algorithme est résistant aux attaques par force brute. Quelle caractéristique de l'algorithme devraient-ils prioriser ?",
+      "choices": [
+        "Longueur de clé courte",
+        "Complexité de l'algorithme",
+        "Pratiques de gestion des clés",
+        "Longueur de clé longue"
+      ],
+      "correctAnswer": "Longueur de clé longue",
+      "explanation": "Une longueur de clé plus longue augmente le nombre de clés possibles, rendant significativement plus difficile pour les attaquants de réussir à effectuer des attaques par force brute."
+    },
+    {
+      "question": "Lors d'un audit de sécurité, il a été découvert qu'un employé utilise un mot de passe faible pour accéder à des fichiers chiffrés. Quelle pratique cryptographique l'organisation devrait-elle appliquer pour améliorer la sécurité ?",
+      "choices": [
+        "Mettre en œuvre l'authentification multi-facteurs",
+        "Passer à un autre algorithme de chiffrement",
+        "Utiliser un gestionnaire de mots de passe",
+        "Changer régulièrement les clés de chiffrement"
+      ],
+      "correctAnswer": "Mettre en œuvre l'authentification multi-facteurs",
+      "explanation": "L'authentification multi-facteurs ajoute une couche de sécurité supplémentaire, rendant plus difficile l'accès aux fichiers chiffrés pour les utilisateurs non autorisés, même s'ils ont le mot de passe."
+    },
+    {
+      "question": "Une organisation est en train de passer à un fournisseur de services cloud et doit s'assurer que les données sensibles sont sécurisées en transit et au repos. Quelle combinaison de solutions cryptographiques devraient-ils mettre en œuvre ?",
+      "choices": [
+        "Chiffrer uniquement les données au repos",
+        "Utiliser uniquement le hachage pour l'intégrité des données",
+        "Utiliser le chiffrement pour les données à la fois au repos et en transit",
+        "Utiliser des signatures numériques pour toutes les données"
+      ],
+      "correctAnswer": "Utiliser le chiffrement pour les données à la fois au repos et en transit",
+      "explanation": "Chiffrer les données à la fois au repos et en transit garantit une protection complète contre l'accès non autorisé et les violations de données."
+    },
+    {
+      "question": "Une entreprise met en œuvre un nouveau système qui nécessite une authentification utilisateur sécurisée. Elle souhaite utiliser une méthode impliquant un secret partagé. Quelle solution cryptographique devraient-ils envisager ?",
+      "choices": [
+        "Chiffrement par clé publique",
+        "Chiffrement par clé symétrique",
+        "Chiffrement par clé asymétrique",
+        "Certificats numériques"
+      ],
+      "correctAnswer": "Chiffrement par clé symétrique",
+      "explanation": "Le chiffrement par clé symétrique utilise une clé secrète partagée pour le chiffrement et le déchiffrement, ce qui le rend adapté à l'authentification utilisateur sécurisée."
+    },
+    {
+      "question": "Une équipe de cybersécurité examine les méthodes de chiffrement utilisées pour les données sensibles des clients. Elle remarque que certaines données sont chiffrées avec une clé qui est stockée à côté des données chiffrées. Quel est le principal risque associé à cette pratique ?",
+      "choices": [
+        "L'intégrité des données est compromise",
+        "L'algorithme de chiffrement est faible",
+        "La clé de chiffrement peut être facilement accessible par des attaquants",
+        "Les données peuvent être perdues si la clé est supprimée"
+      ],
+      "correctAnswer": "La clé de chiffrement peut être facilement accessible par des attaquants",
+      "explanation": "Stocker la clé de chiffrement à côté des données chiffrées crée un risque de sécurité significatif, car les attaquants qui accèdent aux données peuvent également accéder à la clé, rendant le chiffrement inefficace."
+    },
+    {
+      "question": "Quel type de chiffrement utilise couramment une seule clé partagée pour le chiffrement et le déchiffrement ?",
+      "choices": [
+        "Chiffrement symétrique",
+        "Chiffrement asymétrique",
+        "Hashing",
+        "Tokenization"
+      ],
+      "correctAnswer": "Chiffrement symétrique",
+      "explanation": "Le chiffrement symétrique utilise la même clé secrète partagée des deux côtés."
+    },
+    {
+      "question": "Quel est le principal objectif de l'échange de clés dans une session de communication sécurisée ?",
+      "choices": [
+        "Pour compresser le trafic",
+        "Pour établir des clés de chiffrement de manière sécurisée",
+        "Pour révoquer des certificats",
+        "Pour stocker des mots de passe dans des journaux"
+      ],
+      "correctAnswer": "Pour établir des clés de chiffrement de manière sécurisée",
+      "explanation": "Les mécanismes d'échange de clés permettent aux deux parties de s'accorder sur des matériaux secrets de manière sécurisée."
+    },
+    {
+      "question": "Quelle approche de chiffrement est la mieux adaptée pour protéger les données transmises sur HTTPS ?",
+      "choices": [
+        "Chiffrement de transport",
+        "Masquage des données",
+        "Uniquement la tokenisation",
+        "Révocation de certificat"
+      ],
+      "correctAnswer": "Chiffrement de transport",
+      "explanation": "Le chiffrement de transport protège les données pendant leur transit entre les systèmes, comme avec HTTPS."
+    }
+  ],
+  "tools": [
+    {
+      "question": "Quel outil cryptographique est intégré dans de nombreux ordinateurs et est couramment utilisé pour stocker en toute sécurité les clés liées à BitLocker ?",
+      "choices": [
+        "HSM",
+        "TPM",
+        "KMS",
+        "OCSP"
+      ],
+      "correctAnswer": "TPM",
+      "explanation": "Un module de plateforme de confiance est un composant matériel conçu pour stocker en toute sécurité des matériaux cryptographiques."
+    },
+    {
+      "question": "Quelle est la fonction principale d'un module de sécurité matériel (HSM) ?",
+      "choices": [
+        "Bloquer les adresses IP malveillantes",
+        "Génération et protection sécurisées des clés",
+        "Compression des fichiers de certificats",
+        "Création de segments de réseau"
+      ],
+      "correctAnswer": "Génération et protection sécurisées des clés",
+      "explanation": "Un HSM est un matériel dédié utilisé pour gérer en toute sécurité des clés sensibles et des opérations cryptographiques."
+    },
+    {
+      "question": "Pourquoi un environnement cloud utiliserait-il un système de gestion des clés (KMS) ?",
+      "choices": [
+        "Pour gérer et faire tourner les clés de chiffrement de manière centralisée",
+        "Pour effectuer une inspection des paquets",
+        "Pour remplacer tous les certificats",
+        "Pour cacher des données dans des fichiers image"
+      ],
+      "correctAnswer": "Pour gérer et faire tourner les clés de chiffrement de manière centralisée",
+      "explanation": "Un KMS aide à générer, stocker, faire tourner et gérer les clés de manière contrôlée."
+    },
+    {
+      "question": "Quel outil fournit un environnement d'exécution sécurisé isolé sur certains appareils ?",
+      "choices": [
+        "Enclave sécurisée",
+        "Certificat wildcard",
+        "CRL",
+        "CA"
+      ],
+      "correctAnswer": "Enclave sécurisée",
+      "explanation": "Une enclave sécurisée est un environnement isolé conçu pour protéger des opérations sensibles et des secrets."
+    },
+    {
+      "question": "Un système de paiement a besoin d'une protection extrêmement forte pour les clés de signature utilisées dans les transactions financières. Quelle solution est la plus appropriée ?",
+      "choices": [
+        "Stocker les clés dans un fichier texte",
+        "Utiliser un HSM",
+        "Utiliser le Wi-Fi public",
+        "Désactiver les journaux de chiffrement"
+      ],
+      "correctAnswer": "Utiliser un HSM",
+      "explanation": "Les HSM sont spécifiquement conçus pour le stockage de clés à haute sécurité et les opérations cryptographiques."
+    },
+    {
+      "question": "Quel avantage un TPM offre-t-il pour la sécurité des points de terminaison ?",
+      "choices": [
+        "Il stocke les clés dans un matériel dédié",
+        "Il remplace complètement les mots de passe des utilisateurs",
+        "Il effectue une validation de blockchain",
+        "Il crée des certificats wildcard"
+      ],
+      "correctAnswer": "Il stocke les clés dans un matériel dédié",
+      "explanation": "Les TPM aident à protéger les secrets contre une extraction facile depuis le logiciel seul."
+    },
+    {
+      "question": "Quel outil cryptographique est le plus susceptible d'aider à automatiser la rotation des clés à travers de nombreuses ressources cloud ?",
+      "choices": [
+        "KMS",
+        "Steganography",
+        "CRL",
+        "Hashing"
+      ],
+      "correctAnswer": "KMS",
+      "explanation": "Un système de gestion des clés est destiné à administrer de manière centralisée les clés et les opérations de cycle de vie associées."
+    },
+    {
+      "question": "Pourquoi un appareil mobile pourrait-il utiliser une enclave sécurisée pour les données d'authentification biométrique ?",
+      "choices": [
+        "Pour isoler des secrets sensibles de l'environnement d'exploitation principal",
+        "Pour augmenter le débit du réseau",
+        "Pour publier des identités d'utilisateur",
+        "Pour supprimer le besoin de chiffrement"
+      ],
+      "correctAnswer": "Pour isoler des secrets sensibles de l'environnement d'exploitation principal",
+      "explanation": "Les enclaves sécurisées protègent des opérations et des données hautement sensibles contre des compromissions plus larges."
+    },
+    {
+      "question": "Quelle déclaration décrit le mieux la différence entre un TPM et un HSM ?",
+      "choices": [
+        "Un TPM est un matériel axé sur les points de terminaison, tandis qu'un HSM est un dispositif cryptographique dédié à haute sécurité",
+        "Un TPM est destiné à la tokenisation, tandis qu'un HSM est destiné au masquage",
+        "Un TPM ne stocke que des certificats, tandis qu'un HSM ne stocke que des journaux",
+        "Ils ne sont pas liés à la cryptographie"
+      ],
+      "correctAnswer": "Un TPM est un matériel axé sur les points de terminaison, tandis qu'un HSM est un dispositif cryptographique dédié à haute sécurité",
+      "explanation": "Les deux protègent les clés, mais les TPM sont généralement intégrés dans les points de terminaison tandis que les HSM sont des dispositifs dédiés pour une protection centralisée plus forte."
+    },
+    {
+      "question": "Une entreprise souhaite une visibilité centralisée sur les applications utilisant quelles clés. Quel outil correspond le mieux à ce besoin ?",
+      "choices": [
+        "Système de gestion des clés",
+        "Outil de stéganographie",
+        "Certificat wildcard",
+        "Portail de réinitialisation de mot de passe"
+      ],
+      "correctAnswer": "Système de gestion des clés",
+      "explanation": "Un KMS aide les organisations à gérer, auditer et contrôler l'utilisation des clés à travers les systèmes."
+    }
+  ],
+  "obfuscation": [
+    {
+      "question": "La tokenisation remplace les données par :",
+      "choices": [
+        "Keys",
+        "Tokens",
+        "Hashes",
+        "Encryption"
+      ],
+      "correctAnswer": "Tokens",
+      "explanation": "Des données sensibles sont remplacées."
+    },
+    {
+      "question": "Quelle technique d'obfuscation cache des informations à l'intérieur d'un autre fichier, comme une image ?",
+      "choices": [
+        "Steganography",
+        "Hashing",
+        "Chiffrement symétrique",
+        "Étirement de clé"
+      ],
+      "correctAnswer": "Steganography",
+      "explanation": "La stéganographie dissimule des données à l'intérieur d'un autre support plutôt que de simplement les chiffrer."
+    },
+    {
+      "question": "Quel est l'objectif principal du masquage des données ?",
+      "choices": [
+        "Rendre les valeurs sensibles illisibles dans les données affichées",
+        "Créer des signatures numériques",
+        "Pour révoquer des certificats",
+        "Stocker des clés privées"
+      ],
+      "correctAnswer": "Rendre les valeurs sensibles illisibles dans les données affichées",
+      "explanation": "Le masquage des données cache des portions d'informations sensibles tout en préservant suffisamment de structure pour une utilisation."
+    },
+    {
+      "question": "Pourquoi une application de paiement pourrait-elle utiliser la tokenisation pour les numéros de carte de crédit ?",
+      "choices": [
+        "Pour remplacer des valeurs sensibles par des substituts non sensibles",
+        "Pour augmenter la vitesse du processeur",
+        "Pour créer des certificats racines",
+        "Pour vérifier les engagements de code"
+      ],
+      "correctAnswer": "Pour remplacer des valeurs sensibles par des substituts non sensibles",
+      "explanation": "La tokenisation réduit l'exposition en remplaçant les données sensibles par des jetons."
+    },
+    {
+      "question": "Quelle option est un exemple de données masquées ?",
+      "choices": [
+        "4111-1111-1111-1111",
+        "XXXX-XXXX-1234",
+        "Digest SHA-256",
+        "Établissement de connexion TLS"
+      ],
+      "correctAnswer": "XXXX-XXXX-1234",
+      "explanation": "Les données masquées cachent une partie de la valeur originale tout en gardant une portion visible limitée."
+    },
+    {
+      "question": "Comment la tokenisation diffère-t-elle du chiffrement ?",
+      "choices": [
+        "La tokenisation substitue les données, tandis que le chiffrement les transforme mathématiquement",
+        "La tokenisation utilise toujours une clé privée",
+        "Le chiffrement ne protège jamais les données",
+        "Ce sont exactement le même processus"
+      ],
+      "correctAnswer": "La tokenisation substitue les données, tandis que le chiffrement les transforme mathématiquement",
+      "explanation": "La tokenisation remplace la valeur par un jeton de référence, tandis que le chiffrement convertit le texte en clair en texte chiffré."
+    },
+    {
+      "question": "Quelle technique est la meilleure lorsqu'une organisation souhaite que les employés ne voient que des numéros de compte partiels à l'écran ?",
+      "choices": [
+        "Masquage des données",
+        "Révocation de certificat",
+        "Blockchain",
+        "Génération de CSR"
+      ],
+      "correctAnswer": "Masquage des données",
+      "explanation": "Le masquage cache une partie de la valeur sensible tout en permettant à l'utilisateur d'identifier l'enregistrement."
+    },
+    {
+      "question": "Un attaquant vole une base de données contenant uniquement des valeurs de substitution au lieu de vraies données de carte. Quel contrôle a probablement réduit le risque ?",
+      "choices": [
+        "Tokenization",
+        "Steganography",
+        "OCSP",
+        "Certificats wildcard"
+      ],
+      "correctAnswer": "Tokenization",
+      "explanation": "La tokenisation limite l'utilité des enregistrements volés en remplaçant les données sensibles par des jetons."
+    },
+    {
+      "question": "Quelle affirmation sur la stéganographie est correcte ?",
+      "choices": [
+        "Elle cache l'existence des données elles-mêmes",
+        "Elle n'est utilisée que pour le hachage de mots de passe",
+        "Elle remplace des certificats",
+        "C'est la même chose que le contrôle de version"
+      ],
+      "correctAnswer": "Elle cache l'existence des données elles-mêmes",
+      "explanation": "La stéganographie vise à dissimuler la présence d'informations à l'intérieur d'un autre fichier ou support."
+    },
+    {
+      "question": "Quand l'obfuscation serait-elle préférée à l'affichage de la vraie valeur à un représentant du support ?",
+      "choices": [
+        "Lorsque le représentant n'a besoin que d'une visibilité limitée sur des données sensibles",
+        "Lors de la création de CAs racines",
+        "Lors du partage de clés privées",
+        "Lors de la rotation du firmware HSM"
+      ],
+      "correctAnswer": "Lorsque le représentant n'a besoin que d'une visibilité limitée sur des données sensibles",
+      "explanation": "Les techniques d'obfuscation réduisent l'exposition lorsque des valeurs sensibles complètes ne sont pas nécessaires pour la tâche."
+    }
+  ],
+  "hashing": [
+    {
+      "question": "Un développeur a pour tâche de mettre en œuvre des vérifications d'intégrité des données pour une application de transfert de fichiers. Quelle solution cryptographique devraient-ils utiliser pour s'assurer que les fichiers n'ont pas été altérés lors de la transmission ?",
+      "choices": [
+        "Chiffrement symétrique",
+        "Fonctions de hachage",
+        "Chiffrement asymétrique",
+        "Chiffrement par clé publique"
+      ],
+      "correctAnswer": "Fonctions de hachage",
+      "explanation": "Les fonctions de hachage créent une valeur de hachage unique pour les fichiers, permettant à l'application de vérifier que les fichiers n'ont pas été modifiés pendant la transmission."
+    },
+    {
+      "question": "Une institution financière s'inquiète de la sécurité des transactions des clients. Elle souhaite s'assurer que les transactions ne peuvent pas être contestées après leur réalisation. Quelle solution cryptographique devraient-ils mettre en œuvre ?",
+      "choices": [
+        "Chiffrement des données de transaction",
+        "Signatures numériques",
+        "Hachage des détails de transaction",
+        "Infrastructure à clé publique"
+      ],
+      "correctAnswer": "Signatures numériques",
+      "explanation": "Les signatures numériques fournissent la non-répudiation, garantissant qu'une fois qu'une transaction est signée, le signataire ne peut pas nier l'avoir réalisée."
+    },
+    {
+      "question": "Quelle caractéristique décrit le mieux le hachage ?",
+      "choices": [
+        "Il est réversible avec la bonne clé",
+        "C'est une transformation unidirectionnelle",
+        "Il cache toujours des données dans des images",
+        "Il nécessite une autorité de certification"
+      ],
+      "correctAnswer": "C'est une transformation unidirectionnelle",
+      "explanation": "Le hachage est conçu pour être unidirectionnel et est couramment utilisé pour vérifier l'intégrité."
+    },
+    {
+      "question": "Pourquoi le salage est-il utilisé lors du hachage des mots de passe ?",
+      "choices": [
+        "Pour ajouter de l'aléatoire et réduire l'efficacité des attaques précalculées",
+        "Pour rendre les mots de passe plus courts",
+        "Pour convertir les hachages en texte clair",
+        "Pour émettre des certificats automatiquement"
+      ],
+      "correctAnswer": "Pour ajouter de l'aléatoire et réduire l'efficacité des attaques précalculées",
+      "explanation": "Le salage aide à protéger contre les tables arc-en-ciel et les sorties de hachage identiques pour le même mot de passe."
+    },
+    {
+      "question": "Quel est le principal avantage en matière de sécurité des signatures numériques ?",
+      "choices": [
+        "Elles fournissent intégrité et non-répudiation",
+        "Elles compressent de gros fichiers",
+        "Elles remplacent l'authentification multifactorielle",
+        "Elles stockent des clés de chiffrement dans du matériel"
+      ],
+      "correctAnswer": "Elles fournissent intégrité et non-répudiation",
+      "explanation": "Les signatures numériques aident à prouver l'origine des données et qu'elles n'ont pas été altérées."
+    },
+    {
+      "question": "Quelle technique renforce le stockage des mots de passe en rendant le calcul de hachage plus coûteux ?",
+      "choices": [
+        "Étirement de clé",
+        "Certificats wildcard",
+        "Masquage des données",
+        "Chiffrement de transport"
+      ],
+      "correctAnswer": "Étirement de clé",
+      "explanation": "L'étirement de clé utilise des opérations répétées ou intentionnellement coûteuses pour ralentir les tentatives de force brute."
+    },
+    {
+      "question": "Si deux fichiers produisent des valeurs de hachage différentes, que cela indique-t-il généralement ?",
+      "choices": [
+        "Ils sont identiques",
+        "Leurs contenus sont différents",
+        "Ils ont tous deux été tokenisés",
+        "Ils partagent le même certificat"
+      ],
+      "correctAnswer": "Leurs contenus sont différents",
+      "explanation": "Un hachage différent indique généralement que les données sous-jacentes ont changé."
+    },
+    {
+      "question": "Pourquoi les mots de passe devraient-ils généralement être hachés plutôt que chiffrés pour le stockage ?",
+      "choices": [
+        "Parce que le hachage est unidirectionnel et mieux adapté à la vérification",
+        "Parce que le chiffrement est toujours peu sûr",
+        "Parce que les hachages sont réversibles",
+        "Parce que le hachage ne nécessite aucun calcul"
+      ],
+      "correctAnswer": "Parce que le hachage est unidirectionnel et mieux adapté à la vérification",
+      "explanation": "Les systèmes de mots de passe ont généralement besoin de vérifier les valeurs soumises, pas de récupérer le mot de passe original."
+    },
+    {
+      "question": "Quel type d'algorithme est couramment associé au hachage plutôt qu'au chiffrement ?",
+      "choices": [
+        "SHA-256",
+        "AES",
+        "TLS",
+        "Échange de clés RSA"
+      ],
+      "correctAnswer": "SHA-256",
+      "explanation": "SHA-256 est un algorithme de hachage utilisé pour produire des résumés de longueur fixe."
+    },
+    {
+      "question": "Quelle est la principale raison de comparer un hachage de fichier nouvellement calculé avec un hachage attendu d'une source de confiance ?",
+      "choices": [
+        "Pour vérifier l'intégrité",
+        "Pour obtenir un certificat",
+        "Pour faire tourner des clés de chiffrement",
+        "Pour créer un jeton"
+      ],
+      "correctAnswer": "Pour vérifier l'intégrité",
+      "explanation": "Faire correspondre les hachages de confiance et calculés aide à confirmer que le fichier n'a pas été modifié."
+    }
+  ],
+  "blockchain": [
+    {
+      "question": "Quelle est la caractéristique définissante d'un grand livre blockchain ?",
+      "choices": [
+        "Il est stocké sur un seul serveur central",
+        "Il est décentralisé et distribué",
+        "Il n'est utilisé que pour le stockage de mots de passe",
+        "C'est un type de certificat"
+      ],
+      "correctAnswer": "Il est décentralisé et distribué",
+      "explanation": "La blockchain est surtout connue pour maintenir un registre distribué entre plusieurs participants."
+    },
+    {
+      "question": "Pourquoi la blockchain est-elle souvent décrite comme un registre public ouvert ?",
+      "choices": [
+        "Parce que les enregistrements de transactions sont distribués et visibles par les participants",
+        "Parce que n'importe qui peut modifier librement les blocs passés",
+        "Parce qu'elle ne stocke que des mots de passe cryptés",
+        "Parce qu'elle supprime le besoin de consensus"
+      ],
+      "correctAnswer": "Parce que les enregistrements de transactions sont distribués et visibles par les participants",
+      "explanation": "Les systèmes de blockchain maintiennent l'historique des transactions à travers plusieurs nœuds plutôt qu'un seul propriétaire central."
+    },
+    {
+      "question": "Quel est un avantage majeur en matière de sécurité de l'utilisation d'un registre de style blockchain ?",
+      "choices": [
+        "Cela rend les enregistrements difficiles à modifier rétroactivement",
+        "Cela remplace tous les pare-feu",
+        "Cela rend les certificats inutiles",
+        "Cela empêche automatiquement toute fraude possible"
+      ],
+      "correctAnswer": "Cela rend les enregistrements difficiles à modifier rétroactivement",
+      "explanation": "La structure des enregistrements chaînés entre plusieurs participants rend la falsification plus difficile."
+    },
+    {
+      "question": "Quel scénario correspond le mieux à l'utilisation de la blockchain ?",
+      "choices": [
+        "Maintenir un enregistrement distribué des transactions",
+        "Créer un fichier de signature antivirus local",
+        "Masquer les numéros de téléphone sur un écran",
+        "Générer un CSR pour un site web"
+      ],
+      "correctAnswer": "Maintenir un enregistrement distribué des transactions",
+      "explanation": "La blockchain est conçue pour maintenir des registres partagés entre plusieurs parties."
+    },
+    {
+      "question": "Que signifie décentralisé dans le contexte de la blockchain ?",
+      "choices": [
+        "Toutes les données sont contrôlées par un administrateur",
+        "Le registre est maintenu par plusieurs participants plutôt que par une autorité centrale",
+        "Le système n'a pas de règles",
+        "Un seul serveur peut valider les transactions"
+      ],
+      "correctAnswer": "Le registre est maintenu par plusieurs participants plutôt que par une autorité centrale",
+      "explanation": "La décentralisation signifie qu'aucune entité unique ne contrôle l'intégralité du registre."
+    },
+    {
+      "question": "Pourquoi une organisation choisirait-elle la blockchain pour la tenue de dossiers de style audit ?",
+      "choices": [
+        "Parce qu'elle offre un historique de transactions partagé",
+        "Parce qu'elle élimine le cryptage",
+        "Parce qu'elle stocke des fichiers sous forme d'images",
+        "Parce qu'elle crée des certificats wildcard"
+      ],
+      "correctAnswer": "Parce qu'elle offre un historique de transactions partagé",
+      "explanation": "La blockchain peut fournir un historique transparent et distribué des événements enregistrés."
+    },
+    {
+      "question": "Quelle est une limitation de dire que la blockchain est 'uniquement cryptée' ?",
+      "choices": [
+        "Cela ignore l'importance de la structure du registre distribué",
+        "Cela signifie que la blockchain n'a pas de transactions",
+        "Cela prouve que la blockchain est centralisée",
+        "Cela montre que la blockchain est la même que le masquage"
+      ],
+      "correctAnswer": "Cela ignore l'importance de la structure du registre distribué",
+      "explanation": "La blockchain ne concerne pas seulement le cryptage ; son modèle de registre distribué est central à son fonctionnement."
+    },
+    {
+      "question": "Quelle phrase résume le mieux la blockchain ?",
+      "choices": [
+        "Un coffre-fort de mots de passe centralisé",
+        "Un registre décentralisé pour l'enregistrement des transactions",
+        "Un type de magasin de clés matérielles",
+        "Un service de révocation de certificats"
+      ],
+      "correctAnswer": "Un registre décentralisé pour l'enregistrement des transactions",
+      "explanation": "Cela capture l'idée centrale de la blockchain de manière concise."
+    },
+    {
+      "question": "Quelle est une raison pour laquelle les organisations peuvent faire confiance aux enregistrements basés sur la blockchain pour le suivi des événements ?",
+      "choices": [
+        "Les enregistrements sont maintenus à travers plusieurs nœuds",
+        "Les utilisateurs peuvent modifier les anciens enregistrements à volonté",
+        "Cela n'a besoin d'aucune validation",
+        "Cela ne fonctionne qu'en mode hors ligne"
+      ],
+      "correctAnswer": "Les enregistrements sont maintenus à travers plusieurs nœuds",
+      "explanation": "La distribution entre de nombreux participants aide à renforcer la confiance dans l'enregistrement partagé."
+    },
+    {
+      "question": "Une équipe souhaite éviter de dépendre d'un seul propriétaire de base de données pour l'historique des transactions. Quelle technologie de ce sujet soutient le mieux cet objectif ?",
+      "choices": [
+        "Blockchain",
+        "Masquage des données",
+        "TPM",
+        "Étirement de clé"
+      ],
+      "correctAnswer": "Blockchain",
+      "explanation": "La blockchain prend en charge la tenue de registres partagés et distribués sans un seul propriétaire de grand livre centralisé."
+    }
+  ],
+  "certificates": [
+    {
+      "question": "Que fait une CA ?",
+      "choices": [
+        "Chiffrer des données",
+        "Émettre des certificats",
+        "Surveiller le trafic",
+        "Stocker des clés"
+      ],
+      "correctAnswer": "Émettre des certificats",
+      "explanation": "La CA valide les identités."
+    },
+    {
+      "question": "L'OCSP est utilisé pour :",
+      "choices": [
+        "Encryption",
+        "Validation en temps réel",
+        "Hashing",
+        "Tokenization"
+      ],
+      "correctAnswer": "Validation en temps réel",
+      "explanation": "Vérifie l'état du certificat."
+    },
+    {
+      "question": "Quel est le but d'une liste de révocation de certificats (CRL) ?",
+      "choices": [
+        "Lister les certificats qui ne devraient plus être dignes de confiance",
+        "Stocker des clés de chiffrement",
+        "Créer des certificats wildcard",
+        "Compresser des clés publiques"
+      ],
+      "correctAnswer": "Lister les certificats qui ne devraient plus être dignes de confiance",
+      "explanation": "Une CRL identifie les certificats qui ont été émis mais qui ont ensuite été révoqués avant leur expiration."
+    },
+    {
+      "question": "Quel type de certificat est couramment utilisé dans les environnements de développement mais n'est pas intrinsèquement approuvé par les clients publics ?",
+      "choices": [
+        "Certificat auto-signé",
+        "Certificat tiers",
+        "Certificat wildcard",
+        "Certificat racine uniquement"
+      ],
+      "correctAnswer": "Certificat auto-signé",
+      "explanation": "Les certificats auto-signés sont signés par eux-mêmes et sont couramment utilisés dans des configurations de test ou de développement."
+    },
+    {
+      "question": "Quel est l'avantage d'un certificat tiers pour un site web public ?",
+      "choices": [
+        "Il est émis par une autorité de certification de confiance",
+        "Il n'expire jamais",
+        "Il supprime le besoin de HTTPS",
+        "Il stocke des clés privées dans le navigateur"
+      ],
+      "correctAnswer": "Il est émis par une autorité de certification de confiance",
+      "explanation": "Les certificats tiers sont dignes de confiance car ils sont signés par des autorités de certification reconnues."
+    },
+    {
+      "question": "Que signifie la racine de confiance dans les systèmes de certificats ?",
+      "choices": [
+        "L'ancre de l'autorité de certification de confiance de niveau supérieur",
+        "Le fichier d'historique du navigateur",
+        "Le dernier certificat émis ce jour-là",
+        "Un mot de passe à usage unique"
+      ],
+      "correctAnswer": "L'ancre de l'autorité de certification de confiance de niveau supérieur",
+      "explanation": "La racine de confiance est le certificat le plus élevé de confiance à partir duquel des chaînes de confiance sont construites."
+    },
+    {
+      "question": "Pourquoi une demande de signature de certificat (CSR) est-elle générée ?",
+      "choices": [
+        "Pour demander l'émission d'un certificat",
+        "Pour révoquer un certificat instantanément",
+        "Pour masquer des données sensibles",
+        "Pour hacher des journaux d'application"
+      ],
+      "correctAnswer": "Pour demander l'émission d'un certificat",
+      "explanation": "Une CSR contient des informations utilisées par une CA pour émettre un certificat."
+    },
+    {
+      "question": "Quel type de certificat est le plus utile lorsqu'une entreprise souhaite un certificat pour de nombreux sous-domaines comme `api.example.com` et `shop.example.com` ?",
+      "choices": [
+        "Certificat wildcard",
+        "Certificat auto-signé",
+        "Entrée CRL",
+        "Certificat racine"
+      ],
+      "correctAnswer": "Certificat wildcard",
+      "explanation": "Les certificats wildcard sont destinés à couvrir plusieurs sous-domaines sous le même domaine de base."
+    },
+    {
+      "question": "Quel problème l'OCSP résout-il par rapport à la dépendance uniquement au fichier de certificat lui-même ?",
+      "choices": [
+        "Il aide à vérifier si un certificat est toujours valide en temps réel",
+        "Il stocke les clés privées de manière plus sécurisée",
+        "Il chiffre le trafic plus rapidement",
+        "Il crée des hachages pour les mots de passe"
+      ],
+      "correctAnswer": "Il aide à vérifier si un certificat est toujours valide en temps réel",
+      "explanation": "L'OCSP permet aux systèmes de vérifier l'état actuel de révocation d'un certificat."
+    },
+    {
+      "question": "Un navigateur fait confiance à un certificat de site web car il peut retracer la chaîne de signature jusqu'à une autorité reconnue. Quel concept est utilisé ?",
+      "choices": [
+        "Chaîne de confiance",
+        "Tokenization",
+        "Étirement de clé",
+        "Masquage des données"
+      ],
+      "correctAnswer": "Chaîne de confiance",
+      "explanation": "Les certificats sont validés à travers une chaîne qui mène finalement à une autorité racine de confiance."
+    }
+  ]
+}
