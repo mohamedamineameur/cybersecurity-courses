@@ -22,7 +22,6 @@ function topicCardLayoutId(subsectionId: string, topicId: string) {
   return `topic-card:${subsectionId}:${topicId}`
 }
 
-const sectionVariant = {
 const smoothEase = [0.22, 1, 0.36, 1] as const
 
 const sectionVariant: Variants = {
