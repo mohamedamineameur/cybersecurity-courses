@@ -107,6 +107,26 @@ export type DeferredInstallPrompt = Event & {
 
 export type AppLanguage = 'fr' | 'en'
 
+export type AppSoundCue =
+  | 'tap'
+  | 'success'
+  | 'error'
+  | 'milestone'
+  | 'complete'
+  | 'celebration'
+
+export type CelebrationKind =
+  | 'success'
+  | 'milestone'
+  | 'combo'
+  | 'complete'
+  | 'achievement'
+
+export type UXPreferences = {
+  soundEnabled: boolean
+  funAnimationsEnabled: boolean
+}
+
 export type TranslateParams = Record<string, string | number | null | undefined>
 
 export type AppI18nContextValue = {

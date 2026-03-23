@@ -1,8 +1,10 @@
+import { motion } from 'framer-motion'
 import { useMemo, useState } from 'react'
 import { courseKeys } from '../i18n/course-keys'
 import { useTranslate } from '../app/i18n'
 import { formatDuration, normalize, topicKey, tr, MOCK_EXAM_DURATION_MS } from '../app/helpers'
 import type { FlatTopicEntry, MockExamState, QuizStoredState, SavedMockExamSession } from '../app/types'
+import { EmptyState } from '../components/EmptyState'
 
 type QuizHubPageProps = {
   quizzes: FlatTopicEntry[]
@@ -49,25 +51,30 @@ export function QuizHubPage({
 
   return (
     <div className="stack">
-      <section className="heroCard small">
+      <motion.section
+        className="heroCard small"
+        initial={{ opacity: 0, y: 18 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.42, ease: 'easeOut' }}
+      >
         <div className="heroGlow" aria-hidden="true" />
         <div className="heroInner">
           <div className="heroKicker">{t('quizHub.kicker')}</div>
           <h1 className="heroTitle">{t('quizHub.title')}</h1>
           <p className="heroSubtitle">{t('quizHub.subtitle')}</p>
           <div className="heroStats">
-            <div className="stat">
+            <motion.div className="stat" initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.08 }}>
               <div className="statTop">
                 <div className="pill">{t('quizHub.available')}</div>
                 <div className="statPct">{quizzes.length}</div>
               </div>
               <div className="muted">{t('quizHub.savedResults', { count: Object.values(quizStates).filter((state) => state.lastCompletedAnswers?.length).length })}</div>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      <section className="panel">
+      <motion.section className="panel" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
         <div className="topicTop">
           <div>
             <h2>{t('mockExam.cardTitle')}</h2>
@@ -92,9 +99,9 @@ export function QuizHubPage({
             {t('mockExam.newExam')}
           </button>
         </div>
-      </section>
+      </motion.section>
 
-      <section className="panel">
+      <motion.section className="panel" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
         <div className="topicTop">
           <div>
             <h2>{t('mockExam.historyTitle')}</h2>
@@ -103,11 +110,19 @@ export function QuizHubPage({
         </div>
         {mockExamHistory.length ? (
           <div className="quizHubList">
-            {mockExamHistory.map((saved) => {
+            {mockExamHistory.map((saved, index) => {
               const answeredCount = saved.answers.filter((answer) => answer !== null).length
               const total = saved.questionIds.length
               return (
-                <article key={saved.id} className="panel quizHubCard">
+                <motion.article
+                  key={saved.id}
+                  className="panel quizHubCard interactiveCard"
+                  initial={{ opacity: 0, y: 14 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.04 }}
+                >
+                  <span className="cardShine" aria-hidden="true" />
                   <div className="topicTop">
                     <div>
                       <div className="topicTitle">{t('mockExam.historyEntryTitle')}</div>
@@ -126,16 +141,16 @@ export function QuizHubPage({
                       {t('mockExam.reviewSavedExam')}
                     </button>
                   </div>
-                </article>
+                </motion.article>
               )
             })}
           </div>
         ) : (
-          <p className="muted">{t('mockExam.historyEmpty')}</p>
+          <EmptyState icon="[]" title={t('mockExam.historyTitle')} body={t('mockExam.historyEmpty')} />
         )}
-      </section>
+      </motion.section>
 
-      <section className="panel">
+      <motion.section className="panel" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
         <div className="searchRow">
           <input
             className="search"
@@ -149,59 +164,73 @@ export function QuizHubPage({
             {t('search.clear')}
           </button>
         </div>
-      </section>
+      </motion.section>
 
       <section className="quizHubList">
-        {filtered.map(({ section, sub, topic }) => {
-          const key = topicKey(sub.id, topic.id)
-          const best = quizScores[key]
-          const saved = quizStates[key]
-          const questionCount = topic.quiz?.length ?? 0
-          const sectionTitle = tr(t, courseKeys.sectionTitle(section.id), section.title)
-          const subsectionTitle = tr(t, courseKeys.subsectionTitle(section.id, sub.id), sub.title)
-          const topicTitle = tr(t, courseKeys.topicTitle(section.id, sub.id, topic.id), topic.title)
-          const draftCount = saved?.draftAnswers?.filter((answer) => answer !== null).length ?? 0
-          const hasDraft = draftCount > 0
-          const lastScore = saved?.lastCompletedScore
+        {filtered.length ? (
+          filtered.map(({ section, sub, topic }, index) => {
+            const key = topicKey(sub.id, topic.id)
+            const best = quizScores[key]
+            const saved = quizStates[key]
+            const questionCount = topic.quiz?.length ?? 0
+            const sectionTitle = tr(t, courseKeys.sectionTitle(section.id), section.title)
+            const subsectionTitle = tr(t, courseKeys.subsectionTitle(section.id, sub.id), sub.title)
+            const topicTitle = tr(t, courseKeys.topicTitle(section.id, sub.id, topic.id), topic.title)
+            const draftCount = saved?.draftAnswers?.filter((answer) => answer !== null).length ?? 0
+            const hasDraft = draftCount > 0
+            const lastScore = saved?.lastCompletedScore
 
-          return (
-            <article key={key} className="panel quizHubCard">
-              <div className="topicTop">
-                <div>
-                  <div className="topicTitle">{topicTitle}</div>
-                  <div className="muted small">{section.id} • {sectionTitle}</div>
-                  <div className="muted small">{sub.id} • {subsectionTitle}</div>
-                  <div className="muted small">{t('quizHub.topicId')}: {topic.id}</div>
+            return (
+              <motion.article
+                key={key}
+                className="panel quizHubCard interactiveCard"
+                initial={{ opacity: 0, y: 14 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-10% 0px -10% 0px' }}
+                transition={{ delay: index * 0.03 }}
+              >
+                <span className="cardShine" aria-hidden="true" />
+                <div className="topicTop">
+                  <div>
+                    <div className="topicTitle">{topicTitle}</div>
+                    <div className="muted small">{section.id} • {sectionTitle}</div>
+                    <div className="muted small">{sub.id} • {subsectionTitle}</div>
+                    <div className="muted small">{t('quizHub.topicId')}: {topic.id}</div>
+                  </div>
+                  <div className="chips">
+                    <span className="pill accent">{t('topic.quiz')}</span>
+                    <span className="pill">{t('quizHub.questions', { count: questionCount })}</span>
+                  </div>
                 </div>
-                <div className="chips">
-                  <span className="pill accent">{t('topic.quiz')}</span>
-                  <span className="pill">{t('quizHub.questions', { count: questionCount })}</span>
-                </div>
-              </div>
 
-              <div className="topicBottom">
-                {best ? <span className="badge">{t('quizHub.best', { score: best.best, total: best.total })}</span> : null}
-                {lastScore !== undefined ? (
-                  <span className="badge ok">{t('quizHub.lastScore', { score: lastScore, total: saved?.total ?? questionCount })}</span>
+                <div className="topicBottom">
+                  {best ? <span className="badge">{t('quizHub.best', { score: best.best, total: best.total })}</span> : null}
+                  {lastScore !== undefined ? (
+                    <span className="badge ok">{t('quizHub.lastScore', { score: lastScore, total: saved?.total ?? questionCount })}</span>
+                  ) : null}
+                  {hasDraft ? <span className="badge">{t('quizHub.inProgress', { count: draftCount, total: questionCount })}</span> : null}
+                </div>
+
+                {saved?.lastCompletedAt ? (
+                  <div className="muted small">{t('quizHub.savedAt')}: {new Date(saved.lastCompletedAt).toLocaleString()}</div>
                 ) : null}
-                {hasDraft ? <span className="badge">{t('quizHub.inProgress', { count: draftCount, total: questionCount })}</span> : null}
-              </div>
 
-              {saved?.lastCompletedAt ? (
-                <div className="muted small">{t('quizHub.savedAt')}: {new Date(saved.lastCompletedAt).toLocaleString()}</div>
-              ) : null}
-
-              <div className="actionsRow">
-                <button className="btnPrimary" onClick={() => onOpenQuiz(sub.id, topic.id)}>
-                  {hasDraft ? t('quizHub.resume') : t('quizHub.openQuiz')}
-                </button>
-                <button className="btnSecondary" onClick={() => onOpenTopic(sub.id, topic.id)}>
-                  {t('quizHub.openTopic')}
-                </button>
-              </div>
-            </article>
-          )
-        })}
+                <div className="actionsRow">
+                  <button className="btnPrimary" onClick={() => onOpenQuiz(sub.id, topic.id)}>
+                    {hasDraft ? t('quizHub.resume') : t('quizHub.openQuiz')}
+                  </button>
+                  <button className="btnSecondary" onClick={() => onOpenTopic(sub.id, topic.id)}>
+                    {t('quizHub.openTopic')}
+                  </button>
+                </div>
+              </motion.article>
+            )
+          })
+        ) : (
+          <div className="panel">
+            <EmptyState icon="0" title={t('quizHub.title')} body={t('search.hint')} />
+          </div>
+        )}
       </section>
     </div>
   )

@@ -1,3 +1,5 @@
+import { AnimatePresence, motion } from 'framer-motion'
+import { useMemo, useState } from 'react'
 import { courseKeys } from '../i18n/course-keys'
 import { useTranslate } from '../app/i18n'
 import { formatInline, tr } from '../app/helpers'
@@ -16,6 +18,19 @@ type TopicPageProps = {
   onStartQuiz: () => void
 }
 
+function topicCardLayoutId(subsectionId: string, topicId: string) {
+  return `topic-card:${subsectionId}:${topicId}`
+}
+
+const sectionVariant = {
+  hidden: { opacity: 0, y: 18 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.34, ease: 'easeOut' },
+  },
+}
+
 export function TopicPage({
   section,
   subsection,
@@ -31,6 +46,7 @@ export function TopicPage({
   const sectionId = section.id
   const subsectionId = subsection.id
   const topicId = topic.id
+  const [showDoneBurst, setShowDoneBurst] = useState(false)
 
   const sectionTitle = tr(t, courseKeys.sectionTitle(sectionId), section.title)
   const subsectionTitle = tr(t, courseKeys.subsectionTitle(sectionId, subsectionId), subsection.title)
@@ -39,30 +55,97 @@ export function TopicPage({
     ? tr(t, courseKeys.topicContent(sectionId, subsectionId, topicId), topic.content)
     : null
 
+  const doneParticles = useMemo(
+    () => Array.from({ length: 8 }, (_, index) => ({
+      id: index,
+      x: Math.cos((Math.PI * 2 * index) / 8) * 34,
+      y: Math.sin((Math.PI * 2 * index) / 8) * 22,
+    })),
+    [],
+  )
+
+  const handleToggleDone = () => {
+    if (!doneAt) {
+      setShowDoneBurst(true)
+      window.setTimeout(() => setShowDoneBurst(false), 720)
+    }
+    onToggleDone()
+  }
+
   return (
-    <div className="stack">
-      <section className="panel">
+    <motion.div
+      className="stack"
+      initial="hidden"
+      animate="visible"
+      variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.08 } } }}
+    >
+      <motion.section
+        className="panel topicHeroPanel"
+        variants={sectionVariant}
+        layoutId={topicCardLayoutId(subsectionId, topicId)}
+      >
         <div className="topicHeader">
-          <button className="btnSecondary" onClick={onBack}>
+          <motion.button className="btnSecondary" onClick={onBack} whileTap={{ scale: 0.97 }}>
             {t('topicPage.back')}
-          </button>
+          </motion.button>
           <div className="crumbs">
             <span className="pill">{subsection.id}</span>
             <span className="muted small">{sectionTitle} • {subsectionTitle}</span>
           </div>
         </div>
 
-        <h1 className="pageTitle">{topicTitle}</h1>
-        {topicContent ? <p className="lead">{formatInline(topicContent, acronymMap)}</p> : null}
+        <motion.h1 className="pageTitle" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }}>
+          {topicTitle}
+        </motion.h1>
+        {topicContent ? (
+          <motion.p className="lead" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
+            {formatInline(topicContent, acronymMap)}
+          </motion.p>
+        ) : null}
 
         <div className="actionsRow">
-          <button className={['btnPrimary', doneAt ? 'ghost' : ''].join(' ')} onClick={onToggleDone}>
-            {doneAt ? t('topicPage.markedDone') : t('topicPage.markDone')}
-          </button>
+          <motion.button
+            className={['btnPrimary', 'doneActionBtn', doneAt ? 'ghost' : ''].join(' ')}
+            onClick={handleToggleDone}
+            whileTap={{ scale: 0.96 }}
+          >
+            <span className="doneActionLabel">
+              {doneAt ? t('topicPage.markedDone') : t('topicPage.markDone')}
+            </span>
+            <AnimatePresence>
+              {doneAt ? (
+                <motion.span
+                  className="doneCheck"
+                  initial={{ scale: 0, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.6, opacity: 0 }}
+                >
+                  ✓
+                </motion.span>
+              ) : null}
+            </AnimatePresence>
+            <AnimatePresence>
+              {showDoneBurst ? (
+                <span className="doneBurst" aria-hidden="true">
+                  {doneParticles.map((particle) => (
+                    <motion.span
+                      key={particle.id}
+                      className="doneParticle"
+                      initial={{ opacity: 0.9, x: 0, y: 0, scale: 0.5 }}
+                      animate={{ opacity: 0, x: particle.x, y: particle.y, scale: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.56, ease: 'easeOut' }}
+                    />
+                  ))}
+                </span>
+              ) : null}
+            </AnimatePresence>
+          </motion.button>
+
           {topic.quiz?.length ? (
-            <button className="btnSecondary" onClick={onStartQuiz}>
+            <motion.button className="btnSecondary" onClick={onStartQuiz} whileTap={{ scale: 0.97 }}>
               {t('topicPage.startQuiz', { count: topic.quiz.length })}
-            </button>
+            </motion.button>
           ) : (
             <button className="btnSecondary" disabled>
               {t('topicPage.quizUnavailable')}
@@ -71,17 +154,17 @@ export function TopicPage({
         </div>
 
         {bestQuiz ? (
-          <div className="feedback ok">
+          <motion.div className="feedback ok" initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.14 }}>
             <div className="feedbackTitle">{t('topicPage.bestScore')}</div>
             <div className="muted">
               {bestQuiz.best}/{bestQuiz.total}
             </div>
-          </div>
+          </motion.div>
         ) : null}
-      </section>
+      </motion.section>
 
       {topic.items?.length ? (
-        <section className="panel">
+        <motion.section className="panel" variants={sectionVariant}>
           <h2>{t('topicPage.keyPoints')}</h2>
           <ItemList
             items={topic.items}
@@ -91,16 +174,21 @@ export function TopicPage({
             topicId={topicId}
             t={t}
           />
-        </section>
+        </motion.section>
       ) : null}
 
       {topic.quiz?.length ? (
-        <section className="panel">
+        <motion.section className="panel" variants={sectionVariant}>
           <h2>{t('topicPage.miniQuiz')}</h2>
           <div className="muted">{t('topicPage.miniQuizHint')}</div>
-          <div className="miniQuiz">
+          <motion.div
+            className="miniQuiz"
+            initial="hidden"
+            animate="visible"
+            variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.08 } } }}
+          >
             {topic.quiz.slice(0, 2).map((quiz, quizIndex) => (
-              <div key={quiz.question} className="miniQ">
+              <motion.div key={quiz.question} className="miniQ" variants={sectionVariant}>
                 <div className="miniQTitle">
                   {tr(t, courseKeys.quizQuestion(sectionId, subsectionId, topicId, quizIndex), quiz.question)}
                 </div>
@@ -114,11 +202,11 @@ export function TopicPage({
                 <div className="muted small">
                   {t('topicPage.answer')}: {tr(t, courseKeys.quizCorrectAnswer(sectionId, subsectionId, topicId, quizIndex), quiz.correctAnswer)}
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
-        </section>
+          </motion.div>
+        </motion.section>
       ) : null}
-    </div>
+    </motion.div>
   )
 }

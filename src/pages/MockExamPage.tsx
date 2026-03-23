@@ -1,12 +1,17 @@
-import { useEffect, useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
+import { useEffect, useRef, useState } from 'react'
 import { useTranslate } from '../app/i18n'
 import { clamp, formatDuration } from '../app/helpers'
-import type { MockExamQuestion, MockExamState } from '../app/types'
+import type { AppSoundCue, CelebrationKind, MockExamQuestion, MockExamState } from '../app/types'
+import { AnimatedCounter } from '../components/AnimatedCounter'
+import { EmptyState } from '../components/EmptyState'
+import { StreakBadge } from '../components/StreakBadge'
 
 type MockExamPageProps = {
   state: MockExamState | null
   questions: MockExamQuestion[]
   isSavedReview: boolean
+  funEnabled?: boolean
   onStartNew: () => void
   onBackToHub: () => void
   onChooseAnswer: (questionIdx: number, answer: string) => void
@@ -14,12 +19,43 @@ type MockExamPageProps = {
   onSubmit: () => void
   onClear: () => void
   onCloseSavedReview: () => void
+  onPlaySound?: (cue: AppSoundCue) => void
+  onCelebrate?: (kind: CelebrationKind, title: string, label?: string) => void
+}
+
+function ExamScoreRing({ score, total }: { score: number; total: number }) {
+  const progress = total ? score / total : 0
+  const radius = 48
+  const circumference = 2 * Math.PI * radius
+
+  return (
+    <div className="scoreRingWrap">
+      <svg className="scoreRing" viewBox="0 0 120 120" aria-hidden="true">
+        <circle cx="60" cy="60" r={radius} className="scoreRingTrack" />
+        <motion.circle
+          cx="60"
+          cy="60"
+          r={radius}
+          className="scoreRingValue"
+          strokeDasharray={circumference}
+          initial={{ strokeDashoffset: circumference }}
+          animate={{ strokeDashoffset: circumference * (1 - progress) }}
+          transition={{ duration: 1.1, ease: 'easeOut' }}
+        />
+      </svg>
+      <div className="scoreRingCenter">
+        <AnimatedCounter value={score} className="scoreRingValueText" />
+        <span className="muted small">/ {total}</span>
+      </div>
+    </div>
+  )
 }
 
 export function MockExamPage({
   state,
   questions,
   isSavedReview,
+  funEnabled = true,
   onStartNew,
   onBackToHub,
   onChooseAnswer,
@@ -27,9 +63,15 @@ export function MockExamPage({
   onSubmit,
   onClear,
   onCloseSavedReview,
+  onPlaySound,
+  onCelebrate,
 }: MockExamPageProps) {
   const { t } = useTranslate()
   const [now, setNow] = useState(state?.startedAt ?? 0)
+  const [questionDirection, setQuestionDirection] = useState<1 | -1>(1)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const submitTimerRef = useRef<number | null>(null)
+  const lastSubmissionRef = useRef<number | null>(null)
 
   useEffect(() => {
     if (!state || state.submittedAt) return
@@ -42,12 +84,26 @@ export function MockExamPage({
     if (Date.now() >= state.endsAt) onSubmit()
   }, [now, onSubmit, state])
 
+  useEffect(() => () => {
+    if (submitTimerRef.current) window.clearTimeout(submitTimerRef.current)
+  }, [])
+
+  useEffect(() => {
+    if (!state?.submittedAt || state.submittedAt === lastSubmissionRef.current || isSavedReview) return
+    lastSubmissionRef.current = state.submittedAt
+    const totalQuestions = state.questionIds.length
+    const ratio = totalQuestions ? (state.score ?? 0) / totalQuestions : 0
+    onPlaySound?.(ratio >= 0.8 ? 'celebration' : 'complete')
+    if (funEnabled) {
+      onCelebrate?.(ratio >= 0.8 ? 'complete' : 'achievement', ratio >= 0.8 ? 'Excellent' : 'Termine', `${state.score ?? 0}/${totalQuestions}`)
+    }
+  }, [funEnabled, isSavedReview, onCelebrate, onPlaySound, state])
+
   if (!state || !questions.length) {
     return (
       <div className="stack">
         <section className="panel">
-          <h2>{t('mockExam.emptyTitle')}</h2>
-          <p className="muted">{t('mockExam.emptyBody')}</p>
+          <EmptyState icon="?" title={t('mockExam.emptyTitle')} body={t('mockExam.emptyBody')} />
           <div className="actionsRow">
             <button className="btnPrimary" onClick={onStartNew}>
               {t('mockExam.startExam')}
@@ -69,11 +125,40 @@ export function MockExamPage({
   const remainingMs = Math.max(0, state.endsAt - now)
   const isSubmitted = Boolean(state.submittedAt)
   const isCorrect = picked !== null && picked === current.quiz.correctAnswer
+  const timerTone = isSubmitted
+    ? 'done'
+    : remainingMs <= 2 * 60 * 1000
+      ? 'critical'
+      : remainingMs <= 10 * 60 * 1000
+        ? 'danger'
+        : remainingMs <= 20 * 60 * 1000
+          ? 'warn'
+          : 'safe'
+
+  const submitWithTransition = () => {
+    if (isSubmitted || isSavedReview || isSubmitting) return
+    setIsSubmitting(true)
+    onPlaySound?.('complete')
+    submitTimerRef.current = window.setTimeout(() => {
+      onSubmit()
+      setIsSubmitting(false)
+    }, 420)
+  }
+
+  const goToQuestion = (nextQuestionIdx: number) => {
+    setQuestionDirection(nextQuestionIdx > idx ? 1 : -1)
+    onGoToQuestion(nextQuestionIdx)
+  }
 
   return (
     <div className="stack">
-      <section className="heroCard small">
-        <div className="heroGlow" aria-hidden="true" />
+      <motion.section
+        className="heroCard small"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.45, ease: 'easeOut' }}
+      >
+        <div className="heroGlow examHeroGlow" aria-hidden="true" />
         <div className="heroInner">
           <div className="heroKicker">{t('mockExam.kicker')}</div>
           <h1 className="heroTitle">{t('mockExam.title')}</h1>
@@ -85,9 +170,18 @@ export function MockExamPage({
                 <div className="statPct">{formatDuration(isSubmitted ? 0 : remainingMs)}</div>
               </div>
               <div className="progress big" aria-label={t('quiz.progress')}>
-                <div className="bar" style={{ width: `${Math.round((answeredCount / total) * 100)}%` }} />
+                <motion.div
+                  className="bar"
+                  animate={{ width: `${Math.round((answeredCount / total) * 100)}%` }}
+                  transition={{ duration: 0.42, ease: 'easeOut' }}
+                />
               </div>
               <div className="muted">{t('mockExam.answeredCount', { answered: answeredCount, total })}</div>
+              {funEnabled ? (
+                <div className="heroRewardRow">
+                  <StreakBadge value={answeredCount} label="rep" tone={answeredCount >= Math.ceil(total * 0.6) ? 'hot' : 'default'} />
+                </div>
+              ) : null}
             </div>
             <div className="stat side">
               <div className="pill">{t('mockExam.format')}</div>
@@ -96,10 +190,10 @@ export function MockExamPage({
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {isSavedReview ? (
-        <section className="panel">
+        <motion.section className="panel" initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }}>
           <div className="topicTop">
             <div>
               <h2>{t('mockExam.reviewBanner')}</h2>
@@ -111,38 +205,51 @@ export function MockExamPage({
               {t('mockExam.closeReview')}
             </button>
           </div>
-        </section>
+        </motion.section>
       ) : null}
 
-      {isSubmitted ? (
-        <section className="panel">
-          <h2>{t('mockExam.resultTitle')}</h2>
-          <p className="muted">{t('mockExam.resultScore', { score: state.score ?? 0, total })}</p>
-          <div className="topicBottom">
-            <span className="badge ok">{t('mockExam.finishedAt')}: {state.submittedAt ? new Date(state.submittedAt).toLocaleString() : '-'}</span>
-            <span className="badge">{t('mockExam.answeredCount', { answered: answeredCount, total })}</span>
-          </div>
-          <div className="actionsRow">
-            <button className="btnPrimary" onClick={onStartNew}>
-              {t('mockExam.newExam')}
-            </button>
-            <button className="btnSecondary" onClick={onBackToHub}>
-              {t('mockExam.backToQuizHub')}
-            </button>
-            {isSavedReview ? (
-              <button className="btnSecondary" onClick={onCloseSavedReview}>
-                {t('mockExam.closeReview')}
+      <AnimatePresence>
+        {isSubmitted ? (
+          <motion.section
+            className="panel examResultPanel"
+            initial={{ opacity: 0, y: 18, scale: 0.985 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.4, ease: 'easeOut' }}
+          >
+            <div className="quizScoreSummary">
+              <div>
+                <h2>{t('mockExam.resultTitle')}</h2>
+                <p className="muted">{t('mockExam.resultScore', { score: state.score ?? 0, total })}</p>
+                <div className="topicBottom">
+                  <span className="badge ok">{t('mockExam.finishedAt')}: {state.submittedAt ? new Date(state.submittedAt).toLocaleString() : '-'}</span>
+                  <span className="badge">{t('mockExam.answeredCount', { answered: answeredCount, total })}</span>
+                </div>
+              </div>
+              <ExamScoreRing score={state.score ?? 0} total={total} />
+            </div>
+            <div className="actionsRow">
+              <button className="btnPrimary" onClick={onStartNew}>
+                {t('mockExam.newExam')}
               </button>
-            ) : (
-              <button className="btnSecondary" onClick={onClear}>
-                {t('mockExam.clearExam')}
+              <button className="btnSecondary" onClick={onBackToHub}>
+                {t('mockExam.backToQuizHub')}
               </button>
-            )}
-          </div>
-        </section>
-      ) : null}
+              {isSavedReview ? (
+                <button className="btnSecondary" onClick={onCloseSavedReview}>
+                  {t('mockExam.closeReview')}
+                </button>
+              ) : (
+                <button className="btnSecondary" onClick={onClear}>
+                  {t('mockExam.clearExam')}
+                </button>
+              )}
+            </div>
+          </motion.section>
+        ) : null}
+      </AnimatePresence>
 
-      <section className="panel">
+      <section className={['panel', isSubmitting ? 'examSubmitting' : ''].join(' ')}>
         <div className="topicTop">
           <div>
             <div className="pill">{t('quiz.question', { current: idx + 1, total })}</div>
@@ -150,48 +257,93 @@ export function MockExamPage({
               {current.sectionId} • {current.sectionTitle} • {current.subsectionId} • {current.subsectionTitle} • {current.topicTitle}
             </div>
           </div>
-          <div className={['examTimer', remainingMs <= 10 * 60 * 1000 && !isSubmitted ? 'danger' : ''].join(' ')}>
+          <motion.div
+            className={['examTimer', timerTone].join(' ')}
+            animate={timerTone === 'critical' ? { scale: [1, 1.04, 1] } : { scale: 1 }}
+            transition={timerTone === 'critical' ? { duration: 0.7, repeat: Infinity } : { duration: 0.2 }}
+          >
             {formatDuration(isSubmitted ? 0 : remainingMs)}
-          </div>
+          </motion.div>
         </div>
 
-        <h2 className="quizQ">{current.quiz.question}</h2>
-        <div className="choices">
-          {current.quiz.choices.map((choice) => {
-            const selected = picked === choice
-            const correct = isSubmitted && choice === current.quiz.correctAnswer
-            return (
-              <button
-                key={choice}
-                className={['choice', selected ? 'selected' : '', correct ? 'correct' : '', isSubmitted && selected && !correct ? 'wrong' : ''].join(' ')}
-                disabled={isSubmitted}
-                onClick={() => onChooseAnswer(idx, choice)}
-              >
-                {choice}
-              </button>
-            )
-          })}
-        </div>
+        <AnimatePresence mode="wait" custom={questionDirection}>
+          <motion.div
+            key={`${idx}-${isSubmitted ? 'review' : 'play'}`}
+            className="quizStage"
+            custom={questionDirection}
+            initial={{ opacity: 0, x: questionDirection > 0 ? 42 : -42 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: questionDirection > 0 ? -32 : 32 }}
+            transition={{ duration: 0.28, ease: 'easeOut' }}
+          >
+            <h2 className="quizQ">{current.quiz.question}</h2>
+            <div className="choices">
+              {current.quiz.choices.map((choice, choiceIndex) => {
+                const selected = picked === choice
+                const correct = isSubmitted && choice === current.quiz.correctAnswer
+                return (
+                  <motion.button
+                    key={choice}
+                    className={[
+                      'choice',
+                      selected ? 'selected' : '',
+                      correct ? 'correct' : '',
+                      isSubmitted && selected && !correct ? 'wrong' : '',
+                    ].join(' ')}
+                    disabled={isSubmitted}
+                    onClick={() => {
+                      onPlaySound?.('tap')
+                      onChooseAnswer(idx, choice)
+                    }}
+                    whileTap={{ scale: 0.985 }}
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: choiceIndex * 0.04 }}
+                  >
+                    {choice}
+                  </motion.button>
+                )
+              })}
+            </div>
 
-        {isSubmitted ? (
-          <div className={['feedback', isCorrect ? 'ok' : 'no'].join(' ')}>
-            <div className="feedbackTitle">{isCorrect ? t('quiz.correct') : t('quiz.wrong')}</div>
-            <div className="muted">{t('quiz.correctWas', { answer: current.quiz.correctAnswer })}</div>
-            {current.quiz.explanation ? <div className="muted">{current.quiz.explanation}</div> : null}
-          </div>
-        ) : null}
+            <AnimatePresence>
+              {isSubmitted ? (
+                <motion.div
+                  className={['feedback', 'feedbackPremium', isCorrect ? 'ok' : 'no'].join(' ')}
+                  initial={{ opacity: 0, y: 12, scale: 0.97 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0 }}
+                >
+                  <div className="feedbackTitleRow">
+                    <motion.span
+                      className="feedbackIcon"
+                      initial={{ scale: 0.65, rotate: isCorrect ? -10 : 10 }}
+                      animate={{ scale: 1, rotate: 0 }}
+                      transition={{ type: 'spring', stiffness: 420, damping: 24 }}
+                    >
+                      {isCorrect ? '✓' : '!'}
+                    </motion.span>
+                    <div className="feedbackTitle">{isCorrect ? t('quiz.correct') : t('quiz.wrong')}</div>
+                  </div>
+                  <div className="muted">{t('quiz.correctWas', { answer: current.quiz.correctAnswer })}</div>
+                  {current.quiz.explanation ? <div className="muted">{current.quiz.explanation}</div> : null}
+                </motion.div>
+              ) : null}
+            </AnimatePresence>
+          </motion.div>
+        </AnimatePresence>
 
         <div className="quizActions">
-          <button className="btnSecondary" onClick={() => onGoToQuestion(idx - 1)} disabled={idx === 0}>
+          <button className="btnSecondary" onClick={() => goToQuestion(idx - 1)} disabled={idx === 0}>
             {t('quiz.prev')}
           </button>
           {isSubmitted ? (
-            <button className="btnPrimary" onClick={() => onGoToQuestion(idx + 1)} disabled={idx === total - 1}>
+            <button className="btnPrimary" onClick={() => goToQuestion(idx + 1)} disabled={idx === total - 1}>
               {t('quiz.next')}
             </button>
           ) : (
-            <button className="btnPrimary" onClick={() => (idx === total - 1 ? onSubmit() : onGoToQuestion(idx + 1))}>
-              {idx === total - 1 ? t('mockExam.submitExam') : t('quiz.next')}
+            <button className="btnPrimary" onClick={() => (idx === total - 1 ? submitWithTransition() : goToQuestion(idx + 1))}>
+              {isSubmitting ? t('loading') : idx === total - 1 ? t('mockExam.submitExam') : t('quiz.next')}
             </button>
           )}
         </div>
@@ -201,8 +353,8 @@ export function MockExamPage({
         <div className="topicTop">
           <h2>{t('mockExam.navigator')}</h2>
           {!isSubmitted ? (
-            <button className="btnSecondary" onClick={onSubmit}>
-              {t('mockExam.submitExam')}
+            <button className="btnSecondary" onClick={submitWithTransition} disabled={isSubmitting}>
+              {isSubmitting ? t('loading') : t('mockExam.submitExam')}
             </button>
           ) : null}
         </div>
@@ -213,7 +365,7 @@ export function MockExamPage({
             const correct = isSubmitted && state.answers[questionIdx] === question.quiz.correctAnswer
             const wrong = isSubmitted && answered && !correct
             return (
-              <button
+              <motion.button
                 key={question.id}
                 className={[
                   'examIndexBtn',
@@ -222,10 +374,14 @@ export function MockExamPage({
                   correct ? 'correct' : '',
                   wrong ? 'wrong' : '',
                 ].join(' ')}
-                onClick={() => onGoToQuestion(questionIdx)}
+                onClick={() => goToQuestion(questionIdx)}
+                whileTap={{ scale: 0.96 }}
+                animate={answered && !isSubmitted ? { scale: [1, 1.06, 1] } : { scale: 1 }}
+                transition={{ duration: 0.28 }}
               >
-                {questionIdx + 1}
-              </button>
+                <span className="examIndexFill" aria-hidden="true" />
+                <span className="examIndexLabel">{questionIdx + 1}</span>
+              </motion.button>
             )
           })}
         </div>

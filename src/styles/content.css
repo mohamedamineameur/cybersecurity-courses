@@ -19,6 +19,22 @@
   gap: 12px;
 }
 
+.interactiveCard {
+  position: relative;
+  transform-style: preserve-3d;
+  transform: perspective(1000px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+}
+
+.cardShine {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(255, 255, 255, 0.34), transparent 36%);
+  opacity: 0;
+  transition: opacity var(--duration-medium) var(--ease-smooth);
+}
+
 .topicCard {
   text-align: left;
   padding: 16px;
@@ -26,7 +42,11 @@
   border: 1px solid var(--border);
   background: var(--bg-card);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition:
+    transform var(--duration-medium) var(--ease-smooth),
+    box-shadow var(--duration-medium) var(--ease-smooth),
+    border-color var(--duration-medium) var(--ease-smooth),
+    background-color var(--duration-medium) var(--ease-smooth);
   box-shadow: var(--shadow-sm);
   min-width: 0;
   max-width: 100%;
@@ -34,13 +54,25 @@
 
 .topicCard:hover {
   border-color: var(--accent-light);
-  box-shadow: var(--shadow);
-  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-3px);
+}
+
+.topicCard:hover .cardShine {
+  opacity: 1;
+}
+
+.topicCard:active {
+  transform: scale(0.985);
 }
 
 .topicCard.done {
   border-color: var(--ok);
   background: linear-gradient(to bottom, var(--ok-bg) 0%, var(--bg-card) 100%);
+}
+
+.topicCard.done .badge.ok {
+  animation: badgePulse 420ms var(--ease-smooth);
 }
 
 .topicTop {
@@ -77,6 +109,10 @@
   font-size: 0.75rem;
   font-weight: 500;
   color: var(--text-muted);
+  transition:
+    transform var(--duration-fast) var(--ease-smooth),
+    border-color var(--duration-fast) var(--ease-smooth),
+    background-color var(--duration-fast) var(--ease-smooth);
 }
 
 .topicBottom {
@@ -118,7 +154,10 @@
   box-shadow: var(--shadow-sm);
 }
 
-.outlineBlock > summary {
+.outlineSummaryBtn {
+  width: 100%;
+  border: 0;
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -128,15 +167,28 @@
   list-style: none;
   font-weight: 700;
   color: var(--text);
-  transition: background 0.2s;
+  transition:
+    background-color var(--duration-fast) var(--ease-smooth),
+    transform var(--duration-fast) var(--ease-smooth);
 }
 
-.outlineBlock > summary:hover {
+.outlineSummaryBtn:hover {
   background: var(--bg);
+  transform: translateX(2px);
 }
 
-.outlineBlock > summary::-webkit-details-marker {
-  display: none;
+.outlineSummaryMain {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+}
+
+.outlineChevron {
+  flex: 0 0 auto;
+  color: var(--text-soft);
+  font-size: 1.1rem;
 }
 
 .outlineTitle {
@@ -189,13 +241,23 @@
   font-size: 0.8rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s;
+  transition:
+    transform var(--duration-fast) var(--ease-smooth),
+    border-color var(--duration-fast) var(--ease-smooth),
+    color var(--duration-fast) var(--ease-smooth),
+    background-color var(--duration-fast) var(--ease-smooth),
+    box-shadow var(--duration-fast) var(--ease-smooth);
 }
 
 .outlineTopic:hover {
   border-color: var(--accent);
   color: var(--accent);
   background: var(--accent-bg);
+  transform: translateY(-1px);
+}
+
+.outlineTopic:active {
+  transform: scale(0.98);
 }
 
 /* ——— Topic page ——— */
@@ -247,6 +309,21 @@
   border-radius: var(--radius);
   border: 1px solid var(--border);
   background: var(--bg);
+  transition:
+    transform var(--duration-medium) var(--ease-smooth),
+    box-shadow var(--duration-medium) var(--ease-smooth),
+    border-color var(--duration-medium) var(--ease-smooth);
+}
+
+.itemCard:hover {
+  border-color: var(--accent-light);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-2px);
+}
+
+.itemCard.open {
+  border-color: rgba(20, 184, 166, 0.28);
+  box-shadow: var(--shadow);
 }
 
 .itemHeader {
@@ -255,6 +332,40 @@
   justify-content: space-between;
   gap: 12px;
   margin-bottom: 8px;
+}
+
+.itemToggle {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+.itemHeaderMain {
+  min-width: 0;
+}
+
+.itemHeaderAside {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
+}
+
+.itemPreview {
+  margin: 6px 0 0;
+}
+
+.itemBody {
+  overflow: hidden;
+}
+
+.itemChevron {
+  color: var(--text-soft);
+  font-size: 1rem;
 }
 
 .itemTitle {
@@ -281,6 +392,11 @@
   line-height: 1.3;
   cursor: pointer;
   touch-action: manipulation;
+  transition:
+    transform var(--duration-fast) var(--ease-smooth),
+    background-color var(--duration-fast) var(--ease-smooth),
+    color var(--duration-fast) var(--ease-smooth),
+    box-shadow var(--duration-fast) var(--ease-smooth);
 }
 
 .acronymWrap.open .acronym,
@@ -305,6 +421,52 @@
   font-weight: 500;
   line-height: 1.4;
   box-shadow: var(--shadow-lg);
+  animation: acronymPopoverIn var(--duration-fast) var(--ease-smooth);
+  transform-origin: bottom center;
+}
+
+.topicHeroPanel {
+  position: relative;
+  overflow: hidden;
+}
+
+.doneActionBtn {
+  position: relative;
+  overflow: visible;
+}
+
+.doneActionLabel {
+  position: relative;
+  z-index: 1;
+}
+
+.doneCheck {
+  margin-left: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.2);
+  font-weight: 800;
+}
+
+.doneBurst {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.doneParticle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(20, 184, 166, 0.85);
+  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.14);
 }
 
 .acronymPopover::after {
@@ -326,5 +488,31 @@
   .acronymPopover::after {
     left: 18px;
     transform: none;
+  }
+}
+
+@keyframes badgePulse {
+  0% {
+    transform: scale(0.92);
+  }
+
+  65% {
+    transform: scale(1.04);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes acronymPopoverIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
   }
 }

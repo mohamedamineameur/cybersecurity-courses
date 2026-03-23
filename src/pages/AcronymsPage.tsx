@@ -5,9 +5,10 @@ import type { AcronymEntry } from '../app/types'
 
 type AcronymsPageProps = {
   entries: AcronymEntry[]
+  onCopy: (label: string) => void
 }
 
-export function AcronymsPage({ entries }: AcronymsPageProps) {
+export function AcronymsPage({ entries, onCopy }: AcronymsPageProps) {
   const { t } = useTranslate()
   const [query, setQuery] = useState('')
   const normalizedQuery = normalize(query)
@@ -45,6 +46,7 @@ export function AcronymsPage({ entries }: AcronymsPageProps) {
             onClick={async () => {
               try {
                 await navigator.clipboard.writeText(`${entry.acronym} — ${entry.spelledOut}`)
+                onCopy(entry.acronym)
               } catch {
                 // ignore
               }

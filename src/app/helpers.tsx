@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { InlineAcronym } from '../components/InlineAcronym'
 import type {
   AcronymsData,
   CourseData,
@@ -477,42 +478,6 @@ export function topicText(topic: CourseTopic) {
   }
 
   return normalize(parts.join(' '))
-}
-
-function InlineAcronym({ short, expanded }: { short: string; expanded: string }) {
-  const [open, setOpen] = useState(false)
-
-  return (
-    <span
-      className={['acronymWrap', open ? 'open' : ''].join(' ')}
-      onBlur={(event) => {
-        const next = event.relatedTarget
-        if (!(next instanceof Node) || !event.currentTarget.contains(next)) setOpen(false)
-      }}
-      onKeyDown={(event) => {
-        if (event.key === 'Escape') {
-          event.preventDefault()
-          setOpen(false)
-        }
-      }}
-    >
-      <button
-        type="button"
-        className="acronym"
-        title={expanded}
-        aria-expanded={open}
-        aria-label={`${short}: ${expanded}`}
-        onClick={() => setOpen((value) => !value)}
-      >
-        {short}
-      </button>
-      {open ? (
-        <span className="acronymPopover" role="tooltip">
-          {expanded}
-        </span>
-      ) : null}
-    </span>
-  )
 }
 
 export function formatInline(text: string, acronymMap: Map<string, string>) {
